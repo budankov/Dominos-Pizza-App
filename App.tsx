@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import { ActivityIndicator } from "react-native";
+import AppDrawer from "./src/navigation/AppDrawer";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "OpenSans-Regular": require("./src/assets/fonts/OpenSans-Regular.ttf"),
+    "OpenSans-Medium": require("./src/assets/fonts/OpenSans-Medium.ttf"),
+    "OpenSans-SemiBold": require("./src/assets/fonts/OpenSans-SemiBold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator size={"large"} />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AppDrawer />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
