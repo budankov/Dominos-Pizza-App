@@ -1,11 +1,6 @@
 import React, { FC, ReactNode } from "react";
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from "react-native";
+import { StatusBar, StyleSheet, View, ViewStyle } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { IS_ANDROID } from "../../constants/constants";
 import { AppColors } from "../../styles/colors";
 
@@ -16,7 +11,8 @@ interface AppSaveViewProps {
 
 const AppSaveView: FC<AppSaveViewProps> = ({ children, style }) => {
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.safeArea} edges={["top"]}>
+      <StatusBar barStyle="light-content" />
       <View style={[styles.container, style]}>{children}</View>
     </SafeAreaView>
   );
@@ -25,8 +21,8 @@ const AppSaveView: FC<AppSaveViewProps> = ({ children, style }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: AppColors.backgroundWhite,
-    paddingTop: IS_ANDROID ? StatusBar.currentHeight || 0 : 0,
+    backgroundColor: AppColors.backgroundGrey,
+    // paddingTop: IS_ANDROID ? StatusBar.currentHeight || 0 : 0,
   },
   container: {
     flex: 1,
