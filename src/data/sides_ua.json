@@ -1,0 +1,497 @@
+[
+    {
+        "id": "side_1",
+        "name": "Буріто's з куркою",
+        "description": "Тортилья, курка, кукурудза, огірки мариновані, перець болгарський, цибуля, соус Бургер",
+        "weight": "160 г*",
+        "price": 115,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fburritochicken-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_2",
+        "name": "Буріто's з яловичиною",
+        "description": "Тортилья, яловичина , кукурудза, огірки мариновані, перець болгарський, цибуля, соус Барбекю",
+        "weight": "160 г*",
+        "price": 118,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fburritobeef-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_3",
+        "name": "Буріто's з тунцем",
+        "description": "Тортилья, тунець, кукурудза, фета, огірки мариновані, цибуля, соус Бургер",
+        "weight": "175 г*",
+        "price": 129,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fburritotuna-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_5",
+        "name": "Буріто's з куркою і картопля фрі з печі",
+        "description": "",
+        "weight": "340 г*",
+        "price": 185,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fkombo%2Fnew%2Fcombo-burritochicken-fries-cut-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_6",
+        "name": "Буріто's з яловичиною і картопля фрі з печі",
+        "description": "",
+        "weight": "340 г*",
+        "price": 188,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fkombo%2Fnew%2Fcombo-burritobeef-fries-cut-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_7",
+        "name": "Буріто's з тунцем і картопля фрі з печі",
+        "description": "",
+        "weight": "355 г*",
+        "price": 199,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FBurito%2Fkombo%2Fnew%2Fcombo-burritotuna-fries-cut-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_8",
+        "name": "Соус Часниковий",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-garlic.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_9",
+        "name": "Ребра під соусом Теріякі",
+        "description": "",
+        "weight": "250 г*",
+        "price": 208,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2FRebra%2FPromo%2FInshi%2F2025.08%2Fteriyaki-ribs-kiev-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_10",
+        "name": "Курячі крильця Теріякі",
+        "description": "",
+        "weight": "255 г*",
+        "price": 219,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2FTeriyaki%20wings%2Fchicken-teriyaki-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_11",
+        "name": "Ребра під соусом Барбекю",
+        "description": "",
+        "weight": "250 г*",
+        "price": 208,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2FRebra%2FPromo%2FInshi%2F2025.08%2Fbbq-ribs-kiev-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_12",
+        "name": "Соус Барбекю",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-bbq.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_13",
+        "name": "Курячі стріпси",
+        "description": "",
+        "weight": "180 г*",
+        "price": 215,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-chickenstrips-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_14",
+        "name": "Журавлиновий соус",
+        "description": "",
+        "weight": "40 г*",
+        "price": 15,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FZhuravlynovyi%2Fpromo-05-2025%2Fpravky-promo%2Fsauces-cranberry-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_15",
+        "name": "Крильця Барбекю",
+        "description": "",
+        "weight": "255 г*",
+        "price": 219,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-buffalowings-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_16",
+        "name": "Крильця гострі",
+        "description": "",
+        "weight": "255 г*",
+        "price": 219,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-buffalowings-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_17",
+        "name": "Курячі крильця",
+        "description": "",
+        "weight": "230 г*",
+        "price": 219,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-buffalowings-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_18",
+        "name": "Салат з грушею і блакитним сиром",
+        "description": "Салатна суміш, телятина, томати чері, груша, блакитний сир, медово-гірчичний соус (40г)",
+        "weight": "155 г*",
+        "price": 119,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-pearbluecheese-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_19",
+        "name": "Салат з в’яленими томатами",
+        "description": "Шпинат, в’ялені томати, болгарський перець, фета, французький соус (14г)",
+        "weight": "129 г*",
+        "price": 128,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-driedtomatoesnoolives-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_20",
+        "name": "Салат Грецький",
+        "description": "Салатна суміш, Болгарський перець, томати чері, оливки, фета, французький соус (14г)",
+        "weight": "156 г*",
+        "price": 119,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-greek-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_21",
+        "name": "Салат з індичкою",
+        "description": "Салатна суміш, індичка, томати чері, пармезан, болгарський перець, медово-гірчичний соус (40г)",
+        "weight": "170 г*",
+        "price": 128,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-turkey-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_22",
+        "name": "Салат з телятиною",
+        "description": "Салатна суміш, телятина, томати чері, пармезан, болгарський перець, медово-гірчичний соус (40г)",
+        "weight": "129 г*",
+        "price": 128,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-veal-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_23",
+        "name": "Салат з тунцем",
+        "description": "Салатна суміш, тунець, томати чері, оливки, болгарський перець, кукурудза, французький соус",
+        "weight": "159 г*",
+        "price": 138,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSalaty%2FPromo%2F2025_06_09%2Fsalad-tuna-sale-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_24",
+        "name": "Мініроли з пепероні та перцем",
+        "description": "",
+        "weight": "250 г*",
+        "price": 109,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FMiniroly%2Fbox-minirolls-pepperonipeppers-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_25",
+        "name": "Мініроли з шинкою та грибами",
+        "description": "",
+        "weight": "260 г*",
+        "price": 109,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FMiniroly%2Fbox-minirolls-hammushrooms-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_26",
+        "name": "Мініроли з лососем і крем-сиром",
+        "description": "",
+        "weight": "235 г*",
+        "price": 199,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FMiniroly%2Fbox-minirolls-salmonphiladelphia-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_27",
+        "name": "Комбо-бокс",
+        "description": "Картопляні Шматочки, Курячі Крильця, Курячі Стріпси",
+        "weight": "475 г*",
+        "price": 349,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-combo-nosauce.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_28",
+        "name": "Комбо-бокс Фрі",
+        "description": "Курячі Крильця, Картопля фрі, Курячі Стріпси",
+        "weight": "475 г*",
+        "price": 353,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKurka%2Fnew%2Fbox-combofries-nosauce.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_29",
+        "name": "Набір соусів Гурме",
+        "description": "журавлина, маринара, медово-гірчичний, часниковий",
+        "weight": "160 г*",
+        "price": 95,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FNabory%20onovlennia%2Fsauces-gourmetset-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_30",
+        "name": "Запечена картопля з моцарелою та ковбасками",
+        "description": "Картопляні шматочки, Моцарела, Соус Часниковий, Соус Бургер,  Білі сосиски, Баварські ковбаски, кріспі цибулька",
+        "weight": "280 г*",
+        "price": 165,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2Fpotato-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_31",
+        "name": "Кріспі Фрі",
+        "description": "Картопля фрі, Бекон, Кріспі цибулька, Халапеньо, Соус Бургер",
+        "weight": "255 г*",
+        "price": 115,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2FKrispi%20Fri%2Fnew%2Fbox-crispyfries.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_32",
+        "name": "Запечена картопля з грибами та беконом",
+        "description": "Соус Барбекю, Картопляні шматочки, Гриби, Бекон, Соус Бургер, кріспі цибулька",
+        "weight": "290 г*",
+        "price": 165,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2Fbox-potatoesmushroomscrispyonions.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_33",
+        "name": "Запечена картопля з ковбасками",
+        "description": "Соус Барбекю, Картопляні Шматочки, Сосиски Баварські, Бекон, Чеддер, Соус Бургер",
+        "weight": "306 г*",
+        "price": 165,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2Fnew%2Fbox-potatosausages-nosauce.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_34",
+        "name": "Набір соусів Оріджинал",
+        "description": "кетчуп, сирний, часниковий, ббк",
+        "weight": "160 г*",
+        "price": 95,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FNabory%20onovlennia%2Fsauces-originalset-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_35",
+        "name": "Картопляні шматочки",
+        "description": "",
+        "weight": "190 г*",
+        "price": 89,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2Fnew%2Fbox-potatowedges-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_36",
+        "name": "Картопля Фрі з печі",
+        "description": "",
+        "weight": "180 г*",
+        "price": 89,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKartoplia%2Fnew%2Fbox-frenchfries-nosauce-withsticker-ukr.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_37",
+        "name": "Соус Сирний",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-cheese.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_38",
+        "name": "Хлібці з шинкою та грибами",
+        "description": "Шинка, Гриби, Моцарела, Чеддер, Часникова приправа",
+        "weight": "335 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlebets-vetchyna-hryby.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_39",
+        "name": "Хлібці зі стейк-м’ясом та цибулею",
+        "description": "Стейк-мясо, Цибуля, Моцарела, Чеддер, Часникова приправа",
+        "weight": "343 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlebets-hoviadyna-luk.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_40",
+        "name": "Хлібці з беконом і халапеньо",
+        "description": "Бекон, Халапеньо, Моцарела, Чеддер, Часникова приправа",
+        "weight": "305 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlibets-s-bekonom-ta-khalapeno.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_41",
+        "name": "Хлібці з баварськими ковбасками та томатами",
+        "description": "Ковбаски баварські, Томати, Моцарела, Чеддер, Часникова приправа",
+        "weight": "312 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlibets-s-bavarskymy-kovbaskamy-ta-tomatamy.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_42",
+        "name": "Хлібці з шпинатом і фетою",
+        "description": "Шпинат, Фета, Моцарела, Чеддер, Часникова приправа",
+        "weight": "303 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlibets-zi-shpynatom-ta-fetoiu.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_43",
+        "name": "Хлібці з сиром",
+        "description": "Моцарела, Чеддер, Соус Маринара (40г), Часникова приправа",
+        "weight": "210 г*",
+        "price": 135,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2Fside-breadcheese-marinarasauce.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_44",
+        "name": "Хлібці з пепероні, мюнхенськими ковбасками та гірчицею",
+        "description": "Сосиски білі, Пеппероні, Моцарела, Чеддер, Часникова приправа",
+        "weight": "338 г*",
+        "price": 157,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkhlibets-z-miunkhenskymy-kovbaskamypeperoni-ta-hirchytseiu.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_45",
+        "name": "Пармезан байтс",
+        "description": "Пармезан",
+        "weight": "160 г*",
+        "price": 99,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fparmezan-baits-2.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_46",
+        "name": "Набір соусів Пікантний",
+        "description": "маринара, гострий, часниковий, сирний",
+        "weight": "160 г*",
+        "price": 95,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FNabory%20onovlennia%2Fsauces-piquantset-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_47",
+        "name": "Набір соусів Оріджинал",
+        "description": "кетчуп, сирний, часниковий, ббк",
+        "weight": "160 г*",
+        "price": 95,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FNabory%20onovlennia%2Fsauces-originalset-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_48",
+        "name": "Набір соусів Гурме",
+        "description": "журавлина, маринара, медово-гірчичний, часниковий",
+        "weight": "160 г*",
+        "price": 95,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FNabory%20onovlennia%2Fsauces-gourmetset-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_49",
+        "name": "Журавлиновий соус",
+        "description": "",
+        "weight": "40 г*",
+        "price": 15,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FZhuravlynovyi%2Fpromo-05-2025%2Fpravky-promo%2Fsauces-cranberry-website-main.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_50",
+        "name": "Соус Барбекю",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-bbq.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_51",
+        "name": "Соус Сирний",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-cheese.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_52",
+        "name": "Кетчуп",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-ketchup.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_53",
+        "name": "Соус Гострий",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-hot.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_54",
+        "name": "Соус Маринара",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-marinara.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_55",
+        "name": "Соус Часниковий",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-garlic.webp&w=1560&q=75",
+        "category": ""
+    },
+    {
+        "id": "side_56",
+        "name": "Соус Медово-Гірчичний",
+        "description": "",
+        "weight": "40 г*",
+        "price": 30,
+        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2F12_02%2Fsauce-40g-honeymustard.webp&w=1560&q=75",
+        "category": ""
+    }
+]
