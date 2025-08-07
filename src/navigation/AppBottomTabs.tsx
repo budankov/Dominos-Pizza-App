@@ -1,7 +1,6 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { s, vs } from "react-native-size-matters";
-import CustomHeader from "../components/headers/CustomHeader";
 import { IS_ANDROID } from "../constants/constants";
 import DrinksScreen from "../screens/drinks/DrinksScreen";
 import HomeScreen from "../screens/home/HomeScreen";
@@ -17,7 +16,7 @@ export default function AppBottomTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        header: (props) => <CustomHeader {...props} />,
+        headerShown: false,
         tabBarActiveTintColor: AppColors.red,
         tabBarInactiveTintColor: AppColors.lightGrey,
         tabBarLabelStyle: {

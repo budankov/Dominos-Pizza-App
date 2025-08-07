@@ -19,30 +19,20 @@ export default function CustomDrawerContent(
         <DrawerItem
           label="ДОМАШНЯ СТОРІНКА"
           onPress={() =>
-            props.navigation.navigate("MainTabs", {
-              screen: "Home",
-            })
+            props.navigation.navigate("MainTabs", { screen: "Home" })
           }
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
           label="КОНСТРУКТОР ПІЦИ"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "PizzaMaker",
-            })
-          }
+          onPress={() => props.navigation.navigate("PizzaMaker")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
           label="PIZZA TRACKER"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "PizzaTracker",
-            })
-          }
+          onPress={() => props.navigation.navigate("PizzaTracker")}
           icon={({ size }) => (
             <Ionicons
               name="chatbubble-ellipses-outline"
@@ -55,21 +45,13 @@ export default function CustomDrawerContent(
         />
         <DrawerItem
           label="ПІЦЕРІЇ"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "Pizzerias",
-            })
-          }
+          onPress={() => props.navigation.navigate("Pizzerias")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
           label="РОБОТА ТА КАРʼЄРА"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "WorkAndCareerScreen",
-            })
-          }
+          onPress={() => props.navigation.navigate("Pizzerias")}
           labelStyle={styles.label}
           style={styles.item}
         />
@@ -83,31 +65,19 @@ export default function CustomDrawerContent(
         />
         <DrawerItem
           label="DOMINO'S CLUB"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "DominosClub",
-            })
-          }
+          onPress={() => props.navigation.navigate("DominosClub")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
           label="ЗАЛИШИТИ ВІГДУК"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "LeaveReview",
-            })
-          }
+          onPress={() => props.navigation.navigate("LeaveReview")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
           label="НОВИНИ"
-          onPress={() =>
-            props.navigation.navigate("DrawerScreens", {
-              screen: "News",
-            })
-          }
+          onPress={() => props.navigation.navigate("News")}
           labelStyle={styles.label}
           style={styles.item}
         />
