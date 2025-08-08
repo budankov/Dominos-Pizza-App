@@ -1,11 +1,6 @@
 import React, { FC, ReactNode } from "react";
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from "react-native";
+import { StatusBar, StyleSheet, View, ViewStyle } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { IS_ANDROID } from "../../constants/constants";
 import { AppColors } from "../../styles/colors";
 
@@ -15,22 +10,29 @@ interface AppSaveViewProps {
 }
 
 const AppSaveView: FC<AppSaveViewProps> = ({ children, style }) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View
+      style={[
+        styles.container,
+        {
+          paddingTop: IS_ANDROID ? StatusBar.currentHeight || 0 : insets.top,
+          paddingBottom: 0,
+        },
+        style,
+      ]}
+    >
       <StatusBar barStyle="light-content" />
-      <View style={[styles.container, style]}>{children}</View>
-    </SafeAreaView>
+      {children}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: AppColors.backgroundGrey,
-    paddingTop: IS_ANDROID ? StatusBar.currentHeight || 0 : 0,
-  },
   container: {
     flex: 1,
+    backgroundColor: AppColors.backgroundGrey,
   },
 });
 

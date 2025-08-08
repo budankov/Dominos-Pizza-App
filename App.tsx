@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { ActivityIndicator } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppDrawer from "./src/navigation/AppDrawer";
 
 export default function App() {
@@ -15,8 +16,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <AppDrawer />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <AppDrawer />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
