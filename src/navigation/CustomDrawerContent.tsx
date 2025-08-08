@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo, EvilIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
@@ -6,7 +6,12 @@ import {
 } from "@react-navigation/drawer";
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Linking, StyleSheet, TouchableOpacity, View } from "react-native";
+import { s } from "react-native-size-matters";
+import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
+import MasterCardIcon from "../assets/icons/MasterCardIcon";
+import VisaIcon from "../assets/icons/VisaIcon";
+import AppText from "../components/texts/AppText";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
@@ -16,6 +21,12 @@ export default function CustomDrawerContent(
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.container}>
+        <View>
+          <View style={styles.logoContainer}>
+            <DominosPizzaLogoIcon width="30px" height="30px" />
+            <AppText style={styles.logo}>Domino's Pizza</AppText>
+          </View>
+        </View>
         <DrawerItem
           label="ДОМАШНЯ СТОРІНКА"
           onPress={() =>
@@ -81,6 +92,101 @@ export default function CustomDrawerContent(
           labelStyle={styles.label}
           style={styles.item}
         />
+        <View style={styles.underline} />
+        <AppText style={styles.text}>Зателефонуйте нам:</AppText>
+        <TouchableOpacity
+          style={styles.phone}
+          onPress={() => Linking.openURL("tel:0442221111")}
+        >
+          <AppText style={styles.phoneText}>0442221111</AppText>
+        </TouchableOpacity>
+        <AppText style={styles.text}>Без вихідних з 10:00 до 22:00</AppText>
+        <TouchableOpacity
+          onPress={() => Linking.openURL("mailto:info@dominos.ua")}
+        >
+          <AppText
+            style={[
+              styles.text,
+              { fontFamily: AppFonts.SemiBold, paddingBottom: s(30) },
+            ]}
+          >
+            info@dominos.ua
+          </AppText>
+        </TouchableOpacity>
+        <AppText style={styles.infoTitle}>Корисна інформація</AppText>
+        <TouchableOpacity
+          style={styles.text}
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          }}
+        >
+          <AppText style={styles.label}>
+            Вміст алергерів і харчова цінність
+          </AppText>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.text}
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          }}
+        >
+          <AppText style={styles.label}>
+            Політика безпеки харчових продуктів
+          </AppText>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.text}
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          }}
+        >
+          <AppText style={styles.label}>Політика конфіденційності</AppText>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.text}
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          }}
+        >
+          <AppText style={styles.label}>Інформаційна політика</AppText>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          }}
+        >
+          <AppText style={styles.label}>Публічна оферта</AppText>
+        </TouchableOpacity>
+        <View style={styles.underline} />
+        <AppText style={styles.titleFollow}>Слідкуйте за нами</AppText>
+        <View style={styles.socialContainer}>
+          <TouchableOpacity
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            }}
+          >
+            <EvilIcons name="sc-telegram" size={30} color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            }}
+          >
+            <Entypo name="instagram" size={24} color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            }}
+          >
+            <FontAwesome name="facebook" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+        <AppText style={styles.titleSupport}>Підтримка платежів</AppText>
+        <View style={styles.paymentContainer}>
+          <MasterCardIcon width="80px" height="80px" />
+          <VisaIcon width="80px" height="80px" fill={"#fff"} />
+        </View>
       </View>
     </DrawerContentScrollView>
   );
@@ -88,10 +194,75 @@ export default function CustomDrawerContent(
 
 const styles = StyleSheet.create({
   container: {},
-  item: {},
+  item: {
+    borderRadius: 0,
+    marginLeft: s(-10),
+  },
   label: {
     fontSize: 18,
     fontFamily: AppFonts.Regular,
-    color: "#ffffff",
+    color: AppColors.textColorWhite,
+  },
+  underline: {
+    borderColor: AppColors.darkGrey,
+    borderBottomWidth: s(0.5),
+    marginVertical: s(10),
+  },
+  text: {
+    color: AppColors.textColorWhite,
+    paddingBottom: s(10),
+  },
+  phone: {
+    paddingTop: s(3),
+    paddingBottom: s(10),
+  },
+  phoneText: {
+    fontSize: s(22),
+    fontFamily: AppFonts.SemiBold,
+    color: AppColors.textColorWhite,
+  },
+  infoTitle: {
+    fontSize: s(18),
+    fontFamily: AppFonts.Bold,
+    color: AppColors.textColorWhite,
+    paddingBottom: s(10),
+  },
+  titleFollow: {
+    fontSize: s(15),
+    fontFamily: AppFonts.Bold,
+    color: AppColors.textColorWhite,
+    textAlign: "center",
+  },
+  titleSupport: {
+    fontSize: s(17),
+    fontFamily: AppFonts.Bold,
+    color: AppColors.textColorWhite,
+    textAlign: "center",
+  },
+  socialContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: s(30),
+    paddingTop: s(15),
+    paddingBottom: s(30),
+  },
+  paymentContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  logoContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  logo: {
+    fontSize: s(14),
+    fontFamily: AppFonts.Logo,
+    color: AppColors.textColorWhite,
+    textAlign: "center",
   },
 });

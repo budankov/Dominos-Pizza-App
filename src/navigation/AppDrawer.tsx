@@ -29,6 +29,7 @@ export default function AppDrawer() {
             backgroundColor: AppColors.backgroundGrey,
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
+            paddingLeft: 0,
           },
         }}
         drawerContent={(props) => <CustomDrawerContent {...props} />}

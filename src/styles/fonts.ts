@@ -1,5 +1,9 @@
 export const AppFonts = {
-  Regular: "OpenSans-Regular",
+  Light: "OpenSans-Light",
   Medium: "OpenSans-Medium",
+  Regular: "OpenSans-Regular",
   SemiBold: "OpenSans-SemiBold",
+  Bold: "OpenSans-Bold",
+  ExtraBold: "OpenSans-ExtraBold",
+  Logo: "FuturaLT-Bold",
 };
