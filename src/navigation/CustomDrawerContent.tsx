@@ -11,8 +11,10 @@ import { s, vs } from "react-native-size-matters";
 import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
 import MasterCardIcon from "../assets/icons/MasterCardIcon";
 import VisaIcon from "../assets/icons/VisaIcon";
+import AppButton from "../components/buttons/AppButton";
 import DrawerHeaderClose from "../components/close-drawer/DrawerHeaderClose";
 import LanguageDropDownMenu from "../components/language/LanguageDropDownMenu";
+import LocationButton from "../components/location/LocationButton";
 import AppText from "../components/texts/AppText";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
@@ -33,6 +35,15 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           </View>
           <LanguageDropDownMenu />
           <DrawerHeaderClose />
+        </View>
+        <View style={styles.headerBottomContainer}>
+          <LocationButton />
+          <AppButton
+            title="Увійти"
+            onPress={() => {}}
+            style={styles.singInButton}
+            styleTitle={styles.singInButtonText}
+          />
         </View>
         <DrawerItem
           label="ДОМАШНЯ СТОРІНКА"
@@ -279,6 +290,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  headerBottomContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: s(5),
+    paddingTop: vs(25),
+    paddingBottom: vs(10),
+  },
+  singInButton: {
+    width: s(120),
+    backgroundColor: AppColors.darkGrey,
+  },
+  singInButtonText: { fontFamily: AppFonts.Bold },
 });
 
 export default CustomDrawerContent;

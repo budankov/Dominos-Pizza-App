@@ -1,0 +1,23 @@
+{
+  "cities": {
+    "kyiv": "Kyiv",
+    "lviv": "Lviv",
+    "odesa": "Odesa",
+    "kharkiv": "Kharkiv",
+    "dnipro": "Dnipro",
+    "zaporizhzhia": "Zaporizhzhia",
+    "vinnytsia": "Vinnytsia",
+    "cherkasy": "Cherkasy",
+    "chernivtsi": "Chernivtsi",
+    "ivano_frankivsk": "Ivano-Frankivsk",
+    "ternopil": "Ternopil",
+    "uzhhorod": "Uzhhorod",
+    "rivne": "Rivne",
+    "kropyvnytskyi": "Kropyvnytskyi",
+    "sumy": "Sumy",
+    "poltava": "Poltava",
+    "kherson": "Kherson",
+    "mykolaiv": "Mykolaiv",
+    "chernihiv": "Chernihiv"
+  }
+}
