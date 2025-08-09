@@ -7,25 +7,32 @@ import {
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
 import { Linking, StyleSheet, TouchableOpacity, View } from "react-native";
-import { s } from "react-native-size-matters";
+import { s, vs } from "react-native-size-matters";
 import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
 import MasterCardIcon from "../assets/icons/MasterCardIcon";
 import VisaIcon from "../assets/icons/VisaIcon";
+import DrawerHeaderClose from "../components/close-drawer/DrawerHeaderClose";
+import LanguageDropDownMenu from "../components/language/LanguageDropDownMenu";
 import AppText from "../components/texts/AppText";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
-export default function CustomDrawerContent(
-  props: DrawerContentComponentProps
-) {
+const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   return (
-    <DrawerContentScrollView {...props}>
+    <DrawerContentScrollView
+      {...props}
+      contentContainerStyle={{
+        paddingTop: s(7),
+      }}
+    >
       <View style={styles.container}>
-        <View>
+        <View style={styles.headerTopContainer}>
           <View style={styles.logoContainer}>
             <DominosPizzaLogoIcon width="30px" height="30px" />
             <AppText style={styles.logo}>Domino's Pizza</AppText>
           </View>
+          <LanguageDropDownMenu />
+          <DrawerHeaderClose />
         </View>
         <DrawerItem
           label="ДОМАШНЯ СТОРІНКА"
@@ -190,16 +197,18 @@ export default function CustomDrawerContent(
       </View>
     </DrawerContentScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    // backgroundColor: "#fff",
+  },
   item: {
-    borderRadius: 0,
+    borderRadius: s(0),
     marginLeft: s(-10),
   },
   label: {
-    fontSize: 18,
+    fontSize: s(18),
     fontFamily: AppFonts.Regular,
     color: AppColors.textColorWhite,
   },
@@ -210,11 +219,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: AppColors.textColorWhite,
-    paddingBottom: s(10),
+    paddingBottom: vs(10),
   },
   phone: {
-    paddingTop: s(3),
-    paddingBottom: s(10),
+    paddingTop: vs(3),
+    paddingBottom: vs(10),
   },
   phoneText: {
     fontSize: s(22),
@@ -225,7 +234,7 @@ const styles = StyleSheet.create({
     fontSize: s(18),
     fontFamily: AppFonts.Bold,
     color: AppColors.textColorWhite,
-    paddingBottom: s(10),
+    paddingBottom: vs(10),
   },
   titleFollow: {
     fontSize: s(15),
@@ -245,8 +254,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: s(30),
-    paddingTop: s(15),
-    paddingBottom: s(30),
+    paddingTop: vs(15),
+    paddingBottom: vs(30),
   },
   paymentContainer: {
     flex: 1,
@@ -265,4 +274,11 @@ const styles = StyleSheet.create({
     color: AppColors.textColorWhite,
     textAlign: "center",
   },
+  headerTopContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+  },
 });
+
+export default CustomDrawerContent;

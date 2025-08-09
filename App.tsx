@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { ActivityIndicator } from "react-native";
+import { MenuProvider } from "react-native-popup-menu";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppDrawer from "./src/navigation/AppDrawer";
 
@@ -21,9 +22,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <AppDrawer />
-      </NavigationContainer>
+      <MenuProvider>
+        <NavigationContainer>
+          <AppDrawer />
+        </NavigationContainer>
+      </MenuProvider>
     </SafeAreaProvider>
   );
 }
