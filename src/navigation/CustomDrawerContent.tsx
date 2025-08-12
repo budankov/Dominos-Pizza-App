@@ -135,7 +135,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.text}
           onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            await WebBrowser.openBrowserAsync(
+              "https://media-v3.dominos.ua/Files/LIST-ALLERGENS-UKR-3.pdf"
+            );
           }}
         >
           <AppText style={styles.label}>
@@ -145,7 +147,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.text}
           onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            await WebBrowser.openBrowserAsync(
+              "https://storage.googleapis.com/static.dominos.ua/dominos_product_policy.pdf"
+            );
           }}
         >
           <AppText style={styles.label}>
@@ -155,7 +159,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.text}
           onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            await WebBrowser.openBrowserAsync(
+              "https://media-v3.dominos.ua/Files/privacy-policy-uk.pdf"
+            );
           }}
         >
           <AppText style={styles.label}>Політика конфіденційності</AppText>
@@ -163,14 +169,18 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.text}
           onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            await WebBrowser.openBrowserAsync(
+              "https://media-v3.dominos.ua/Files/information-policy-uk.pdf"
+            );
           }}
         >
           <AppText style={styles.label}>Інформаційна політика</AppText>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+            await WebBrowser.openBrowserAsync(
+              "https://media-v3.dominos.ua/Files/public-offer-agreement-kyiv.pdf"
+            );
           }}
         >
           <AppText style={styles.label}>Публічна оферта</AppText>
@@ -180,21 +190,27 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={styles.socialContainer}>
           <TouchableOpacity
             onPress={async () => {
-              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+              await WebBrowser.openBrowserAsync(
+                "https://www.instagram.com/dominosukraine/"
+              );
             }}
           >
             <EvilIcons name="sc-telegram" size={30} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={async () => {
-              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+              await WebBrowser.openBrowserAsync(
+                "https://www.instagram.com/dominos_ua/"
+              );
             }}
           >
             <Entypo name="instagram" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={async () => {
-              await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+              await WebBrowser.openBrowserAsync(
+                "https://www.facebook.com/DominosPizzaUkraine/"
+              );
             }}
           >
             <FontAwesome name="facebook" size={24} color="white" />
@@ -295,7 +311,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: s(5),
+    paddingRight: s(20),
     paddingTop: vs(25),
     paddingBottom: vs(10),
   },
