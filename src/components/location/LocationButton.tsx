@@ -1,10 +1,11 @@
-import { Fontisto } from "@expo/vector-icons";
-import React, { useState } from "react";
+import { EvilIcons, Fontisto } from "@expo/vector-icons";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { s } from "react-native-size-matters";
 import { AppColors } from "../../styles/colors";
+import { AppFonts } from "../../styles/fonts";
 import AppText from "../texts/AppText";
 import citiesArrEn from "./cities-en.json";
 import citiesArrUa from "./cities-ua.json";
@@ -15,8 +16,11 @@ const LocationButton = () => {
   const citiesData =
     i18n.language === "en" ? citiesArrEn.cities : citiesArrUa.cities;
 
-  const cityCodes = Object.keys(citiesData);
-  const [selectedCityCode, setSelectedCityCode] = useState(cityCodes[0] || "");
+  type CityCode = keyof typeof citiesData;
+  const cityCodes = Object.keys(citiesData) as CityCode[];
+  const [selectedCityCode, setSelectedCityCode] = React.useState<CityCode>(
+    cityCodes[0]
+  );
 
   const openSheet = () => {
     SheetManager.show("LOCALS_SHEET");
@@ -43,6 +47,15 @@ const LocationButton = () => {
 
       <ActionSheet id="LOCALS_SHEET">
         <View style={styles.sheetContainer}>
+          <View style={styles.sheetHeader}>
+            <TouchableOpacity
+              onPress={() => SheetManager.hide("LOCALS_SHEET")}
+              style={styles.closeBtn}
+            >
+              <EvilIcons name="close" size={40} color="#000000" />
+            </TouchableOpacity>
+            <AppText style={styles.title}>Де ви знаходитесь?</AppText>
+          </View>
           {cityCodes.map((code) => (
             <TouchableOpacity
               key={code}
@@ -52,14 +65,19 @@ const LocationButton = () => {
                 code === selectedCityCode && styles.cityItemActive,
               ]}
             >
-              <AppText
-                style={[
-                  styles.cityText,
-                  code === selectedCityCode && styles.cityTextActive,
-                ]}
-              >
-                {citiesData[code]}
-              </AppText>
+              {code === selectedCityCode ? (
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Fontisto
+                    name="map-marker-alt"
+                    size={18}
+                    color={AppColors.red}
+                    style={{ marginRight: s(10) }}
+                  />
+                  <AppText style={styles.cityText}>{citiesData[code]}</AppText>
+                </View>
+              ) : (
+                <AppText style={styles.cityText}>{citiesData[code]}</AppText>
+              )}
             </TouchableOpacity>
           ))}
         </View>
@@ -81,19 +99,26 @@ const styles = StyleSheet.create({
   sheetContainer: {
     padding: s(20),
   },
+  sheetHeader: {
+    paddingBottom: 20,
+  },
   cityItem: {
-    paddingVertical: s(10),
+    paddingVertical: s(5),
   },
   cityItemActive: {
-    backgroundColor: "#ddd",
     borderRadius: s(6),
   },
   cityText: {
-    fontSize: s(18),
+    fontSize: s(16),
     color: "#000",
   },
-  cityTextActive: {
-    fontWeight: "bold",
+  title: {
+    fontFamily: AppFonts.SemiBold,
+    fontSize: s(20),
+    textAlign: "center",
+  },
+  closeBtn: {
+    alignItems: "flex-end",
   },
 });
 

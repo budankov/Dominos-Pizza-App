@@ -23,6 +23,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   return (
     <DrawerContentScrollView
       {...props}
+      freact-react-i18next
       contentContainerStyle={{
         paddingTop: s(7),
       }}
@@ -86,8 +87,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         />
         <DrawerItem
           label="ФРАЙЧАЙЗИНГ"
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
+          onPress={() => {
+            WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
           }}
           labelStyle={styles.label}
           style={styles.item}
@@ -134,8 +135,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <AppText style={styles.infoTitle}>Корисна інформація</AppText>
         <TouchableOpacity
           style={styles.text}
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
               "https://media-v3.dominos.ua/Files/LIST-ALLERGENS-UKR-3.pdf"
             );
           }}
@@ -146,8 +147,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.text}
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
               "https://storage.googleapis.com/static.dominos.ua/dominos_product_policy.pdf"
             );
           }}
@@ -158,8 +159,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.text}
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
               "https://media-v3.dominos.ua/Files/privacy-policy-uk.pdf"
             );
           }}
@@ -168,8 +169,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.text}
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
               "https://media-v3.dominos.ua/Files/information-policy-uk.pdf"
             );
           }}
@@ -177,8 +178,8 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           <AppText style={styles.label}>Інформаційна політика</AppText>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
               "https://media-v3.dominos.ua/Files/public-offer-agreement-kyiv.pdf"
             );
           }}
@@ -189,27 +190,25 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <AppText style={styles.titleFollow}>Слідкуйте за нами</AppText>
         <View style={styles.socialContainer}>
           <TouchableOpacity
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                "https://www.instagram.com/dominosukraine/"
-              );
+            onPress={() => {
+              WebBrowser.openBrowserAsync("https://t.me/dominosukraine");
             }}
           >
             <EvilIcons name="sc-telegram" size={30} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                "https://www.instagram.com/dominos_ua/"
-              );
-            }}
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                "https:/www.instagram.com/dominos_ua/"
+              )
+            }
           >
             <Entypo name="instagram" size={24} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                "https://www.facebook.com/DominosPizzaUkraine/"
+            onPress={() => {
+              WebBrowser.openBrowserAsync(
+                "https://m.facebook.com/@DominosPizzaUkraine/?wtsid=rdr_0jQj34BYpwjAk45KU&hr=1"
               );
             }}
           >
