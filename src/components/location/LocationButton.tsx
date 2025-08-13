@@ -10,7 +10,7 @@ import AppText from "../texts/AppText";
 import citiesArrEn from "./cities-en.json";
 import citiesArrUa from "./cities-ua.json";
 
-const LocationButton = () => {
+const LocationButton = ({ sheetId, markerSize, titleSize }) => {
   const { i18n } = useTranslation();
 
   const citiesData =
@@ -23,12 +23,12 @@ const LocationButton = () => {
   );
 
   const openSheet = () => {
-    SheetManager.show("LOCALS_SHEET");
+    SheetManager.show(sheetId);
   };
 
   const handleConfirm = (code: string) => {
     setSelectedCityCode(code);
-    SheetManager.hide("LOCALS_SHEET");
+    SheetManager.hide(sheetId);
   };
 
   return (
@@ -36,23 +36,23 @@ const LocationButton = () => {
       <TouchableOpacity onPress={openSheet} style={styles.button}>
         <Fontisto
           name="map-marker-alt"
-          size={18}
+          size={s(markerSize)}
           color={AppColors.textColorWhite}
           style={{ paddingRight: s(5) }}
         />
-        <AppText style={styles.selectedCity}>
+        <AppText style={[styles.selectedCity, { fontSize: s(titleSize) }]}>
           {citiesData[selectedCityCode]}
         </AppText>
       </TouchableOpacity>
 
-      <ActionSheet id="LOCALS_SHEET">
+      <ActionSheet id={sheetId}>
         <View style={styles.sheetContainer}>
           <View style={styles.sheetHeader}>
             <TouchableOpacity
-              onPress={() => SheetManager.hide("LOCALS_SHEET")}
+              onPress={() => SheetManager.hide(sheetId)}
               style={styles.closeBtn}
             >
-              <EvilIcons name="close" size={40} color="#000000" />
+              <EvilIcons name="close" size={s(40)} color="#000000" />
             </TouchableOpacity>
             <AppText style={styles.title}>Де ви знаходитесь?</AppText>
           </View>
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   selectedCity: {
-    fontSize: s(22),
     color: "#fff",
   },
   sheetContainer: {
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius: s(6),
   },
   cityText: {
-    fontSize: s(16),
+    fontSize: s(20),
     color: "#000",
   },
   title: {

@@ -38,7 +38,11 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           <DrawerHeaderClose />
         </View>
         <View style={styles.headerBottomContainer}>
-          <LocationButton />
+          <LocationButton
+            sheetId="LOCALS_SHEET_DRAWER"
+            markerSize={18}
+            titleSize={22}
+          />
           <AppButton
             title="Увійти"
             onPress={() => {}}

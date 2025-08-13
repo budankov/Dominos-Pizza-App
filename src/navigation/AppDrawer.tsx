@@ -4,6 +4,7 @@ import { Dimensions } from "react-native";
 import CustomHeader from "../components/headers/CustomHeader";
 import AppSaveView from "../components/views/AppSaveView";
 import WorkAndCareerScreen from "../screens/career/WorkAndCareerScreen";
+import CartScreen from "../screens/cart/CartScreen";
 import DominosClubScreen from "../screens/club/DominosClubScreen";
 import HomeScreen from "../screens/home/HomeScreen";
 import PizzaMakerScreen from "../screens/maker/PizzaMakerScreen";
@@ -43,6 +44,7 @@ export default function AppDrawer() {
         <Drawer.Screen name="DominosClub" component={DominosClubScreen} />
         <Drawer.Screen name="LeaveReview" component={LeaveReviewScreen} />
         <Drawer.Screen name="News" component={NewsScreen} />
+        <Drawer.Screen name="CartScreen" component={CartScreen} />
       </Drawer.Navigator>
     </AppSaveView>
   );
