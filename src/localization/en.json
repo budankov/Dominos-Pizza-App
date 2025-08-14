@@ -1,0 +1,31 @@
+{
+  "tab_home": "Home",
+  "tab_promotions": "Promotions & News",
+  "tab_pizza": "Pizza",
+  "tab_drinks": "Drinks",
+  "tab_sides": "Sides",
+  "tab_starter": "Desserts",
+
+  "drawer_sign_in": "Sign In",
+  "drawer_home": "HOME",
+  "drawer_pizza_maker": "PIZZA MAKER",
+  "drawer_pizza_tracker": "PIZZA TRACKER",
+  "drawer_pizzerias": "PIZZERIAS",
+  "drawer_career": "CAREERS",
+  "drawer_franchising": "FRANCHISING",
+  "drawer_club": "DOMINO'S CLUB",
+  "drawer_leave_review": "LEAVE A REVIEW",
+  "drawer_news": "NEWS",
+  "drawer_call_us": "Call us:",
+  "drawer_working_hours": "Open daily from 10:00 to 22:00",
+  "drawer_useful_info": "Useful Information",
+  "drawer_allergens_info": "Allergens & Nutritional Information",
+  "drawer_food_safety_policy": "Food Safety Policy",
+  "drawer_privacy_policy": "Privacy Policy",
+  "drawer_information_policy": "Information Policy",
+  "drawer_public_offer": "Public Offer",
+  "drawer_follow_us": "Follow us",
+  "drawer_payment_support": "Payment Support",
+
+  "location_title": "Where are you located?"
+}

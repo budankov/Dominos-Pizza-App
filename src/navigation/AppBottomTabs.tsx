@@ -1,5 +1,6 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useTranslation } from "react-i18next";
 import { s, vs } from "react-native-size-matters";
 import { IS_ANDROID } from "../constants/constants";
 import DrinksScreen from "../screens/drinks/DrinksScreen";
@@ -13,6 +14,8 @@ import { AppColors } from "../styles/colors";
 const Tab = createBottomTabNavigator();
 
 export default function AppBottomTabs() {
+  const { t } = useTranslation();
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -35,7 +38,7 @@ export default function AppBottomTabs() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),
-          title: "Домашня",
+          title: t("tab_home"),
         }}
       />
       <Tab.Screen
@@ -45,7 +48,7 @@ export default function AppBottomTabs() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="pricetags-outline" size={size} color={color} />
           ),
-          title: "Акції і новини",
+          title: t("tab_promotions"),
         }}
       />
       <Tab.Screen
@@ -55,7 +58,7 @@ export default function AppBottomTabs() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="pizza-outline" size={size} color={color} />
           ),
-          title: "Піца",
+          title: t("tab_pizza"),
         }}
       />
       <Tab.Screen
@@ -69,7 +72,7 @@ export default function AppBottomTabs() {
               color={color}
             />
           ),
-          title: "Напої",
+          title: t("tab_drinks"),
         }}
       />
       <Tab.Screen
@@ -83,7 +86,7 @@ export default function AppBottomTabs() {
               color={color}
             />
           ),
-          title: "Сайди",
+          title: t("tab_sides"),
         }}
       />
       <Tab.Screen
@@ -93,7 +96,7 @@ export default function AppBottomTabs() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="cupcake" size={size} color={color} />
           ),
-          title: "Десерти",
+          title: t("tab_starter"),
         }}
       />
     </Tab.Navigator>

@@ -1,0 +1,31 @@
+{
+  "tab_home": "Домашня",
+  "tab_promotions": "Акції і новини",
+  "tab_pizza": "Піца",
+  "tab_drinks": "Напої",
+  "tab_sides": "Сайди",
+  "tab_starter": "Десерти",
+
+  "drawer_sign_in": "Увійти",
+  "drawer_home": "ДОМАШНЯ СТОРІНКА",
+  "drawer_pizza_maker": "КОНСТРУКТОР ПІЦИ",
+  "drawer_pizza_tracker": "PIZZA TRACKER",
+  "drawer_pizzerias": "ПІЦЕРІЇ",
+  "drawer_career": "РОБОТА ТА КАРʼЄРА",
+  "drawer_franchising": "ФРАЙЧАЙЗИНГ",
+  "drawer_club": "DOMINO'S CLUB",
+  "drawer_leave_review": "ЗАЛИШИТИ ВІГДУК",
+  "drawer_news": "НОВИНИ",
+  "drawer_call_us": "Зателефонуйте нам:",
+  "drawer_working_hours": "Без вихідних з 10:00 до 22:00",
+  "drawer_useful_info": "Корисна інформація",
+  "drawer_allergens_info": "Вміст алергерів і харчова цінність",
+  "drawer_food_safety_policy": "Політика безпеки харчових продуктів",
+  "drawer_privacy_policy": "Політика конфіденційності",
+  "drawer_information_policy": "Інформаційна політика",
+  "drawer_public_offer": "Публічна оферта",
+  "drawer_follow_us": "Слідкуйте за нами",
+  "drawer_payment_support": "Підтримка платежів",
+
+  "location_title": "Де ви знаходитесь?"
+}

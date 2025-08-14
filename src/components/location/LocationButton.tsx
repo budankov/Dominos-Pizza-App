@@ -11,7 +11,7 @@ import citiesArrEn from "./cities-en.json";
 import citiesArrUa from "./cities-ua.json";
 
 const LocationButton = ({ sheetId, markerSize, titleSize }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const citiesData =
     i18n.language === "en" ? citiesArrEn.cities : citiesArrUa.cities;
@@ -54,7 +54,7 @@ const LocationButton = ({ sheetId, markerSize, titleSize }) => {
             >
               <EvilIcons name="close" size={s(40)} color="#000000" />
             </TouchableOpacity>
-            <AppText style={styles.title}>Де ви знаходитесь?</AppText>
+            <AppText style={styles.title}>{t("location_title")}</AppText>
           </View>
           {cityCodes.map((code) => (
             <TouchableOpacity

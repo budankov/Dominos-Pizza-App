@@ -1,8 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import { I18nextProvider } from "react-i18next";
 import { ActivityIndicator } from "react-native";
 import { MenuProvider } from "react-native-popup-menu";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import i18n from "./src/localization/i18n";
 import AppDrawer from "./src/navigation/AppDrawer";
 
 export default function App() {
@@ -22,11 +24,13 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <MenuProvider>
-        <NavigationContainer>
-          <AppDrawer />
-        </NavigationContainer>
-      </MenuProvider>
+      <I18nextProvider i18n={i18n}>
+        <MenuProvider>
+          <NavigationContainer>
+            <AppDrawer />
+          </NavigationContainer>
+        </MenuProvider>
+      </I18nextProvider>
     </SafeAreaProvider>
   );
 }

@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
   Menu,
@@ -8,19 +8,25 @@ import {
   MenuTrigger,
 } from "react-native-popup-menu";
 import { s } from "react-native-size-matters";
+import i18n from "../../localization/i18n";
+import { languagesArr } from "../../localization/languagesList";
 import { AppColors } from "../../styles/colors";
 import AppText from "../texts/AppText";
 
 const LanguageDropDownMenu = () => {
-  const [lang, setLang] = useState("Укр");
+  const [selectedLang, setSelectedLang] = useState(i18n.language);
 
-  const options = ["Укр", "Eng"];
+  useEffect(() => {
+    i18n.changeLanguage(selectedLang);
+  }, [selectedLang]);
 
   return (
     <Menu>
       <MenuTrigger>
         <View style={styles.trigger}>
-          <AppText style={styles.triggerText}>{lang}</AppText>
+          <AppText style={styles.triggerText}>
+            {selectedLang === "en" ? "Eng" : "Укр"}
+          </AppText>
           <Ionicons name="chevron-down" size={16} color="white" />
         </View>
       </MenuTrigger>
@@ -30,24 +36,24 @@ const LanguageDropDownMenu = () => {
           optionsContainer: styles.menuContainer,
         }}
       >
-        {options.map((item) => (
+        {languagesArr.map((lang) => (
           <MenuOption
-            key={item}
-            onSelect={() => setLang(item)}
+            key={lang.code}
+            onSelect={() => setSelectedLang(lang.code)}
             customStyles={{
               optionWrapper: [
                 styles.menuItem,
-                item === lang && styles.menuItemActive,
+                lang.code === selectedLang && styles.menuItemActive,
               ],
             }}
           >
             <AppText
               style={[
                 styles.menuItemText,
-                item === lang && styles.menuItemTextActive,
+                lang.code === selectedLang && styles.menuItemTextActive,
               ]}
             >
-              {item}
+              {lang.label}
             </AppText>
           </MenuOption>
         ))}

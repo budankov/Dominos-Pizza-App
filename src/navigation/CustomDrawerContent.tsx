@@ -6,6 +6,7 @@ import {
 } from "@react-navigation/drawer";
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, TouchableOpacity, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
@@ -20,6 +21,8 @@ import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
+  const { t } = useTranslation();
+
   return (
     <DrawerContentScrollView
       {...props}
@@ -44,14 +47,14 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             titleSize={22}
           />
           <AppButton
-            title="Увійти"
+            title={t("drawer_sign_in")}
             onPress={() => {}}
             style={styles.singInButton}
             styleTitle={styles.singInButtonText}
           />
         </View>
         <DrawerItem
-          label="ДОМАШНЯ СТОРІНКА"
+          label={t("drawer_home")}
           onPress={() =>
             props.navigation.navigate("MainTabs", { screen: "Home" })
           }
@@ -59,13 +62,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           style={styles.item}
         />
         <DrawerItem
-          label="КОНСТРУКТОР ПІЦИ"
+          label={t("drawer_pizza_maker")}
           onPress={() => props.navigation.navigate("PizzaMaker")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
-          label="PIZZA TRACKER"
+          label={t("drawer_pizza_tracker")}
           onPress={() => props.navigation.navigate("PizzaTracker")}
           icon={({ size }) => (
             <Ionicons
@@ -78,19 +81,19 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           style={styles.item}
         />
         <DrawerItem
-          label="ПІЦЕРІЇ"
+          label={t("drawer_pizzerias")}
           onPress={() => props.navigation.navigate("Pizzerias")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
-          label="РОБОТА ТА КАРʼЄРА"
+          label={t("drawer_career")}
           onPress={() => props.navigation.navigate("Pizzerias")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
-          label="ФРАЙЧАЙЗИНГ"
+          label={t("drawer_franchising")}
           onPress={() => {
             WebBrowser.openBrowserAsync("https://biz.dominos.ua/");
           }}
@@ -98,32 +101,32 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           style={styles.item}
         />
         <DrawerItem
-          label="DOMINO'S CLUB"
+          label={t("drawer_club")}
           onPress={() => props.navigation.navigate("DominosClub")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
-          label="ЗАЛИШИТИ ВІГДУК"
+          label={t("drawer_leave_review")}
           onPress={() => props.navigation.navigate("LeaveReview")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <DrawerItem
-          label="НОВИНИ"
+          label={t("drawer_news")}
           onPress={() => props.navigation.navigate("News")}
           labelStyle={styles.label}
           style={styles.item}
         />
         <View style={styles.underline} />
-        <AppText style={styles.text}>Зателефонуйте нам:</AppText>
+        <AppText style={styles.text}>{t("drawer_call_us")}</AppText>
         <TouchableOpacity
           style={styles.phone}
           onPress={() => Linking.openURL("tel:0442221111")}
         >
           <AppText style={styles.phoneText}>0442221111</AppText>
         </TouchableOpacity>
-        <AppText style={styles.text}>Без вихідних з 10:00 до 22:00</AppText>
+        <AppText style={styles.text}>{t("drawer_working_hours")}</AppText>
         <TouchableOpacity
           onPress={() => Linking.openURL("mailto:info@dominos.ua")}
         >
@@ -136,7 +139,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             info@dominos.ua
           </AppText>
         </TouchableOpacity>
-        <AppText style={styles.infoTitle}>Корисна інформація</AppText>
+        <AppText style={styles.infoTitle}>{t("drawer_useful_info")}</AppText>
         <TouchableOpacity
           style={styles.text}
           onPress={() => {
@@ -145,9 +148,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             );
           }}
         >
-          <AppText style={styles.label}>
-            Вміст алергерів і харчова цінність
-          </AppText>
+          <AppText style={styles.label}>{t("drawer_allergens_info")}</AppText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.text}
@@ -158,7 +159,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           }}
         >
           <AppText style={styles.label}>
-            Політика безпеки харчових продуктів
+            {t("drawer_food_safety_policy")}
           </AppText>
         </TouchableOpacity>
         <TouchableOpacity
@@ -169,7 +170,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             );
           }}
         >
-          <AppText style={styles.label}>Політика конфіденційності</AppText>
+          <AppText style={styles.label}>{t("drawer_privacy_policy")}</AppText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.text}
@@ -179,7 +180,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             );
           }}
         >
-          <AppText style={styles.label}>Інформаційна політика</AppText>
+          <AppText style={styles.label}>
+            {t("drawer_information_policy")}
+          </AppText>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
@@ -188,10 +191,10 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             );
           }}
         >
-          <AppText style={styles.label}>Публічна оферта</AppText>
+          <AppText style={styles.label}>{t("drawer_public_offer")}</AppText>
         </TouchableOpacity>
         <View style={styles.underline} />
-        <AppText style={styles.titleFollow}>Слідкуйте за нами</AppText>
+        <AppText style={styles.titleFollow}>{t("drawer_follow_us")}</AppText>
         <View style={styles.socialContainer}>
           <TouchableOpacity
             onPress={() => {
@@ -219,7 +222,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             <FontAwesome name="facebook" size={24} color="white" />
           </TouchableOpacity>
         </View>
-        <AppText style={styles.titleSupport}>Підтримка платежів</AppText>
+        <AppText style={styles.titleSupport}>
+          {t("drawer_payment_support")}
+        </AppText>
         <View style={styles.paymentContainer}>
           <MasterCardIcon width="80px" height="80px" />
           <VisaIcon width="80px" height="80px" fill={"#fff"} />
