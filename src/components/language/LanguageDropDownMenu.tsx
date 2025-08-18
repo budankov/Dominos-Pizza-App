@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import {
   Menu,
@@ -8,13 +8,20 @@ import {
   MenuTrigger,
 } from "react-native-popup-menu";
 import { s } from "react-native-size-matters";
+import { useDispatch, useSelector } from "react-redux";
 import i18n from "../../localization/i18n";
 import { languagesArr } from "../../localization/languagesList";
+import { setLanguage } from "../../store/reducers/languageSlice";
+import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import AppText from "../texts/AppText";
 
 const LanguageDropDownMenu = () => {
-  const [selectedLang, setSelectedLang] = useState(i18n.language);
+  const dispatch = useDispatch();
+
+  const selectedLang = useSelector(
+    (state: RootState) => state.language.userLanguage
+  );
 
   useEffect(() => {
     i18n.changeLanguage(selectedLang);
@@ -39,7 +46,7 @@ const LanguageDropDownMenu = () => {
         {languagesArr.map((lang) => (
           <MenuOption
             key={lang.code}
-            onSelect={() => setSelectedLang(lang.code)}
+            onSelect={() => dispatch(setLanguage(lang.code))}
             customStyles={{
               optionWrapper: [
                 styles.menuItem,
