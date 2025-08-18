@@ -4,8 +4,11 @@ import { I18nextProvider } from "react-i18next";
 import { ActivityIndicator } from "react-native";
 import { MenuProvider } from "react-native-popup-menu";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import i18n from "./src/localization/i18n";
 import AppDrawer from "./src/navigation/AppDrawer";
+import { persistor, store } from "./src/store/store";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,14 +26,21 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
-      <I18nextProvider i18n={i18n}>
-        <MenuProvider>
-          <NavigationContainer>
-            <AppDrawer />
-          </NavigationContainer>
-        </MenuProvider>
-      </I18nextProvider>
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <PersistGate
+        loading={<ActivityIndicator size={"large"} />}
+        persistor={persistor}
+      >
+        <SafeAreaProvider>
+          <I18nextProvider i18n={i18n}>
+            <MenuProvider>
+              <NavigationContainer>
+                <AppDrawer />
+              </NavigationContainer>
+            </MenuProvider>
+          </I18nextProvider>
+        </SafeAreaProvider>
+      </PersistGate>
+    </Provider>
   );
 }

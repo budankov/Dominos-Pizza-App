@@ -1,33 +1,48 @@
 import { EvilIcons, Fontisto } from "@expo/vector-icons";
-import React from "react";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { s } from "react-native-size-matters";
+import { useDispatch, useSelector } from "react-redux";
+import { setCity } from "../../store/reducers/locationSlice";
+import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppText from "../texts/AppText";
 import citiesArrEn from "./cities-en.json";
 import citiesArrUa from "./cities-ua.json";
 
-const LocationButton = ({ sheetId, markerSize, titleSize }) => {
+interface LocationButtonProps {
+  sheetId: string;
+  markerSize: number;
+  titleSize: number;
+}
+
+const LocationButton: FC<LocationButtonProps> = ({
+  sheetId,
+  markerSize,
+  titleSize,
+}) => {
   const { i18n, t } = useTranslation();
+  const dispatch = useDispatch();
 
   const citiesData =
     i18n.language === "en" ? citiesArrEn.cities : citiesArrUa.cities;
+  const cityCodes = Object.keys(citiesData) as (keyof typeof citiesData)[];
 
   type CityCode = keyof typeof citiesData;
-  const cityCodes = Object.keys(citiesData) as CityCode[];
-  const [selectedCityCode, setSelectedCityCode] = React.useState<CityCode>(
-    cityCodes[0]
-  );
+
+  const selectedCityCode = useSelector(
+    (state: RootState) => state.userLocation.userCity
+  ) as CityCode;
 
   const openSheet = () => {
     SheetManager.show(sheetId);
   };
 
-  const handleConfirm = (code: string) => {
-    setSelectedCityCode(code);
+  const handleConfirm = (code: keyof typeof citiesData) => {
+    dispatch(setCity(code));
     SheetManager.hide(sheetId);
   };
 
