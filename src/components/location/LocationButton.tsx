@@ -34,7 +34,7 @@ const LocationButton: FC<LocationButtonProps> = ({
   type CityCode = keyof typeof citiesData;
 
   const selectedCityCode = useSelector(
-    (state: RootState) => state.userLocation.userCity
+    (state: RootState) => state.location.userCity
   ) as CityCode;
 
   const openSheet = () => {

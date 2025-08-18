@@ -1,18 +1,25 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { combineReducers } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import languageSlice from "../reducers/languageSlice";
 import locationSlice from "../reducers/locationSlice";
 
-const persistConfig = {
-  key: "root",
+const locationPersistConfig = {
+  key: "location",
   storage: AsyncStorage,
-  whitelist: ["userLocation", "userLanguage"],
+  whitelist: ["userCity"],
 };
 
-const rootReducer = combineReducers({
-  userLocation: locationSlice,
-  userLanguage: languageSlice,
-});
+const languagePersistConfig = {
+  key: "language",
+  storage: AsyncStorage,
+  whitelist: ["userLanguage"],
+};
 
-export const persistedRootReducer = persistReducer(persistConfig, rootReducer);
+export const persistedLocationSlice = persistReducer(
+  locationPersistConfig,
+  locationSlice
+);
+export const persistedLanguageSlice = persistReducer(
+  languagePersistConfig,
+  languageSlice
+);

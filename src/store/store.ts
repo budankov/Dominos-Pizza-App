@@ -8,10 +8,16 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import { persistedRootReducer } from "./persisted/persistConfig";
+import {
+  persistedLanguageSlice,
+  persistedLocationSlice,
+} from "./persisted/persistConfig";
 
 export const store = configureStore({
-  reducer: persistedRootReducer,
+  reducer: {
+    location: persistedLocationSlice,
+    language: persistedLanguageSlice,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
