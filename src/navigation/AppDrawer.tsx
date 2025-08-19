@@ -15,6 +15,7 @@ import PizzaTrackerScreen from "../screens/tracker/PizzaTrackerScreen";
 import { AppColors } from "../styles/colors";
 import AppBottomTabs from "./AppBottomTabs";
 import CustomDrawerContent from "./CustomDrawerContent";
+import PromotionsScreen from "../screens/promotions/PromotionsScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -43,6 +44,7 @@ export default function AppDrawer() {
         <Drawer.Screen name="WorkAndCareer" component={WorkAndCareerScreen} />
         <Drawer.Screen name="DominosClub" component={DominosClubScreen} />
         <Drawer.Screen name="LeaveReview" component={LeaveReviewScreen} />
+        <Drawer.Screen name="Promotions" component={PromotionsScreen} />
         <Drawer.Screen name="News" component={NewsScreen} />
         <Drawer.Screen name="CartScreen" component={CartScreen} />
       </Drawer.Navigator>
