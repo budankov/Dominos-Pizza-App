@@ -12,7 +12,7 @@
     ],
     "weight": 610,
     "price": 339,
-    "category": "Новинка"
+    "category": "Гурме"
   },
   {
     "id": "pizza_2",
@@ -27,20 +27,16 @@
     ],
     "weight": 547,
     "price": 349,
-    "category": "Новинка"
+    "category": "Файнест"
   },
   {
     "id": "pizza_3",
     "name": "Піца Салямі",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Соус Domino's",
-      "Салямі"
-    ],
+    "ingredients": ["Моцарела", "Соус Domino's", "Салямі"],
     "weight": 501,
     "price": 305,
-    "category": ""
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_4",
@@ -56,48 +52,34 @@
     ],
     "weight": 550,
     "price": 350,
-    "category": ""
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_5",
     "name": "Піца з грушею і блакитним сиром",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FHrusha%2Fpearandbluecheese-pieces.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Бергадер Блю",
-      "Соус Альфредо",
-      "Груша"
-    ],
+    "ingredients": ["Моцарела", "Бергадер Блю", "Соус Альфредо", "Груша"],
     "weight": 502,
     "price": 307,
-    "category": ""
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_6",
     "name": "Піца Тоні Пепероні",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-300dpi-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Пепероні",
-      "Моцарела",
-      "Соус Domino's"
-    ],
+    "ingredients": ["Пепероні", "Моцарела", "Соус Domino's"],
     "weight": 508,
     "price": 305,
-    "category": ""
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_7",
     "name": "Піца Гавайська",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fhavaiska-300dpi-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Курка",
-      "Моцарела",
-      "Ананас",
-      "Соус Domino's"
-    ],
+    "ingredients": ["Курка", "Моцарела", "Ананас", "Соус Domino's"],
     "weight": 613,
     "price": 315,
-    "category": ""
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_8",
@@ -113,7 +95,7 @@
     ],
     "weight": 522,
     "price": 352,
-    "category": "Сирна"
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_9",
@@ -129,7 +111,7 @@
     ],
     "weight": 872,
     "price": 430,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_10",
@@ -144,7 +126,7 @@
     ],
     "weight": 827,
     "price": 430,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_11",
@@ -160,62 +142,43 @@
     ],
     "weight": 821,
     "price": 430,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_12",
     "name": "Піца Пепероні з томатами",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-y-tomaty-300dpi.webp&w=1560&q=75",
-    "ingredients": [
-      "Пепероні",
-      "Моцарела",
-      "Помідори",
-      "Соус Барбекю"
-    ],
+    "ingredients": ["Пепероні", "Моцарела", "Помідори", "Соус Барбекю"],
     "weight": 832,
     "price": 430,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_13",
     "name": "Піца Мангеттен",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fmanhatten-slice-collageweb-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Пепероні",
-      "Моцарела",
-      "Гриби(x2)",
-      "Соус Альфредо"
-    ],
+    "ingredients": ["Пепероні", "Моцарела", "Гриби(x2)", "Соус Альфредо"],
     "weight": 857,
     "price": 430,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_14",
     "name": "Піца Шинка та гриби",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fvetchina-i-griby.webp&w=1560&q=75",
-    "ingredients": [
-      "Шинка",
-      "Моцарела",
-      "Гриби",
-      "Соус Domino's"
-    ],
+    "ingredients": ["Шинка", "Моцарела", "Гриби", "Соус Domino's"],
     "weight": 838,
     "price": 430,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_15",
     "name": "Піца Салямі",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Соус Domino's",
-      "Салямі"
-    ],
+    "ingredients": ["Моцарела", "Соус Domino's", "Салямі"],
     "weight": 701,
     "price": 370,
-    "category": ""
+    "category": "Герої"
   },
   {
     "id": "pizza_16",
@@ -231,20 +194,16 @@
     ],
     "weight": 748,
     "price": 398,
-    "category": "Гостра"
+    "category": "Герої"
   },
   {
     "id": "pizza_17",
     "name": "Піца Тоні Пепероні",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-300dpi-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Пепероні",
-      "Моцарела",
-      "Соус Domino's"
-    ],
+    "ingredients": ["Пепероні", "Моцарела", "Соус Domino's"],
     "weight": 714,
     "price": 370,
-    "category": ""
+    "category": "Герої"
   },
   {
     "id": "pizza_18",
@@ -260,7 +219,7 @@
     ],
     "weight": 737,
     "price": 364,
-    "category": ""
+    "category": "Герої"
   },
   {
     "id": "pizza_19",
@@ -276,7 +235,7 @@
     ],
     "weight": 683,
     "price": 377,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_20",
@@ -293,7 +252,7 @@
     ],
     "weight": 726,
     "price": 378,
-    "category": ""
+    "category": "Краща ціна"
   },
   {
     "id": "pizza_21",
@@ -306,7 +265,7 @@
     ],
     "weight": 776,
     "price": 357,
-    "category": ""
+    "category": "Герої"
   },
   {
     "id": "pizza_22",
@@ -323,7 +282,7 @@
     ],
     "weight": 552,
     "price": 302,
-    "category": ""
+    "category": "Герої"
   },
   {
     "id": "pizza_23",
@@ -339,22 +298,16 @@
     ],
     "weight": 550,
     "price": 350,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_24",
     "name": "Піца Грецька з тунцем",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fd830e077-bcd6-4c65-8069-d3481664a7f2.webp&w=1560&q=75",
-    "ingredients": [
-      "Тунець",
-      "Моцарела",
-      "Фета",
-      "Оливки",
-      "Соус Часниковий"
-    ],
+    "ingredients": ["Тунець", "Моцарела", "Фета", "Оливки", "Соус Часниковий"],
     "weight": 516,
     "price": 337,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_25",
@@ -372,7 +325,7 @@
     ],
     "weight": 599,
     "price": 328,
-    "category": "Гостра"
+    "category": "Дивина"
   },
   {
     "id": "pizza_26",
@@ -388,7 +341,7 @@
     ],
     "weight": 533,
     "price": 329,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_27",
@@ -405,21 +358,16 @@
     ],
     "weight": 539,
     "price": 302,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_28",
     "name": "Піца з грушею і блакитним сиром",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FHrusha%2Fpearandbluecheese-pieces.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Бергадер Блю",
-      "Соус Альфредо",
-      "Груша"
-    ],
+    "ingredients": ["Моцарела", "Бергадер Блю", "Соус Альфредо", "Груша"],
     "weight": 502,
     "price": 307,
-    "category": ""
+    "category": "Дивина"
   },
   {
     "id": "pizza_29",
@@ -434,7 +382,7 @@
     ],
     "weight": 547,
     "price": 349,
-    "category": "Новинка"
+    "category": "Бестселери і новинки"
   },
   {
     "id": "pizza_30",
@@ -451,7 +399,7 @@
     ],
     "weight": 613,
     "price": 344,
-    "category": ""
+    "category": "Файнест"
   },
   {
     "id": "pizza_31",
@@ -470,7 +418,7 @@
     ],
     "weight": 658,
     "price": 364,
-    "category": ""
+    "category": "Файнест"
   },
   {
     "id": "pizza_32",
@@ -485,7 +433,7 @@
     ],
     "weight": 604,
     "price": 352,
-    "category": ""
+    "category": "Файнест"
   },
   {
     "id": "pizza_33",
@@ -502,7 +450,7 @@
     ],
     "weight": 598,
     "price": 344,
-    "category": ""
+    "category": "Файнест"
   },
   {
     "id": "pizza_34",
@@ -519,64 +467,34 @@
     ],
     "weight": 560,
     "price": 364,
-    "category": ""
-  },
-  {
-    "id": "pizza_35",
-    "name": "Піца Песто",
-    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPesto%2FUPD%2FPesto%2Fpizza-pestoallergen-website-main-ukr.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Фета",
-      "Помідори",
-      "Соус Domino's",
-      "Соус песто"
-    ],
-    "weight": 610,
-    "price": 339,
-    "category": "Новинка"
+    "category": "Файнест"
   },
   {
     "id": "pizza_36",
     "name": "Піца з індичкою",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2Fturkey-pizzapieces.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Соус Альфредо",
-      "Індичка",
-      "Крем-сир"
-    ],
+    "ingredients": ["Моцарела", "Соус Альфредо", "Індичка", "Крем-сир"],
     "weight": 495,
     "price": 332,
-    "category": ""
+    "category": "Гурме"
   },
   {
     "id": "pizza_37",
     "name": "Піца Курка-Дорблю",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpytstsa-kurytsa-holuboisyr-kusochek.webp&w=1560&q=75",
-    "ingredients": [
-      "Курка",
-      "Моцарела",
-      "Бергадер Блю",
-      "Соус Альфредо"
-    ],
+    "ingredients": ["Курка", "Моцарела", "Бергадер Блю", "Соус Альфредо"],
     "weight": 510,
     "price": 322,
-    "category": ""
+    "category": "Гурме"
   },
   {
     "id": "pizza_38",
     "name": "Піца Лосось Філадельфія",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fsalmonphill-slicere-made-web-min-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Моцарела",
-      "Соус Альфредо",
-      "Крем-сир",
-      "Лосось"
-    ],
+    "ingredients": ["Моцарела", "Соус Альфредо", "Крем-сир", "Лосось"],
     "weight": 479,
     "price": 368,
-    "category": ""
+    "category": "Гурме"
   },
   {
     "id": "pizza_39",
@@ -592,7 +510,7 @@
     ],
     "weight": 522,
     "price": 352,
-    "category": "Сирна"
+    "category": "Гурме"
   },
   {
     "id": "pizza_40",
@@ -610,21 +528,16 @@
     ],
     "weight": 578,
     "price": 342,
-    "category": "Вегетаріанська"
+    "category": "Гурме"
   },
   {
     "id": "pizza_41",
     "name": "Піца Гавайська",
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fhavaiska-300dpi-min.webp&w=1560&q=75",
-    "ingredients": [
-      "Курка",
-      "Моцарела",
-      "Ананас",
-      "Соус Domino's"
-    ],
+    "ingredients": ["Курка", "Моцарела", "Ананас", "Соус Domino's"],
     "weight": 980,
     "price": 498,
-    "category": ""
+    "category": "Гурме"
   },
   {
     "id": "pizza_42",
@@ -638,6 +551,6 @@
     ],
     "weight": 497,
     "price": 332,
-    "category": ""
+    "category": "Краща ціна"
   }
 ]
