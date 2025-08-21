@@ -1,5 +1,13 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { s, vs } from "react-native-size-matters";
 import pizzaArrUa from "../../data/pizza_ua.json";
 import { AppColors } from "../../styles/colors";
@@ -14,11 +22,14 @@ const PizzaCard = () => {
       {pizzaArrUa.map(
         ({ id, name, image, ingredients, weight, price, category }) => (
           <View key={id} style={styles.card}>
-            <Image
-              source={{ uri: image }}
-              style={styles.image}
-              resizeMode="cover"
-            />
+            <View>
+              <Image
+                source={{ uri: image }}
+                style={styles.image}
+                resizeMode="cover"
+              />
+              <Text style={styles.weight}>{weight} г*</Text>
+            </View>
             <View style={styles.bottomPart}>
               <AppText style={styles.title}>{name}</AppText>
               <AppText style={styles.ingredients}>
@@ -31,6 +42,21 @@ const PizzaCard = () => {
                 onPress={() => console.log("В розробці")}
               />
               <PizzaCartRadioGroup />
+              <View style={styles.floor}>
+                <AppText style={styles.price}>{price} грн</AppText>
+
+                <Pressable
+                  style={styles.addCartBtn}
+                  onPress={() => console.log("object")}
+                >
+                  <Ionicons
+                    name="cart-outline"
+                    size={s(32)}
+                    color={AppColors.textColorWhite}
+                  />
+                  <Text style={styles.addCartBtnText}>В кошик</Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         )
@@ -41,15 +67,28 @@ const PizzaCard = () => {
 
 const styles = StyleSheet.create({
   container: {
+    width: Dimensions.get("window").width,
     alignSelf: "center",
     paddingHorizontal: s(14),
     paddingVertical: vs(20),
   },
   card: {
     marginBottom: s(20),
+    paddingBottom: s(30),
     borderRadius: s(16),
     borderWidth: s(1),
     borderColor: AppColors.lightGrey,
+  },
+  weight: {
+    position: "absolute",
+    bottom: 10,
+    right: 10,
+    borderRadius: s(15),
+    fontSize: s(11),
+    fontFamily: AppFonts.Bold,
+    color: AppColors.lightGrey,
+    padding: 5,
+    backgroundColor: "#00000047",
   },
   bottomPart: {
     paddingHorizontal: s(14),
@@ -64,7 +103,7 @@ const styles = StyleSheet.create({
     fontSize: s(22),
     fontFamily: AppFonts.Medium,
     textAlign: "center",
-    paddingVertical: vs(10),
+    paddingVertical: vs(6),
   },
   ingredients: {
     fontSize: s(14),
@@ -72,13 +111,40 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   changeIngredientsBtn: {
-    backgroundColor: AppColors.lightGrey,
-    marginVertical: vs(14),
+    backgroundColor: AppColors.buttonLightGray,
+    marginVertical: vs(10),
     height: vs(34),
   },
   changeIngredientsTitle: {
-    fontSize: s(12),
+    fontFamily: AppFonts.Regular,
+    fontSize: s(13),
     color: AppColors.textColor,
+  },
+  floor: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+  },
+  price: {
+    fontSize: s(20),
+    color: AppColors.textColor,
+    marginRight: s(10),
+  },
+  addCartBtn: {
+    flex: 1,
+    backgroundColor: AppColors.red,
+    borderRadius: s(25),
+    height: vs(40),
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    gap: s(10),
+    paddingHorizontal: s(14),
+  },
+  addCartBtnText: {
+    color: AppColors.textColorWhite,
+    fontSize: s(16),
   },
 });
 

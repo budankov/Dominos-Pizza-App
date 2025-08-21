@@ -1,10 +1,11 @@
-import { EvilIcons, Fontisto } from "@expo/vector-icons";
+import { EvilIcons } from "@expo/vector-icons";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { s } from "react-native-size-matters";
 import { useDispatch, useSelector } from "react-redux";
+import MapMarkerIcon from "../../assets/icons/MapMarkerIcon";
 import { setCity } from "../../store/reducers/locationSlice";
 import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
@@ -49,12 +50,7 @@ const LocationButton: FC<LocationButtonProps> = ({
   return (
     <>
       <TouchableOpacity onPress={openSheet} style={styles.button}>
-        <Fontisto
-          name="map-marker-alt"
-          size={s(markerSize)}
-          color={AppColors.textColorWhite}
-          style={{ paddingRight: s(5) }}
-        />
+        <MapMarkerIcon />
         <AppText style={[styles.selectedCity, { fontSize: s(titleSize) }]}>
           {citiesData[selectedCityCode]}
         </AppText>
@@ -82,12 +78,10 @@ const LocationButton: FC<LocationButtonProps> = ({
             >
               {code === selectedCityCode ? (
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <Fontisto
-                    name="map-marker-alt"
-                    size={18}
-                    color={AppColors.red}
-                    style={{ marginRight: s(10) }}
-                  />
+                  <View style={styles.mapMarkerIcon}>
+                    <MapMarkerIcon color={AppColors.red} />
+                  </View>
+
                   <AppText style={styles.cityText}>{citiesData[code]}</AppText>
                 </View>
               ) : (
@@ -109,6 +103,7 @@ const styles = StyleSheet.create({
   },
   selectedCity: {
     color: "#fff",
+    paddingLeft: s(5),
   },
   sheetContainer: {
     padding: s(20),
@@ -125,6 +120,9 @@ const styles = StyleSheet.create({
   cityText: {
     fontSize: s(20),
     color: "#000",
+  },
+  mapMarkerIcon: {
+    paddingRight: s(5),
   },
   title: {
     fontFamily: AppFonts.SemiBold,

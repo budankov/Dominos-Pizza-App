@@ -16,6 +16,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: s(15),
+    backgroundColor: "#fff",
   },
 });
 

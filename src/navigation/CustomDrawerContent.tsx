@@ -1,4 +1,4 @@
-import { Entypo, EvilIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Entypo, EvilIcons, FontAwesome } from "@expo/vector-icons";
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
@@ -11,6 +11,7 @@ import { Linking, StyleSheet, TouchableOpacity, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
 import MasterCardIcon from "../assets/icons/MasterCardIcon";
+import PizzaTrackerIcon from "../assets/icons/PizzaTrackerIcon";
 import VisaIcon from "../assets/icons/VisaIcon";
 import AppButton from "../components/buttons/AppButton";
 import DrawerHeaderClose from "../components/close-drawer/DrawerHeaderClose";
@@ -70,13 +71,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <DrawerItem
           label={t("drawer_pizza_tracker")}
           onPress={() => props.navigation.navigate("PizzaTracker")}
-          icon={({ size }) => (
-            <Ionicons
-              name="chatbubble-ellipses-outline"
-              size={size}
-              color={AppColors.red}
-            />
-          )}
+          icon={() => <PizzaTrackerIcon width={23} height={23} />}
           labelStyle={styles.label}
           style={styles.item}
         />

@@ -7,7 +7,7 @@ import { AppFonts } from "../../styles/fonts";
 const sizeOptions = [
   { label: "Стандарт", value: "standard" },
   { label: "Велика", value: "large" },
-  { label: "Екстра", value: "xlarge" },
+  { label: "Екстравелика", value: "xlarge" },
   { label: "Найбільша", value: "xxl" },
 ];
 
@@ -140,17 +140,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: s(10),
-    gap: s(10),
+    gap: s(5),
   },
   rowWithLabel: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: s(15),
+    marginTop: s(12),
   },
   sideLabel: {
-    width: s(70),
-    fontSize: s(16),
-    fontFamily: AppFonts.Medium,
+    width: s(50),
+    fontSize: s(13),
+    fontFamily: AppFonts.Regular,
   },
   rowButtons: {
     flex: 1,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     paddingVertical: vs(8),
     borderRadius: s(20),
     borderWidth: s(1),
-    borderColor: AppColors.lightGrey,
+    borderColor: AppColors.buttonBorderGray,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     paddingVertical: vs(8),
     borderRadius: s(20),
     borderWidth: 1,
-    borderColor: AppColors.lightGrey,
+    borderColor: AppColors.buttonBorderGray,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -184,14 +184,15 @@ const styles = StyleSheet.create({
     paddingVertical: vs(10),
     borderRadius: s(20),
     borderWidth: s(1),
-    borderColor: AppColors.lightGrey,
+    borderColor: AppColors.buttonBorderGray,
   },
   selectedButton: {
-    backgroundColor: AppColors.backgroundGrey,
+    backgroundColor: AppColors.buttonDarkGray,
   },
   buttonText: {
     color: AppColors.textColor,
-    fontFamily: AppFonts.Medium,
+    fontFamily: AppFonts.Regular,
+    fontSize: s(13),
   },
   selectedText: {
     color: AppColors.textColorWhite,
