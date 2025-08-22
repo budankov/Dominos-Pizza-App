@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import React, { FC } from "react";
 import {
   Dimensions,
   Image,
@@ -9,58 +9,66 @@ import {
   View,
 } from "react-native";
 import { s, vs } from "react-native-size-matters";
-import pizzaArrUa from "../../data/pizza_ua.json";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppButton from "../buttons/AppButton";
 import PizzaCartRadioGroup from "../radio/PizzaCartRadioGroup";
 import AppText from "../texts/AppText";
 
-const PizzaCard = () => {
+interface Pizza {
+  id: string;
+  name: string;
+  image: string;
+  ingredients: string[];
+  weight: number;
+  price: number;
+}
+
+interface PizzaCardProps {
+  pizza: Pizza;
+}
+
+const PizzaCard: FC<PizzaCardProps> = ({
+  pizza: { id, name, image, ingredients, weight, price },
+}) => {
   return (
     <View style={styles.container}>
-      {pizzaArrUa.map(
-        ({ id, name, image, ingredients, weight, price, category }) => (
-          <View key={id} style={styles.card}>
-            <View>
-              <Image
-                source={{ uri: image }}
-                style={styles.image}
-                resizeMode="cover"
-              />
-              <Text style={styles.weight}>{weight} г*</Text>
-            </View>
-            <View style={styles.bottomPart}>
-              <AppText style={styles.title}>{name}</AppText>
-              <AppText style={styles.ingredients}>
-                {ingredients.join(", ")}
-              </AppText>
-              <AppButton
-                style={styles.changeIngredientsBtn}
-                styleTitle={styles.changeIngredientsTitle}
-                title=" Замінити інгрідієнти"
-                onPress={() => console.log("В розробці")}
-              />
-              <PizzaCartRadioGroup />
-              <View style={styles.floor}>
-                <AppText style={styles.price}>{price} грн</AppText>
+      <View key={id} style={styles.card}>
+        <View>
+          <Image
+            source={{ uri: image }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+          <Text style={styles.weight}>{weight} г*</Text>
+        </View>
+        <View style={styles.bottomPart}>
+          <AppText style={styles.title}>{name}</AppText>
+          <AppText style={styles.ingredients}>{ingredients.join(", ")}</AppText>
+          <AppButton
+            style={styles.changeIngredientsBtn}
+            styleTitle={styles.changeIngredientsTitle}
+            title=" Замінити інгрідієнти"
+            onPress={() => console.log("В розробці")}
+          />
+          <PizzaCartRadioGroup />
+          <View style={styles.floor}>
+            <AppText style={styles.price}>{price} грн</AppText>
 
-                <Pressable
-                  style={styles.addCartBtn}
-                  onPress={() => console.log("object")}
-                >
-                  <Ionicons
-                    name="cart-outline"
-                    size={s(32)}
-                    color={AppColors.textColorWhite}
-                  />
-                  <Text style={styles.addCartBtnText}>В кошик</Text>
-                </Pressable>
-              </View>
-            </View>
+            <Pressable
+              style={styles.addCartBtn}
+              onPress={() => console.log("В розробці")}
+            >
+              <Ionicons
+                name="cart-outline"
+                size={s(32)}
+                color={AppColors.textColorWhite}
+              />
+              <Text style={styles.addCartBtnText}>В кошик</Text>
+            </Pressable>
           </View>
-        )
-      )}
+        </View>
+      </View>
     </View>
   );
 };
@@ -70,7 +78,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     alignSelf: "center",
     paddingHorizontal: s(14),
-    paddingVertical: vs(20),
   },
   card: {
     marginBottom: s(20),

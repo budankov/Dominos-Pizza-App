@@ -1,14 +1,14 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { s } from "react-native-size-matters";
-import PizzaCard from "../../components/card/PizzaCard";
+import PizzaList from "../../components/card/PizzaList";
 import NewsCarousel from "../../components/carousel/NewsCarousel";
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <NewsCarousel />
-      <PizzaCard />
+      <PizzaList />
     </ScrollView>
   );
 };
