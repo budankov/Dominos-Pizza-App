@@ -9,6 +9,7 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import {
+  persistedCartSlice,
   persistedLanguageSlice,
   persistedLocationSlice,
 } from "./persisted/persistConfig";
@@ -17,6 +18,7 @@ export const store = configureStore({
   reducer: {
     location: persistedLocationSlice,
     language: persistedLanguageSlice,
+    cart: persistedCartSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

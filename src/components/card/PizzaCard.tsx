@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import React, { FC } from "react";
 import {
   Dimensions,
@@ -9,13 +9,20 @@ import {
   View,
 } from "react-native";
 import { s, vs } from "react-native-size-matters";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  decrementQty,
+  incrementQty,
+} from "../../store/reducers/cartSlice";
+import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppButton from "../buttons/AppButton";
 import PizzaCartRadioGroup from "../radio/PizzaCartRadioGroup";
 import AppText from "../texts/AppText";
 
-interface Pizza {
+export interface Pizza {
   id: string;
   name: string;
   image: string;
@@ -28,23 +35,28 @@ interface PizzaCardProps {
   pizza: Pizza;
 }
 
-const PizzaCard: FC<PizzaCardProps> = ({
-  pizza: { id, name, image, ingredients, weight, price },
-}) => {
+const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
+  const dispatch = useDispatch();
+  const item = useSelector((state: RootState) =>
+    state.cart.items.find((i) => i.id === pizza.id)
+  );
+
   return (
     <View style={styles.container}>
-      <View key={id} style={styles.card}>
+      <View key={pizza.id} style={styles.card}>
         <View>
           <Image
-            source={{ uri: image }}
+            source={{ uri: pizza.image }}
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.weight}>{weight} г*</Text>
+          <Text style={styles.weight}>{pizza.weight} г*</Text>
         </View>
         <View style={styles.bottomPart}>
-          <AppText style={styles.title}>{name}</AppText>
-          <AppText style={styles.ingredients}>{ingredients.join(", ")}</AppText>
+          <AppText style={styles.title}>{pizza.name}</AppText>
+          <AppText style={styles.ingredients}>
+            {pizza.ingredients.join(", ")}
+          </AppText>
           <AppButton
             style={styles.changeIngredientsBtn}
             styleTitle={styles.changeIngredientsTitle}
@@ -53,19 +65,34 @@ const PizzaCard: FC<PizzaCardProps> = ({
           />
           <PizzaCartRadioGroup />
           <View style={styles.floor}>
-            <AppText style={styles.price}>{price} грн</AppText>
-
-            <Pressable
-              style={styles.addCartBtn}
-              onPress={() => console.log("В розробці")}
-            >
-              <Ionicons
-                name="cart-outline"
-                size={s(32)}
-                color={AppColors.textColorWhite}
-              />
-              <Text style={styles.addCartBtnText}>В кошик</Text>
-            </Pressable>
+            <AppText style={styles.price}>{pizza.price}.00 грн</AppText>
+            {!item ? (
+              <Pressable
+                style={styles.addCartBtn}
+                onPress={() => dispatch(addToCart(pizza))}
+              >
+                <Ionicons
+                  name="cart-outline"
+                  size={s(32)}
+                  color={AppColors.textColorWhite}
+                />
+                <Text style={styles.addCartBtnText}>В кошик</Text>
+              </Pressable>
+            ) : (
+              <View style={styles.countItemBtn}>
+                <Pressable
+                  onPress={() => dispatch(decrementQty({ id: pizza.id }))}
+                >
+                  <AntDesign name="minus" size={16} color="black" />
+                </Pressable>
+                <Text>{item.qty}</Text>
+                <Pressable
+                  onPress={() => dispatch(incrementQty({ id: pizza.id }))}
+                >
+                  <AntDesign name="plus" size={16} color="black" />
+                </Pressable>
+              </View>
+            )}
           </View>
         </View>
       </View>
@@ -152,6 +179,17 @@ const styles = StyleSheet.create({
   addCartBtnText: {
     color: AppColors.textColorWhite,
     fontSize: s(16),
+  },
+  countItemBtn: {
+    flex: 1,
+    backgroundColor: AppColors.lightGrey,
+    borderRadius: s(25),
+    height: vs(40),
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    gap: s(40),
+    paddingHorizontal: s(14),
   },
 });
 
