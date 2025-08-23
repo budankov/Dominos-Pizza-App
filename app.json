@@ -15,19 +15,52 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "LSApplicationQueriesSchemes": ["instagram", "tg", "fb", "https"]
-      }
+        "LSApplicationQueriesSchemes": [
+          "instagram",
+          "tg",
+          "fb",
+          "https",
+          "instagram",
+          "tg",
+          "fb",
+          "https",
+          "instagram",
+          "tg",
+          "fb",
+          "https",
+          "instagram",
+          "tg",
+          "fb",
+          "https"
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.budankov.DominosPizzaApp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.budankov.DominosPizzaApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-web-browser"]
+    "plugins": [
+      "expo-web-browser"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e8389396-6757-4a89-b91e-3063785f8c9a"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e8389396-6757-4a89-b91e-3063785f8c9a"
+    }
   }
 }
