@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Dimensions,
-  SectionList,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { s, vs } from "react-native-size-matters";
 import pizzaArrUa from "../../data/pizza_ua.json";
 import { AppFonts } from "../../styles/fonts";
+import FilterPizza from "../filter/FilterPizza";
+import Sort from "../filter/Sort";
 import PizzaCard from "./PizzaCard";
 
 const PizzaList = () => {
@@ -26,21 +21,12 @@ const PizzaList = () => {
     }, {})
   ).sort((a, b) => a.title.localeCompare(b.title));
 
-  const handleSort = (type: any) => {
-    const sorted = [...pizzaArrUa];
+  const handleSort = (type: "priceAsc" | "priceDesc") => {
+    const sorted = [...filteredPizzas];
     if (type === "priceAsc") sorted.sort((a, b) => a.price - b.price);
     if (type === "priceDesc") sorted.sort((a, b) => b.price - a.price);
 
     setFilteredPizzas(sorted);
-    setMode("flat");
-  };
-
-  const handleFilter = (filters: any) => {
-    const result = pizzaArrUa.filter((pizza) => {
-      return pizza.price >= filters.minPrice && pizza.price <= filters.maxPrice;
-    });
-
-    setFilteredPizzas(result);
     setMode("flat");
   };
 
@@ -51,16 +37,9 @@ const PizzaList = () => {
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-around",
-          paddingBottom: 30,
-        }}
-      >
-        <Button title="Сортувати ↑" onPress={() => handleSort("priceAsc")} />
-        <Button title="Сортувати ↓" onPress={() => handleSort("priceDesc")} />
-        <Button title="Скинути" onPress={handleReset} />
+      <View style={styles.filterContainer}>
+        <FilterPizza />
+        <Sort onSort={handleSort} reset={handleReset} />
       </View>
 
       {mode === "section" ? (
@@ -100,6 +79,12 @@ const styles = StyleSheet.create({
     fontSize: s(23),
     fontFamily: AppFonts.SemiBold,
     marginBottom: vs(10),
+  },
+  filterContainer: {
+    flexDirection: "row",
+    gap: s(10),
+    paddingTop: vs(25),
+    paddingBottom: vs(20),
   },
 });
 

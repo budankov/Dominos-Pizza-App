@@ -9,4 +9,5 @@ export const AppColors = {
   buttonLightGray: "#E3E3E3",
   buttonDarkGray: "#4F4F4F",
   buttonBorderGray: "#DEDEDE",
+  buttonFilterChooseGray: "#F6F7F8",
 };
