@@ -12,6 +12,10 @@ const PizzaList = () => {
   const [mode, setMode] = useState<"section" | "flat">("section");
   const [filteredPizzas, setFilteredPizzas] = useState(pizzaArrUa);
 
+  const prices = filteredPizzas.map((p) => p.price);
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
   const sections = Object.values(
     filteredPizzas.reduce((acc: Record<string, any>, pizza: any) => {
       const cat = (pizza.category || "Без категорії").trim();
@@ -35,10 +39,33 @@ const PizzaList = () => {
     setMode("section");
   };
 
+  const handleApplyFilters = (filters: {
+    size: string;
+    low: number;
+    high: number;
+  }) => {
+    let result = pizzaArrUa;
+
+    result = result.filter(
+      (p) => p.price >= filters.low && p.price <= filters.high
+    );
+
+    if (filters.size && filters.size !== "standard") {
+      result = result.filter((p) => p.size === filters.size);
+    }
+
+    setFilteredPizzas(result);
+    setMode("flat");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.filterContainer}>
-        <FilterPizza />
+        <FilterPizza
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          onApplyFilters={handleApplyFilters}
+        />
         <Sort onSort={handleSort} reset={handleReset} />
       </View>
 
