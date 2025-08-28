@@ -27,5 +27,8 @@
   "drawer_follow_us": "Слідкуйте за нами",
   "drawer_payment_support": "Підтримка платежів",
 
-  "location_title": "Де ви знаходитесь?"
+  "location_title": "Де ви знаходитесь?",
+
+  "pizzaDough": "Тісто",
+  "pizzaCrust": "Борти"
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { s, vs } from "react-native-size-matters";
-import pizzaArrUa from "../../data/pizza_ua.json";
+import pizzaArrUa from "../../data/pizza-ua.json";
 import { AppFonts } from "../../styles/fonts";
 import FilterPizza from "../filter/FilterPizza";
 import Sort from "../filter/Sort";

@@ -7,7 +7,7 @@ import Carousel, {
   Pagination,
 } from "react-native-reanimated-carousel";
 import { s } from "react-native-size-matters";
-import newsArr from "../../data/promotions_ua.json";
+import newsArr from "../../data/promotions-ua.json";
 import { AppColors } from "../../styles/colors";
 
 const NewsCarousel = () => {

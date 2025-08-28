@@ -27,5 +27,8 @@
   "drawer_follow_us": "Follow us",
   "drawer_payment_support": "Payment Support",
 
-  "location_title": "Where are you located?"
+  "location_title": "Where are you located?",
+
+  "pizzaDough": "Dough",
+  "pizzaCrust": "Crust"
 }

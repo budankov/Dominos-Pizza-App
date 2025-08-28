@@ -1,27 +1,39 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
+import doughEn from "../../data/dough-en.json";
+import doughUa from "../../data/dough-ua.json";
+import sizesEn from "../../data/sizes-en.json";
+import sizesUa from "../../data/sizes-ua.json";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
-
-const sizeOptions = [
-  { label: "Стандарт", value: "standard" },
-  { label: "Велика", value: "large" },
-  { label: "Екстравелика", value: "xlarge" },
-  { label: "Найбільша", value: "xxl" },
-];
-
-const doughOptions = [
-  { label: "Тісто Пухке", value: "thick" },
-  { label: "Тісто Тонке", value: "thin" },
-  { label: "Борт Сирний", value: "cheese" },
-  { label: "Борт Хот-Дог", value: "sausages" },
-];
 
 const PizzaCartRadioGroup = () => {
   const [size, setSize] = useState("standard");
   const [dough, setDough] = useState("thick");
 
+  const { i18n, t } = useTranslation();
+
+  const sizesData = i18n.language === "en" ? sizesEn.sizes : sizesUa.sizes;
+  const doughData = i18n.language === "en" ? doughEn.dough : doughUa.dough;
+
+  const sizeOptions = Object.entries(sizesData).map(([value, label]) => ({
+    label,
+    value,
+  }));
+  const firstSizes = sizeOptions.slice(0, 3);
+  const lastSize = sizeOptions[sizeOptions.length - 1];
+
+  const doughOptions = Object.entries(doughData).map(([value, label]) => ({
+    value,
+    label,
+  }));
+
+  const doughGroups = [
+    { title: t("pizzaDough"), types: ["thick", "thin"] },
+    { title: t("pizzaCrust"), types: ["cheese", "sausages"] },
+  ];
   const handleSizeChange = (newSize: string) => {
     setSize(newSize);
 
@@ -33,7 +45,7 @@ const PizzaCartRadioGroup = () => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        {sizeOptions.slice(0, 3).map((option) => (
+        {firstSizes.map((option) => (
           <Pressable
             key={option.value}
             style={[
@@ -57,77 +69,64 @@ const PizzaCartRadioGroup = () => {
       <Pressable
         style={[
           styles.fullWidthButton,
-          size === "xxl" && styles.selectedButton,
+          size === lastSize.value && styles.selectedButton,
         ]}
-        onPress={() => handleSizeChange("xxl")}
+        onPress={() => handleSizeChange(lastSize.value)}
       >
         <Text
-          style={[styles.buttonText, size === "xxl" && styles.selectedText]}
+          style={[
+            styles.buttonText,
+            size === lastSize.value && styles.selectedText,
+          ]}
         >
-          Найбільша
+          {lastSize.label}
         </Text>
       </Pressable>
 
-      <View style={styles.rowWithLabel}>
-        <Text style={styles.sideLabel}>Тісто</Text>
-        <View style={styles.rowButtons}>
-          {doughOptions
-            .filter((o) => o.value === "thick" || o.value === "thin")
-            .map((option) => (
-              <Pressable
-                key={option.value}
-                style={[
-                  styles.buttonSmall,
-                  dough === option.value && styles.selectedButton,
-                  option.value === "thick" && size === "xxl"
-                    ? { opacity: 0.4 }
-                    : {},
-                ]}
-                onPress={() =>
-                  !(option.value === "thick" && size === "xxl") &&
-                  setDough(option.value)
-                }
-                disabled={option.value === "thick" && size === "xxl"}
-              >
-                <Text
+      {doughGroups.map((group) => (
+        <View key={group.title} style={styles.rowWithLabel}>
+          <Text style={styles.sideLabel}>{group.title}</Text>
+          <View style={styles.rowButtons}>
+            {doughOptions
+              .filter((o) => group.types.includes(o.value))
+              .map((option) => (
+                <Pressable
+                  key={option.value}
                   style={[
-                    styles.buttonText,
-                    dough === option.value && styles.selectedText,
+                    styles.buttonSmall,
+                    dough === option.value && styles.selectedButton,
+                    group.types[0] === "thick" &&
+                    size === lastSize.value &&
+                    option.value === "thick"
+                      ? { opacity: 0.4 }
+                      : {},
                   ]}
+                  onPress={() =>
+                    !(
+                      group.types[0] === "thick" &&
+                      size === lastSize.value &&
+                      option.value === "thick"
+                    ) && setDough(option.value)
+                  }
+                  disabled={
+                    group.types[0] === "thick" &&
+                    size === lastSize.value &&
+                    option.value === "thick"
+                  }
                 >
-                  {option.label}
-                </Text>
-              </Pressable>
-            ))}
+                  <Text
+                    style={[
+                      styles.buttonText,
+                      dough === option.value && styles.selectedText,
+                    ]}
+                  >
+                    {option.label}
+                  </Text>
+                </Pressable>
+              ))}
+          </View>
         </View>
-      </View>
-
-      <View style={styles.rowWithLabel}>
-        <Text style={styles.sideLabel}>Борт</Text>
-        <View style={styles.rowButtons}>
-          {doughOptions
-            .filter((o) => o.value === "cheese" || o.value === "sausages")
-            .map((option) => (
-              <Pressable
-                key={option.value}
-                style={[
-                  styles.buttonSmall,
-                  dough === option.value && styles.selectedButton,
-                ]}
-                onPress={() => setDough(option.value)}
-              >
-                <Text
-                  style={[
-                    styles.buttonText,
-                    dough === option.value && styles.selectedText,
-                  ]}
-                >
-                  {option.label}
-                </Text>
-              </Pressable>
-            ))}
-        </View>
-      </View>
+      ))}
     </View>
   );
 };

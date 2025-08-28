@@ -1,20 +1,16 @@
 import { EvilIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import React, { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { s } from "react-native-size-matters";
+import sizesEn from "../../data/sizes-en.json";
+import sizesUa from "../../data/sizes-ua.json";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppText from "../texts/AppText";
 import PriceFilter from "./PriceFilter";
-
-const sizeOptions = [
-  { label: "Стандарт", value: "standard" },
-  { label: "Велика", value: "large" },
-  { label: "Екстравелика", value: "xlarge" },
-  { label: "Найбільша", value: "xxl" },
-];
 
 interface FilterPizzaProps {
   minPrice: number;
@@ -30,6 +26,16 @@ const FilterPizza: FC<FilterPizzaProps> = ({
   const [size, setSize] = useState("");
   const [low, setLow] = useState(minPrice);
   const [high, setHigh] = useState(maxPrice);
+
+  const { i18n, t } = useTranslation();
+
+  const sizesData = i18n.language === "en" ? sizesEn.sizes : sizesUa.sizes;
+  const sizeOptions = Object.entries(sizesData).map(([value, label]) => ({
+    label,
+    value,
+  }));
+  const firstSizes = sizeOptions.slice(0, 3);
+  const lastSize = sizeOptions[sizeOptions.length - 1];
 
   const handleSizeChange = (newSize: string) => {
     setSize(newSize);
@@ -65,7 +71,7 @@ const FilterPizza: FC<FilterPizzaProps> = ({
           </View>
           <View style={styles.container}>
             <View style={styles.row}>
-              {sizeOptions.slice(0, 3).map((option) => (
+              {firstSizes.map((option) => (
                 <Pressable
                   key={option.value}
                   style={[
@@ -85,21 +91,20 @@ const FilterPizza: FC<FilterPizzaProps> = ({
                 </Pressable>
               ))}
             </View>
-
             <Pressable
               style={[
                 styles.fullWidthButton,
-                size === "xxl" && styles.selectedButton,
+                size === lastSize.value && styles.selectedButton,
               ]}
-              onPress={() => handleSizeChange("xxl")}
+              onPress={() => handleSizeChange(lastSize.value)}
             >
               <Text
                 style={[
                   styles.buttonText,
-                  size === "xxl" && styles.selectedText,
+                  size === lastSize.value && styles.selectedText,
                 ]}
               >
-                Найбільша
+                {lastSize.label}
               </Text>
             </Pressable>
           </View>
@@ -112,14 +117,6 @@ const FilterPizza: FC<FilterPizzaProps> = ({
               setHigh(h);
             }}
           />
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
           <Pressable onPress={handleApply}>
             <Text>Застосувати</Text>
           </Pressable>
