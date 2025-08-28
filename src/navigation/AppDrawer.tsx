@@ -10,12 +10,12 @@ import HomeScreen from "../screens/home/HomeScreen";
 import PizzaMakerScreen from "../screens/maker/PizzaMakerScreen";
 import NewsScreen from "../screens/news/NewsScreen";
 import PizzeriasScreen from "../screens/pizzerias/PizzeriasScreen";
+import PromotionsScreen from "../screens/promotions/PromotionsScreen";
 import LeaveReviewScreen from "../screens/review/LeaveReviewScreen";
 import PizzaTrackerScreen from "../screens/tracker/PizzaTrackerScreen";
 import { AppColors } from "../styles/colors";
 import AppBottomTabs from "./AppBottomTabs";
 import CustomDrawerContent from "./CustomDrawerContent";
-import PromotionsScreen from "../screens/promotions/PromotionsScreen";
 
 const Drawer = createDrawerNavigator();
 

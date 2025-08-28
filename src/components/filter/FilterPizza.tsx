@@ -2,15 +2,16 @@ import { EvilIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { s } from "react-native-size-matters";
-import sizesEn from "../../data/sizes-en.json";
-import sizesUa from "../../data/sizes-ua.json";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppText from "../texts/AppText";
+import IngredientsFilter from "./IngredientsFilter";
 import PriceFilter from "./PriceFilter";
+import SizeFilter from "./SizeFilter";
+import TagsFilter from "./TagsFilter";
 
 interface FilterPizzaProps {
   minPrice: number;
@@ -26,20 +27,10 @@ const FilterPizza: FC<FilterPizzaProps> = ({
   const [size, setSize] = useState("");
   const [low, setLow] = useState(minPrice);
   const [high, setHigh] = useState(maxPrice);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   const { i18n, t } = useTranslation();
-
-  const sizesData = i18n.language === "en" ? sizesEn.sizes : sizesUa.sizes;
-  const sizeOptions = Object.entries(sizesData).map(([value, label]) => ({
-    label,
-    value,
-  }));
-  const firstSizes = sizeOptions.slice(0, 3);
-  const lastSize = sizeOptions[sizeOptions.length - 1];
-
-  const handleSizeChange = (newSize: string) => {
-    setSize(newSize);
-  };
 
   const handleApply = () => {
     onApplyFilters({ size, low, high });
@@ -59,68 +50,43 @@ const FilterPizza: FC<FilterPizzaProps> = ({
       </View>
 
       <ActionSheet id="filterSheet">
-        <View style={styles.sheetContainer}>
-          <View style={styles.sheetHeader}>
-            <AppText style={styles.title}>Фільтр</AppText>
-            <Pressable
-              onPress={() => SheetManager.hide("filterSheet")}
-              style={styles.closeBtn}
-            >
-              <EvilIcons name="close" size={s(30)} color="#000000" />
-            </Pressable>
-          </View>
-          <View style={styles.container}>
-            <View style={styles.row}>
-              {firstSizes.map((option) => (
-                <Pressable
-                  key={option.value}
-                  style={[
-                    styles.button,
-                    size === option.value && styles.selectedButton,
-                  ]}
-                  onPress={() => handleSizeChange(option.value)}
-                >
-                  <Text
-                    style={[
-                      styles.buttonText,
-                      size === option.value && styles.selectedText,
-                    ]}
-                  >
-                    {option.label}
-                  </Text>
-                </Pressable>
-              ))}
-            </View>
-            <Pressable
-              style={[
-                styles.fullWidthButton,
-                size === lastSize.value && styles.selectedButton,
-              ]}
-              onPress={() => handleSizeChange(lastSize.value)}
-            >
-              <Text
-                style={[
-                  styles.buttonText,
-                  size === lastSize.value && styles.selectedText,
-                ]}
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.sheetContainer}>
+            <View style={styles.sheetHeader}>
+              <AppText style={styles.title}>Фільтр</AppText>
+              <Pressable
+                onPress={() => SheetManager.hide("filterSheet")}
+                style={styles.closeBtn}
               >
-                {lastSize.label}
-              </Text>
+                <EvilIcons name="close" size={s(30)} color="#000000" />
+              </Pressable>
+            </View>
+
+            <SizeFilter size={size} setSize={setSize} />
+
+            <PriceFilter
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+              onChange={(l, h) => {
+                setLow(l);
+                setHigh(h);
+              }}
+            />
+            <TagsFilter
+              selectedTags={selectedTags}
+              setSelectedTags={setSelectedTags}
+            />
+
+            <IngredientsFilter
+              selectedIngredients={selectedIngredients}
+              setSelectedIngredients={setSelectedIngredients}
+            />
+
+            <Pressable onPress={handleApply}>
+              <Text>Застосувати</Text>
             </Pressable>
           </View>
-
-          <PriceFilter
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            onChange={(l, h) => {
-              setLow(l);
-              setHigh(h);
-            }}
-          />
-          <Pressable onPress={handleApply}>
-            <Text>Застосувати</Text>
-          </Pressable>
-        </View>
+        </ScrollView>
       </ActionSheet>
     </>
   );
@@ -161,70 +127,6 @@ const styles = StyleSheet.create({
     fontFamily: AppFonts.SemiBold,
     fontSize: s(18),
     textAlign: "center",
-  },
-  container: {
-    paddingBottom: s(30),
-  },
-  row: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: s(10),
-    gap: s(5),
-  },
-  rowWithLabel: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: s(12),
-  },
-  sideLabel: {
-    width: s(50),
-    fontSize: s(13),
-    fontFamily: AppFonts.Regular,
-  },
-  rowButtons: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: s(5),
-  },
-  button: {
-    flex: 1,
-    paddingVertical: s(8),
-    borderRadius: s(20),
-    borderWidth: s(1),
-    borderColor: AppColors.buttonBorderGray,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  buttonSmall: {
-    flex: 1,
-    paddingVertical: s(8),
-    borderRadius: s(20),
-    borderWidth: 1,
-    borderColor: AppColors.buttonBorderGray,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  fullWidthButton: {
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: s(10),
-    paddingVertical: s(10),
-    borderRadius: s(20),
-    borderWidth: s(1),
-    borderColor: AppColors.buttonBorderGray,
-  },
-  selectedButton: {
-    backgroundColor: AppColors.buttonDarkGray,
-  },
-  buttonText: {
-    color: AppColors.textColor,
-    fontFamily: AppFonts.Regular,
-    fontSize: s(13),
-  },
-  selectedText: {
-    color: AppColors.textColorWhite,
   },
 });
 

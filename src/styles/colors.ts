@@ -10,4 +10,6 @@ export const AppColors = {
   buttonDarkGray: "#4F4F4F",
   buttonBorderGray: "#DEDEDE",
   buttonFilterChooseGray: "#F6F7F8",
+  buttonCheckedBox: "#00668E",
+  buttonCheckBoxBorder: "#1b6e83ff",
 };
