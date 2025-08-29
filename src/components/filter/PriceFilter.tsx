@@ -28,6 +28,7 @@ const PriceFilter: FC<PriceFilterProps> = ({
 
   return (
     <>
+      <Text style={styles.title}>Ціна</Text>
       <View style={styles.labelContainer}>
         <Text style={styles.sideLabel}>{values[0]}</Text>
         <Text style={styles.sideLabel}>{values[1]}</Text>
@@ -83,6 +84,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0,
     shadowRadius: 0,
     elevation: 0,
+  },
+  title: {
+    fontSize: s(16),
+    fontFamily: AppFonts.SemiBold,
+    marginBottom: s(5),
+    marginRight: s(5),
   },
 });
 

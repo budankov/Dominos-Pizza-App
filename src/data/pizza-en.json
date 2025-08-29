@@ -1,0 +1,556 @@
+[
+  {
+    "id": "pizza_1",
+    "name": "Pesto Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPesto%2FUPD%2FPesto%2Fpizza-pestoallergen-website-main-ukr.webp&w=1560&q=75",
+    "ingredients": [
+      "Mozzarella",
+      "Feta",
+      "Tomatoes",
+      "Domino's Sauce",
+      "Pesto Sauce"
+    ],
+    "weight": 610,
+    "price": 339,
+    "category": "Gourmet",
+    "tags": ["New"]
+  },
+  {
+    "id": "pizza_2",
+    "name": "Chicken Pesto Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPesto%2FUPD%2FChicken%20Pesto%2Fpizza-pestochickenallergen-website-main-ukr.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Garlic Sauce",
+      "Sun-dried Tomatoes",
+      "Pesto Sauce"
+    ],
+    "weight": 547,
+    "price": 349,
+    "category": "Finest",
+    "tags": ["New"]
+  },
+  {
+    "id": "pizza_3",
+    "name": "Salami Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Domino's Sauce", "Salami"],
+    "weight": 501,
+    "price": 305,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_4",
+    "name": "Pizza with Sun-dried Tomatoes and Chicken",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPitsa%20z%20vialenymy%20tomatamy%2Fdriedtomato-pieces.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Feta",
+      "Spinach",
+      "Alfredo Sauce",
+      "Sun-dried Tomatoes"
+    ],
+    "weight": 550,
+    "price": 350,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_5",
+    "name": "Pizza with Pear and Blue Cheese",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FHrusha%2Fpearandbluecheese-pieces.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Bergader Blue", "Alfredo Sauce", "Pear"],
+    "weight": 502,
+    "price": 307,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_6",
+    "name": "Tony Pepperoni Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-300dpi-min.webp&w=1560&q=75",
+    "ingredients": ["Pepperoni", "Mozzarella", "Domino's Sauce"],
+    "weight": 508,
+    "price": 305,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_7",
+    "name": "Hawaiian Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fhavaiska-300dpi-min.webp&w=1560&q=75",
+    "ingredients": ["Chicken", "Mozzarella", "Pineapple", "Domino's Sauce"],
+    "weight": 613,
+    "price": 315,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_8",
+    "name": "Five Cheese Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpiat-syrov-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Parmesan",
+      "Mozzarella",
+      "Cheddar",
+      "Feta",
+      "Bergader Blue",
+      "Alfredo Sauce"
+    ],
+    "weight": 522,
+    "price": 352,
+    "category": "Bestsellers & New",
+    "tags": ["Cheesy", "Vegetarian"]
+  },
+  {
+    "id": "pizza_9",
+    "name": "Toscana Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Ftoskana-960.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Feta",
+      "Cherry Tomatoes",
+      "Spinach",
+      "Alfredo Sauce"
+    ],
+    "weight": 872,
+    "price": 430,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_10",
+    "name": "Veal and Tomato Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2Fz%20teliatynoiu%20i%20tomatamy%2Fpizza-vealtomato-website-main.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Tomatoes", "Onion", "Garlic Sauce", "Veal"],
+    "weight": 827,
+    "price": 430,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_11",
+    "name": "Texas Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Ftekhas-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Bavarian Sausages",
+      "Mozzarella",
+      "Onion",
+      "Corn",
+      "Mushrooms",
+      "BBQ Sauce"
+    ],
+    "weight": 821,
+    "price": 430,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_12",
+    "name": "Pepperoni with Tomatoes Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-y-tomaty-300dpi.webp&w=1560&q=75",
+    "ingredients": ["Pepperoni", "Mozzarella", "Tomatoes", "BBQ Sauce"],
+    "weight": 832,
+    "price": 430,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_13",
+    "name": "Manhattan Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fmanhatten-slice-collageweb-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Pepperoni",
+      "Mozzarella",
+      "Mushrooms(x2)",
+      "Alfredo Sauce"
+    ],
+    "weight": 857,
+    "price": 430,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_14",
+    "name": "Ham and Mushroom Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fvetchina-i-griby.webp&w=1560&q=75",
+    "ingredients": ["Ham", "Mozzarella", "Mushrooms", "Domino's Sauce"],
+    "weight": 838,
+    "price": 430,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_15",
+    "name": "Salami Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Domino's Sauce", "Salami"],
+    "weight": 701,
+    "price": 370,
+    "category": "Heroes"
+  },
+  {
+    "id": "pizza_16",
+    "name": "Diablo Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2Fdiabolo-pizzapieces.webp&w=1560&q=75",
+    "ingredients": [
+      "Pepperoni",
+      "Mozzarella",
+      "Tomatoes",
+      "Jalapeno",
+      "Domino's Sauce",
+      "Chorizo"
+    ],
+    "weight": 748,
+    "price": 398,
+    "category": "Heroes",
+    "tags": ["Spicy"]
+  },
+  {
+    "id": "pizza_17",
+    "name": "Tony Pepperoni Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpepperony-300dpi-min.webp&w=1560&q=75",
+    "ingredients": ["Pepperoni", "Mozzarella", "Domino's Sauce"],
+    "weight": 714,
+    "price": 370,
+    "category": "Heroes"
+  },
+  {
+    "id": "pizza_18",
+    "name": "BBQ Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FBBQ-NEW-28.04%2Fbbq-960x619-website-main.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Onion",
+      "Mushrooms",
+      "BBQ Sauce",
+      "Bacon"
+    ],
+    "weight": 737,
+    "price": 364,
+    "category": "Heroes"
+  },
+  {
+    "id": "pizza_19",
+    "name": "Carbonara Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkarbonara-300dpi.webp&w=1560&q=75",
+    "ingredients": [
+      "Ham",
+      "Mozzarella",
+      "Onion",
+      "Mushrooms",
+      "Alfredo Sauce",
+      "Bacon"
+    ],
+    "weight": 683,
+    "price": 377,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_20",
+    "name": "Country Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkantry-300dpi.webp&w=1560&q=75",
+    "ingredients": [
+      "Ham",
+      "Mozzarella",
+      "Pickled Cucumbers",
+      "Onion",
+      "Mushrooms",
+      "Garlic Sauce",
+      "Bacon"
+    ],
+    "weight": 726,
+    "price": 378,
+    "category": "Best Value"
+  },
+  {
+    "id": "pizza_21",
+    "name": "Margherita Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fmarharyta-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Mozzarella(x2)",
+      "Domino's Sauce",
+      "(double portion of mozzarella)"
+    ],
+    "weight": 776,
+    "price": 357,
+    "category": "Heroes"
+  },
+  {
+    "id": "pizza_22",
+    "name": "Grill Mix Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fgrill-slice-collageweb-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Meatballs",
+      "Mozzarella",
+      "Bell Pepper",
+      "Onion",
+      "BBQ Sauce",
+      "Bacon"
+    ],
+    "weight": 552,
+    "price": 302,
+    "category": "Heroes"
+  },
+  {
+    "id": "pizza_23",
+    "name": "Pizza with Sun-dried Tomatoes and Chicken",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPitsa%20z%20vialenymy%20tomatamy%2Fdriedtomato-pieces.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Feta",
+      "Spinach",
+      "Alfredo Sauce",
+      "Sun-dried Tomatoes"
+    ],
+    "weight": 550,
+    "price": 350,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_24",
+    "name": "Greek Pizza with Tuna",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fd830e077-bcd6-4c65-8069-d3481664a7f2.webp&w=1560&q=75",
+    "ingredients": ["Tuna", "Mozzarella", "Feta", "Olives", "Garlic Sauce"],
+    "weight": 516,
+    "price": 337,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_25",
+    "name": "Jamaica Bombastic Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fjb-c2rtch-fin-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Bell Pepper",
+      "Jalapeno",
+      "Corn",
+      "Mushrooms",
+      "Pineapple",
+      "Domino's Sauce"
+    ],
+    "weight": 599,
+    "price": 328,
+    "category": "Exotic",
+    "tags": ["Spicy"]
+  },
+  {
+    "id": "pizza_26",
+    "name": "Provence Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fprovans-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Pepperoni",
+      "Ham",
+      "Mozzarella",
+      "Bergader Blue",
+      "Tomatoes",
+      "Alfredo Sauce"
+    ],
+    "weight": 533,
+    "price": 329,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_27",
+    "name": "Chicken Kebab Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2Fchiken%20kebab%2Fchickenkebab-pieces.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Pickled Cucumbers",
+      "Onion",
+      "Mushrooms",
+      "Domino's Sauce",
+      "Burger Sauce Drizzle"
+    ],
+    "weight": 539,
+    "price": 302,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_28",
+    "name": "Pizza with Pear and Blue Cheese",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FHrusha%2Fpearandbluecheese-pieces.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Bergader Blue", "Alfredo Sauce", "Pear"],
+    "weight": 502,
+    "price": 307,
+    "category": "Exotic"
+  },
+  {
+    "id": "pizza_29",
+    "name": "Chicken Pesto Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPesto%2FUPD%2FChicken%20Pesto%2Fpizza-pestochickenallergen-website-main-ukr.webp&w=1560&q=75",
+    "ingredients": [
+      "Chicken",
+      "Mozzarella",
+      "Garlic Sauce",
+      "Sun-dried Tomatoes",
+      "Pesto Sauce"
+    ],
+    "weight": 547,
+    "price": 349,
+    "category": "Bestsellers & New"
+  },
+  {
+    "id": "pizza_30",
+    "name": "Beef & Crispy Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FbeefandCrispy%2Fnew%2Fbeefandcrispy-pieces.webp&w=1560&q=75",
+    "ingredients": [
+      "Mozzarella",
+      "Bell Pepper",
+      "Tomatoes",
+      "Pickled Cucumbers",
+      "BBQ Sauce",
+      "Crispy Onions",
+      "Beef"
+    ],
+    "weight": 613,
+    "price": 344,
+    "category": "Finest"
+  },
+  {
+    "id": "pizza_31",
+    "name": "Extravaganza Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fextravaganzza-slice1-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Pepperoni",
+      "Meatballs",
+      "Ham",
+      "Mozzarella",
+      "Bell Pepper",
+      "Onion",
+      "Olives",
+      "Mushrooms",
+      "Domino's Sauce"
+    ],
+    "weight": 658,
+    "price": 364,
+    "category": "Finest"
+  },
+  {
+    "id": "pizza_32",
+    "name": "Royal Cheeseburger Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Froyal-slice-retoch-min-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Mozzarella",
+      "Onion",
+      "BBQ Sauce",
+      "Steak Portion (Beef)",
+      "Burger Sauce Drizzle"
+    ],
+    "weight": 604,
+    "price": 352,
+    "category": "Finest"
+  },
+  {
+    "id": "pizza_33",
+    "name": "Munich Deluxe Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fmiunkhenskaia-delux-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Bavarian Sausages",
+      "Ham",
+      "Mozzarella",
+      "Mustard",
+      "Tomatoes",
+      "BBQ Sauce",
+      "White Sausages"
+    ],
+    "weight": 598,
+    "price": 344,
+    "category": "Finest"
+  },
+  {
+    "id": "pizza_34",
+    "name": "Mizza Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fmytstsa-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Pepperoni",
+      "Bavarian Sausages",
+      "Ham",
+      "Parmesan",
+      "Mozzarella",
+      "Domino's Sauce",
+      "Bacon"
+    ],
+    "weight": 560,
+    "price": 364,
+    "category": "Finest"
+  },
+  {
+    "id": "pizza_36",
+    "name": "Turkey Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2Fturkey-pizzapieces.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Alfredo Sauce", "Turkey", "Cream Cheese"],
+    "weight": 495,
+    "price": 332,
+    "category": "Gourmet"
+  },
+  {
+    "id": "pizza_37",
+    "name": "Chicken & Blue Cheese Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpytstsa-kurytsa-holuboisyr-kusochek.webp&w=1560&q=75",
+    "ingredients": ["Chicken", "Mozzarella", "Bergader Blue", "Alfredo Sauce"],
+    "weight": 510,
+    "price": 322,
+    "category": "Gourmet"
+  },
+  {
+    "id": "pizza_38",
+    "name": "Salmon Philadelphia Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fsalmonphill-slicere-made-web-min-min.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Alfredo Sauce", "Cream Cheese", "Salmon"],
+    "weight": 479,
+    "price": 368,
+    "category": "Gourmet"
+  },
+  {
+    "id": "pizza_39",
+    "name": "Five Cheese Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fpiat-syrov-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Parmesan",
+      "Mozzarella",
+      "Cheddar",
+      "Feta",
+      "Bergader Blue",
+      "Alfredo Sauce"
+    ],
+    "weight": 522,
+    "price": 352,
+    "category": "Gourmet"
+  },
+  {
+    "id": "pizza_40",
+    "name": "Spinach & Feta Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fshpynatfeta-300dpi-min.webp&w=1560&q=75",
+    "ingredients": [
+      "Mozzarella",
+      "Feta",
+      "Bell Pepper",
+      "Tomatoes",
+      "Olives",
+      "Mushrooms",
+      "Spinach",
+      "Alfredo Sauce"
+    ],
+    "weight": 578,
+    "price": 342,
+    "category": "Gourmet",
+    "tags": ["Vegetarian"]
+  },
+  {
+    "id": "pizza_41",
+    "name": "Hawaiian Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fhavaiska-300dpi-min.webp&w=1560&q=75",
+    "ingredients": ["Chicken", "Mozzarella", "Pineapple", "Domino's Sauce"],
+    "weight": 980,
+    "price": 498,
+    "category": "Gourmet"
+  },
+  {
+    "id": "pizza_42",
+    "name": "Chorizo Pizza",
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FChorizo%2Fchorizo-pizzapieces.webp&w=1560&q=75",
+    "ingredients": ["Mozzarella", "Bell Pepper", "Domino's Sauce", "Chorizo"],
+    "weight": 497,
+    "price": 332,
+    "category": "Best Value"
+  }
+]

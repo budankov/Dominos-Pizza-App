@@ -4,9 +4,10 @@ import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import { s } from "react-native-size-matters";
+import { s, vs } from "react-native-size-matters";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
+import AppButton from "../buttons/AppButton";
 import AppText from "../texts/AppText";
 import IngredientsFilter from "./IngredientsFilter";
 import PriceFilter from "./PriceFilter";
@@ -16,15 +17,25 @@ import TagsFilter from "./TagsFilter";
 interface FilterPizzaProps {
   minPrice: number;
   maxPrice: number;
-  onApplyFilters: (low: number, high: number, size: string) => void;
+  onApplyFilters: (filters: {
+    size: "standard" | "large" | "xlarge" | "xxl";
+    low: number;
+    high: number;
+    selectedTags: string[];
+    selectedIngredients: string[];
+  }) => void;
+  onReset: () => void;
 }
 
 const FilterPizza: FC<FilterPizzaProps> = ({
   minPrice,
   maxPrice,
   onApplyFilters,
+  onReset,
 }) => {
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState<
+    "standard" | "large" | "xlarge" | "xxl" | ""
+  >("");
   const [low, setLow] = useState(minPrice);
   const [high, setHigh] = useState(maxPrice);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -33,8 +44,15 @@ const FilterPizza: FC<FilterPizzaProps> = ({
   const { i18n, t } = useTranslation();
 
   const handleApply = () => {
-    onApplyFilters({ size, low, high });
+    onApplyFilters({ size, low, high, selectedTags, selectedIngredients });
     SheetManager.hide("filterSheet");
+  };
+
+  const handleReset = () => {
+    setSize("");
+    setSelectedTags([]);
+    setSelectedIngredients([]);
+    onReset();
   };
 
   return (
@@ -58,7 +76,7 @@ const FilterPizza: FC<FilterPizzaProps> = ({
                 onPress={() => SheetManager.hide("filterSheet")}
                 style={styles.closeBtn}
               >
-                <EvilIcons name="close" size={s(30)} color="#000000" />
+                <EvilIcons name="close" size={s(36)} color="#000000" />
               </Pressable>
             </View>
 
@@ -81,10 +99,20 @@ const FilterPizza: FC<FilterPizzaProps> = ({
               selectedIngredients={selectedIngredients}
               setSelectedIngredients={setSelectedIngredients}
             />
-
-            <Pressable onPress={handleApply}>
-              <Text>Застосувати</Text>
-            </Pressable>
+          </View>
+          <View style={styles.buttonContainer}>
+            <AppButton
+              title="Очистити"
+              backgroundColor={AppColors.buttonLightGray}
+              textColor={AppColors.textColor}
+              styleTitle={{ fontSize: s(15) }}
+              onPress={handleReset}
+            />
+            <AppButton
+              title="Фільтрувати"
+              onPress={handleApply}
+              styleTitle={{ fontSize: s(15) }}
+            />
           </View>
         </ScrollView>
       </ActionSheet>
@@ -116,17 +144,23 @@ const styles = StyleSheet.create({
   sheetContainer: {
     width: "100%",
     paddingHorizontal: s(10),
-    paddingVertical: s(20),
+    paddingVertical: vs(65),
+    paddingBottom: vs(10),
   },
   sheetHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingBottom: s(10),
   },
   title: {
     fontFamily: AppFonts.SemiBold,
-    fontSize: s(18),
+    fontSize: s(22),
     textAlign: "center",
+  },
+  buttonContainer: {
+    paddingHorizontal: s(14),
+    gap: s(10),
+    paddingBottom: vs(50),
+    marginBottom: vs(15),
   },
 });
 

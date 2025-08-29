@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   checkbox: {
-    width: s(24),
-    height: s(24),
+    width: s(22),
+    height: s(22),
     borderColor: AppColors.buttonCheckBoxBorder,
     borderWidth: s(1),
     borderRadius: s(5),
   },
   checkTitle: {
-    fontSize: s(16),
+    fontSize: s(15),
     fontFamily: AppFonts.Regular,
   },
 });

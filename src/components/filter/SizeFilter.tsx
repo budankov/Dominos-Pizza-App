@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: s(10),
-    paddingVertical: s(10),
+    paddingVertical: s(8),
     borderRadius: s(20),
     borderWidth: s(1),
     borderColor: AppColors.buttonBorderGray,
