@@ -18,7 +18,6 @@ const PizzaList = () => {
   const { i18n } = useTranslation();
   const language = i18n.language; // "en" або "ua"
 
-  // Стейт
   const [mode, setMode] = useState<"section" | "flat">("section");
   const [filteredPizzas, setFilteredPizzas] = useState(
     language === "en" ? pizzaArrEn : pizzaArrUa
@@ -27,18 +26,15 @@ const PizzaList = () => {
     "standard" | "large" | "xlarge" | "xxl"
   >("standard");
 
-  // Поточні дані по мові
   const pizzas = language === "en" ? pizzaArrEn : pizzaArrUa;
   const tagsData = language === "en" ? pizzaTagsEn : pizzaTagsUa;
   const ingredientsData =
     language === "en" ? pizzaIngredientsEn : pizzaIngredientsUa;
 
-  // Ціни для фільтра
   const prices = filteredPizzas.map((p) => p.price);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
 
-  // Секції по категоріях
   const sections = Object.values(
     filteredPizzas.reduce((acc: Record<string, any>, pizza: any) => {
       const cat = (pizza.category || "Без категорії").trim();
@@ -48,7 +44,6 @@ const PizzaList = () => {
     }, {})
   ).sort((a, b) => a.title.localeCompare(b.title));
 
-  // Сортування
   const handleSort = (type: "priceAsc" | "priceDesc") => {
     const sorted = [...filteredPizzas];
     if (type === "priceAsc") sorted.sort((a, b) => a.price - b.price);
@@ -58,13 +53,11 @@ const PizzaList = () => {
     setMode("flat");
   };
 
-  // Скидання
   const handleReset = () => {
     setFilteredPizzas(pizzas);
     setMode("section");
   };
 
-  // Фільтрування
   const handleApplyFilters = (filters: {
     size: "standard" | "large" | "xlarge" | "xxl";
     low: number;
@@ -81,15 +74,15 @@ const PizzaList = () => {
       (p) => p.price >= filters.low && p.price <= filters.high
     );
 
-    // Локалізація тегів та інгредієнтів
     const selectedTagsLocalized = filters.selectedTags
       .map((tag) => tagsData.tags[tag])
       .filter(Boolean) as string[];
+
     const selectedIngredientsLocalized = filters.selectedIngredients
       .map((ing) => ingredientsData.ingredients[ing])
       .filter(Boolean) as string[];
 
-    // Фільтруємо OR: тег або інгредієнт
+    // OR-фільтр: тег або інгредієнт
     if (
       selectedTagsLocalized.length > 0 ||
       selectedIngredientsLocalized.length > 0
@@ -119,7 +112,12 @@ const PizzaList = () => {
         <Sort onSort={handleSort} reset={handleReset} />
       </View>
 
-      {mode === "section" ? (
+      {/* Якщо нічого не знайдено */}
+      {filteredPizzas.length === 0 ? (
+        <View style={styles.emptyBox}>
+          <Text style={styles.emptyText}>Нічого не знайдено</Text>
+        </View>
+      ) : mode === "section" ? (
         <SectionList
           scrollEnabled={false}
           sections={sections}
@@ -154,6 +152,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     paddingHorizontal: s(14),
     paddingVertical: s(14),
+    backgroundColor: "#fff",
   },
   categoryTitle: {
     textAlign: "center",
@@ -166,6 +165,14 @@ const styles = StyleSheet.create({
     gap: s(10),
     paddingTop: vs(25),
     paddingBottom: vs(20),
+  },
+  emptyBox: {
+    padding: 20,
+    alignItems: "center",
+  },
+  emptyText: {
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
 
