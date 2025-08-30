@@ -85,45 +85,22 @@ const PizzaList = () => {
     const selectedTagsLocalized = filters.selectedTags
       .map((tag) => tagsData.tags[tag])
       .filter(Boolean) as string[];
-    const selectedIngredientsLocalized = filters.selectedIngredients.map(
-      (ing) => ingredientsData.ingredients[ing]
-    );
+    const selectedIngredientsLocalized = filters.selectedIngredients
+      .map((ing) => ingredientsData.ingredients[ing])
+      .filter(Boolean) as string[];
 
-    // Комбінація тег + інгредієнт (строге співпадіння)
+    // Фільтруємо OR: тег або інгредієнт
     if (
-      selectedTagsLocalized.length > 0 &&
+      selectedTagsLocalized.length > 0 ||
       selectedIngredientsLocalized.length > 0
     ) {
       result = result.filter(
         (p) =>
-          selectedTagsLocalized.some((tag) => p.tags?.includes(tag)) &&
+          selectedTagsLocalized.some((tag) => p.tags?.includes(tag)) ||
           selectedIngredientsLocalized.some((ing) =>
             p.ingredients?.includes(ing)
           )
       );
-    } else {
-      // Тільки теги
-      if (selectedTagsLocalized.length > 0) {
-        result = result.filter((p) =>
-          selectedTagsLocalized.some((tag) => p.tags?.includes(tag))
-        );
-      }
-
-      // Тільки інгредієнти
-      if (selectedIngredientsLocalized.length > 0) {
-        result = result.filter((p) =>
-          selectedIngredientsLocalized.some((ing) =>
-            p.ingredients?.includes(ing)
-          )
-        );
-      }
-    }
-
-    // Якщо немає результатів
-    if (result.length === 0) {
-      result = [
-        { id: "empty", name: "Нічого не знайдено", ingredients: [], price: 0 },
-      ];
     }
 
     setFilteredPizzas(result);
