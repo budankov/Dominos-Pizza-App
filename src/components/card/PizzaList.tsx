@@ -112,7 +112,6 @@ const PizzaList = () => {
         <Sort onSort={handleSort} reset={handleReset} />
       </View>
 
-      {/* Якщо нічого не знайдено */}
       {filteredPizzas.length === 0 ? (
         <View style={styles.emptyBox}>
           <Text style={styles.emptyText}>Нічого не знайдено</Text>

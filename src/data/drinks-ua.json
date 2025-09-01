@@ -1,226 +1,258 @@
 [
-    {
-        "id": "drink_1",
-        "name": "Red Bull",
-        "price": 69,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-website-main.webp&w=1560&q=75",
-        "volume": 250
-    },
-    {
-        "id": "drink_2",
-        "name": "Red Bull Sugar Free",
-        "price": 69,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-sugarfree-sugarfree-website-main.webp&w=1560&q=75",
-        "volume": 250
-    },
-    {
-        "id": "drink_3",
-        "name": "Red Bull Yellow Edition",
-        "price": 69,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-tropical-website-main.webp&w=1560&q=75",
-        "volume": 250
-    },
-    {
-        "id": "drink_4",
-        "name": "Coca-Cola vanilla 0.5",
-        "price": 62,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fcolavanilla-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_5",
-        "name": "Coca-Cola Cherry",
-        "price": 62,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fcheri%2Fcola-cherry-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_6",
-        "name": "Coca-Cola",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fcc.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_7",
-        "name": "Coca-Cola Zero",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fcczero.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_8",
-        "name": "Fanta Апельсин",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Ffanta-05.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_9",
-        "name": "Sprite",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fsprite-05.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_10",
-        "name": "Schweppes Мохіто",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fsheps-mokhito.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_11",
-        "name": "Schweppes Індіан Тонік",
-        "price": 55,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Find-min-thumbnail-2300x2300.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_12",
-        "name": "BonAqua негазована",
-        "price": 46,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fng.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_13",
-        "name": "BonAqua газована",
-        "price": 46,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fgaz.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_14",
-        "name": "Cappy томатний",
-        "price": 125,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-tomato1l-website-main.webp&w=1560&q=75",
-        "volume": 1
-    },
-    {
-        "id": "drink_15",
-        "name": "Cappy апельсин",
-        "price": 130,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-orange1l-website-main.webp&w=1560&q=75",
-        "volume": 1
-    },
-    {
-        "id": "drink_16",
-        "name": "Cappy екзотик",
-        "price": 125,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-exotic1l-website-main.webp&w=1560&q=75",
-        "volume": 1
-    },
-    {
-        "id": "drink_17",
-        "name": "Cappy яблуко",
-        "price": 125,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-apple1l-website-main.webp&w=1560&q=75",
-        "volume": 1
-    },
-    {
-        "id": "drink_18",
-        "name": "Cappy Mini Мультифрут",
-        "price": 46,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2Fcappy-multifuit20cl-website-main.webp&w=1560&q=75",
-        "volume": 200
-    },
-    {
-        "id": "drink_19",
-        "name": "Cappy Mini Виноград-яблуко",
-        "price": 46,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2Fcappy-grapeapple20cl-website-main.webp&w=1560&q=75",
-        "volume": 200
-    },
-    {
-        "id": "drink_20",
-        "name": "Garage зі смаком лимона",
-        "price": 75,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgarage-website-main.webp&w=1560&q=75",
-        "volume": 480
-    },
-    {
-        "id": "drink_21",
-        "name": "Somersby яблуко",
-        "price": 78,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fsomersby-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_22",
-        "name": "Jack Daniels & Coca-Cola",
-        "price": 120,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FSlaboalkoholni%20napoi%2Fjd-cola-website-main.webp&w=1560&q=75",
-        "volume": 330
-    },
-    {
-        "id": "drink_23",
-        "name": "Tuborg Green",
-        "price": 72,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Ftuborggreen50cl-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_24",
-        "name": "Staropramen",
-        "price": 75,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-staropx4-website-main.webp&w=1560&q=75",
-        "volume": 480
-    },
-    {
-        "id": "drink_25",
-        "name": "Carlsberg Non Alcoholic",
-        "price": 72,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsberg-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_26",
-        "name": "Carlsberg",
-        "price": 79,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsbergpilsner50cl-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_27",
-        "name": "Kronenbourg 1664 Blanc",
-        "price": 84,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-blancx4-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_28",
-        "name": "Grimbergen Blanche",
-        "price": 110,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergenblanche50cl-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_29",
-        "name": "Grimbergen Double-Ambrée",
-        "price": 110,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergendoubleambree50cl-website-main.webp&w=1560&q=75",
-        "volume": 500
-    },
-    {
-        "id": "drink_30",
-        "name": "Miller Genuine Draft",
-        "price": 80,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fmillergenuinedraft48cl-website-main.webp&w=1560&q=75",
-        "volume": 480
-    },
-    {
-        "id": "drink_31",
-        "name": "Чай імбир лемонграс",
-        "price": 50,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fnehazovani%20napoi%2Fimbyr.webp&w=1560&q=75",
-        "volume": null
-    },
-    {
-        "id": "drink_32",
-        "name": "Чай малина м'ята",
-        "price": 50,
-        "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fnehazovani%20napoi%2Fmalyna.webp&w=1560&q=75",
-        "volume": null
-    }
+  {
+    "id": "drink_1",
+    "name": "Red Bull",
+    "price": 69,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-website-main.webp&w=1560&q=75",
+    "volume": 250,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_2",
+    "name": "Red Bull Sugar Free",
+    "price": 69,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-sugarfree-sugarfree-website-main.webp&w=1560&q=75",
+    "volume": 250,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_3",
+    "name": "Red Bull Yellow Edition",
+    "price": 69,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-tropical-website-main.webp&w=1560&q=75",
+    "volume": 250,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_4",
+    "name": "Coca-Cola vanilla 0.5",
+    "price": 62,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fcolavanilla-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_5",
+    "name": "Coca-Cola Cherry",
+    "price": 62,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fcheri%2Fcola-cherry-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_6",
+    "name": "Coca-Cola",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fcc.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_7",
+    "name": "Coca-Cola Zero",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fcczero.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_8",
+    "name": "Fanta Апельсин",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Ffanta-05.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_9",
+    "name": "Sprite",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fbezalkoholni%20hazovani%20napoi%2Fsprite-05.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_10",
+    "name": "Schweppes Мохіто",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fsheps-mokhito.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_11",
+    "name": "Schweppes Індіан Тонік",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Find-min-thumbnail-2300x2300.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_12",
+    "name": "BonAqua негазована",
+    "price": 46,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fng.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_13",
+    "name": "BonAqua газована",
+    "price": 46,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fgaz.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Вода і напої"
+  },
+  {
+    "id": "drink_14",
+    "name": "Cappy томатний",
+    "price": 125,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-tomato1l-website-main.webp&w=1560&q=75",
+    "volume": 1,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_15",
+    "name": "Cappy апельсин",
+    "price": 130,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-orange1l-website-main.webp&w=1560&q=75",
+    "volume": 1,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_16",
+    "name": "Cappy екзотик",
+    "price": 125,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-exotic1l-website-main.webp&w=1560&q=75",
+    "volume": 1,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_17",
+    "name": "Cappy яблуко",
+    "price": 125,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2F1l%2Fcappy-apple1l-website-main.webp&w=1560&q=75",
+    "volume": 1,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_18",
+    "name": "Cappy Mini Мультифрут",
+    "price": 46,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2Fcappy-multifuit20cl-website-main.webp&w=1560&q=75",
+    "volume": 200,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_19",
+    "name": "Cappy Mini Виноград-яблуко",
+    "price": 46,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fsik%2FCappy%2Fcappy-grapeapple20cl-website-main.webp&w=1560&q=75",
+    "volume": 200,
+    "category": "Сік"
+  },
+  {
+    "id": "drink_20",
+    "name": "Garage зі смаком лимона",
+    "price": 75,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgarage-website-main.webp&w=1560&q=75",
+    "volume": 480,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_21",
+    "name": "Somersby яблуко",
+    "price": 78,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fsomersby-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_22",
+    "name": "Jack Daniels & Coca-Cola",
+    "price": 120,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FSlaboalkoholni%20napoi%2Fjd-cola-website-main.webp&w=1560&q=75",
+    "volume": 330,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_23",
+    "name": "Tuborg Green",
+    "price": 72,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Ftuborggreen50cl-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_24",
+    "name": "Staropramen",
+    "price": 75,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-staropx4-website-main.webp&w=1560&q=75",
+    "volume": 480,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_25",
+    "name": "Carlsberg Non Alcoholic",
+    "price": 72,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsberg-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_26",
+    "name": "Carlsberg",
+    "price": 79,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsbergpilsner50cl-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_27",
+    "name": "Kronenbourg 1664 Blanc",
+    "price": 84,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-blancx4-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_28",
+    "name": "Grimbergen Blanche",
+    "price": 110,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergenblanche50cl-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_29",
+    "name": "Grimbergen Double-Ambrée",
+    "price": 110,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergendoubleambree50cl-website-main.webp&w=1560&q=75",
+    "volume": 500,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_30",
+    "name": "Miller Genuine Draft",
+    "price": 80,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fmillergenuinedraft48cl-website-main.webp&w=1560&q=75",
+    "volume": 480,
+    "category": "Слабоалкогольні напої і пиво"
+  },
+  {
+    "id": "drink_31",
+    "name": "Чай імбир лемонграс",
+    "price": 50,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fnehazovani%20napoi%2Fimbyr.webp&w=1560&q=75",
+    "volume": null,
+    "category": "Чай"
+  },
+  {
+    "id": "drink_32",
+    "name": "Чай малина м'ята",
+    "price": 50,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2Fnehazovani%20napoi%2Fmalyna.webp&w=1560&q=75",
+    "volume": null,
+    "category": "Чай"
+  }
 ]

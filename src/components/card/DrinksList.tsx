@@ -1,0 +1,113 @@
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
+import { s, vs } from "react-native-size-matters";
+import {
+  default as drinksArrEn,
+  default as drinksArrUa,
+} from "../../data/drinks-ua.json";
+import { AppFonts } from "../../styles/fonts";
+import Sort from "../filter/Sort";
+import DrinksCard from "./DrinksCard";
+
+const DrinksList = () => {
+  const { i18n } = useTranslation();
+  const language = i18n.language;
+
+  const [mode, setMode] = useState<"section" | "flat">("section");
+  const [filteredDrinks, setFilteredDrinks] = useState(
+    language === "en" ? drinksArrEn : drinksArrUa
+  );
+
+  const drinks = language === "en" ? drinksArrEn : drinksArrUa;
+
+  const prices = filteredDrinks.map((p) => p.price);
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
+  const sections = Object.values(
+    filteredDrinks.reduce((acc: Record<string, any>, drink: any) => {
+      const cat = (drink.category || "Без категорії").trim();
+      if (!acc[cat]) acc[cat] = { title: cat, data: [] };
+      acc[cat].data.push(drink);
+      return acc;
+    }, {})
+  ).sort((a, b) => a.title.localeCompare(b.title));
+
+  const handleSort = (type: "priceAsc" | "priceDesc") => {
+    const sorted = [...filteredDrinks];
+    if (type === "priceAsc") sorted.sort((a, b) => a.price - b.price);
+    if (type === "priceDesc") sorted.sort((a, b) => b.price - a.price);
+
+    setFilteredDrinks(sorted);
+    setMode("flat");
+  };
+
+  const handleReset = () => {
+    setFilteredDrinks(drinks);
+    setMode("section");
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.filterContainer}>
+        <Sort onSort={handleSort} reset={handleReset} />
+      </View>
+
+      {mode === "section" ? (
+        <SectionList
+          scrollEnabled={false}
+          sections={sections}
+          stickySectionHeadersEnabled={false}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          renderSectionHeader={({ section }) => (
+            <Text style={styles.categoryTitle}>{section.title}</Text>
+          )}
+          renderItem={({ item }) => <DrinksCard drinks={item} />}
+        />
+      ) : (
+        <FlatList
+          scrollEnabled={false}
+          data={filteredDrinks}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <DrinksCard drinks={item} />}
+        />
+      )}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    width: Dimensions.get("window").width,
+    alignSelf: "center",
+    paddingHorizontal: s(14),
+    paddingVertical: s(14),
+    backgroundColor: "#fff",
+  },
+  categoryTitle: {
+    textAlign: "center",
+    fontSize: s(23),
+    fontFamily: AppFonts.SemiBold,
+    marginBottom: vs(10),
+  },
+  filterContainer: {
+    flexDirection: "row",
+    gap: s(10),
+    paddingTop: vs(25),
+    paddingBottom: vs(20),
+  },
+  emptyBox: {
+    padding: 20,
+    alignItems: "center",
+  },
+  emptyText: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+});
+
+export default DrinksList;
