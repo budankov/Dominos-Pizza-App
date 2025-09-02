@@ -18,6 +18,7 @@ import {
 import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
+import CardTags from "../tags/CardTags";
 import AppText from "../texts/AppText";
 
 export interface Drinks {
@@ -27,6 +28,7 @@ export interface Drinks {
   ingredients: string[];
   volume: number;
   price: number;
+  tags: string[];
 }
 
 interface DrinksCardProps {
@@ -42,6 +44,9 @@ const DrinksCard: FC<DrinksCardProps> = ({ drinks }) => {
   return (
     <View style={styles.container}>
       <View key={drinks.id} style={styles.card}>
+        {drinks.tags && drinks.tags.length > 0 && (
+          <CardTags tags={drinks.tags} />
+        )}
         <Image
           source={{ uri: drinks.image }}
           style={styles.image}
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: s(16),
     borderTopLeftRadius: s(16),
   },
+
   title: {
     fontSize: s(22),
     fontFamily: AppFonts.Medium,

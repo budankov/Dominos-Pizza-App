@@ -20,6 +20,7 @@ import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 import AppButton from "../buttons/AppButton";
 import PizzaCartRadioGroup from "../radio/PizzaCartRadioGroup";
+import CardTags from "../tags/CardTags";
 import AppText from "../texts/AppText";
 
 export interface Pizza {
@@ -29,6 +30,7 @@ export interface Pizza {
   ingredients: string[];
   weight: number;
   price: number;
+  tags: string[];
 }
 
 interface PizzaCardProps {
@@ -44,6 +46,7 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
   return (
     <View style={styles.container}>
       <View key={pizza.id} style={styles.card}>
+        {pizza.tags && pizza.tags.length > 0 && <CardTags tags={pizza.tags} />}
         <View>
           <Image
             source={{ uri: pizza.image }}

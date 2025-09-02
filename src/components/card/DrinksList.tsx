@@ -22,10 +22,6 @@ const DrinksList = () => {
 
   const drinks = language === "en" ? drinksArrEn : drinksArrUa;
 
-  const prices = filteredDrinks.map((p) => p.price);
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
-
   const sections = Object.values(
     filteredDrinks.reduce((acc: Record<string, any>, drink: any) => {
       const cat = (drink.category || "Без категорії").trim();
@@ -51,7 +47,7 @@ const DrinksList = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.filterContainer}>
+      <View style={styles.sortContainer}>
         <Sort onSort={handleSort} reset={handleReset} />
       </View>
 
@@ -85,7 +81,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     alignSelf: "center",
     paddingHorizontal: s(14),
-    paddingVertical: s(14),
     backgroundColor: "#fff",
   },
   categoryTitle: {
@@ -94,10 +89,10 @@ const styles = StyleSheet.create({
     fontFamily: AppFonts.SemiBold,
     marginBottom: vs(10),
   },
-  filterContainer: {
-    flexDirection: "row",
+  sortContainer: {
+    width: "50%",
+    alignSelf: "flex-end",
     gap: s(10),
-    paddingTop: vs(25),
     paddingBottom: vs(20),
   },
   emptyBox: {

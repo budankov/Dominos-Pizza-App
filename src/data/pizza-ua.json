@@ -13,7 +13,7 @@
     "weight": 610,
     "price": 339,
     "category": "Гурме",
-    "tags": ["Новинка"]
+    "tags": ["New"]
   },
   {
     "id": "pizza_2",
@@ -29,7 +29,7 @@
     "weight": 547,
     "price": 349,
     "category": "Файнест",
-    "tags": ["Новинка"]
+    "tags": ["New"]
   },
   {
     "id": "pizza_3",
@@ -98,7 +98,7 @@
     "weight": 522,
     "price": 352,
     "category": "Бестселери і новинки",
-    "tags": ["Сирна", "Вегетаріанська"]
+    "tags": ["Cheesy", "Vegetarian"]
   },
   {
     "id": "pizza_9",
@@ -198,7 +198,7 @@
     "weight": 748,
     "price": 398,
     "category": "Герої",
-    "tags": ["Гостра"]
+    "tags": ["Spicy"]
   },
   {
     "id": "pizza_17",
@@ -330,7 +330,7 @@
     "weight": 599,
     "price": 328,
     "category": "Дивина",
-    "tags": ["Гостра"]
+    "tags": ["Spicy"]
   },
   {
     "id": "pizza_26",
@@ -534,7 +534,7 @@
     "weight": 578,
     "price": 342,
     "category": "Гурме",
-    "tags": ["Вегетаріанська"]
+    "tags": ["Vegetarian"]
   },
   {
     "id": "pizza_41",

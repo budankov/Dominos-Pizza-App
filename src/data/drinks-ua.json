@@ -5,7 +5,8 @@
     "price": 69,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-website-main.webp&w=1560&q=75",
     "volume": 250,
-    "category": "Вода і напої"
+    "category": "Вода і напої",
+    "tags": ["New"]
   },
   {
     "id": "drink_2",
@@ -13,7 +14,8 @@
     "price": 69,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-sugarfree-sugarfree-website-main.webp&w=1560&q=75",
     "volume": 250,
-    "category": "Вода і напої"
+    "category": "Вода і напої",
+    "tags": ["New"]
   },
   {
     "id": "drink_3",
@@ -21,7 +23,8 @@
     "price": 69,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FRed%20Bull%2Fredbull-tropical-website-main.webp&w=1560&q=75",
     "volume": 250,
-    "category": "Вода і напої"
+    "category": "Вода і напої",
+    "tags": ["New"]
   },
   {
     "id": "drink_4",
@@ -157,7 +160,8 @@
     "price": 75,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgarage-website-main.webp&w=1560&q=75",
     "volume": 480,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_21",
@@ -165,7 +169,8 @@
     "price": 78,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fsomersby-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_22",
@@ -173,7 +178,8 @@
     "price": 120,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FSlaboalkoholni%20napoi%2Fjd-cola-website-main.webp&w=1560&q=75",
     "volume": 330,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_23",
@@ -181,7 +187,8 @@
     "price": 72,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Ftuborggreen50cl-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_24",
@@ -189,7 +196,8 @@
     "price": 75,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-staropx4-website-main.webp&w=1560&q=75",
     "volume": 480,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_25",
@@ -197,7 +205,8 @@
     "price": 72,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsberg-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_26",
@@ -205,7 +214,8 @@
     "price": 79,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fcarlsbergpilsner50cl-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_27",
@@ -213,7 +223,8 @@
     "price": 84,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2FPack4%2Fbeer-blancx4-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_28",
@@ -221,7 +232,8 @@
     "price": 110,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergenblanche50cl-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_29",
@@ -229,7 +241,8 @@
     "price": 110,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fgrimbergendoubleambree50cl-website-main.webp&w=1560&q=75",
     "volume": 500,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_30",
@@ -237,7 +250,8 @@
     "price": 80,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FNapoi%2FPyvo%2Fnew_2025%2Fmillergenuinedraft48cl-website-main.webp&w=1560&q=75",
     "volume": 480,
-    "category": "Слабоалкогольні напої і пиво"
+    "category": "Слабоалкогольні напої і пиво",
+    "tags": ["18+"]
   },
   {
     "id": "drink_31",
