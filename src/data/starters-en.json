@@ -1,0 +1,242 @@
+[
+  {
+    "id": "starter_1",
+    "name": "Cherry Rolls",
+    "description": "",
+    "weight": "290",
+    "price": 99,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fpromo-vysh-05-2025%2Fkyiv-ta-inshi%2Fcherryrolls-sale-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_2",
+    "name": "Cherry Muffin",
+    "description": "",
+    "weight": "80",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fmafiny%2Fmuffin-cherry-640x400.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_3",
+    "name": "Double Caramel Muffin",
+    "description": "",
+    "weight": "80",
+    "price": 55,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fmafiny%2Fmuffin-doublecaramel-640x400.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_4",
+    "name": "Cheesecake New York",
+    "description": "",
+    "weight": "130",
+    "price": 85,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FChizkeik%2Fcheesecake-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_5",
+    "name": "Chocolate Rolls",
+    "description": "",
+    "weight": "265",
+    "price": 123,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fchocoroll.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_6",
+    "name": "Cinnamon Bites (cranberry sauce 50g)",
+    "description": "",
+    "weight": "235",
+    "price": 99,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FCinnamon%20Bites%2FCranberry%2Fcinnamonbites-cranberrysauce-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard", "Double"]
+  },
+  {
+    "id": "starter_7",
+    "name": "Cinnamon Bites",
+    "description": "Sweet sauce (50g)",
+    "weight": "235",
+    "price": 99,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FCinnamon%20Bites%2FSweet%2Fcinnamonbites-sweetsauce-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard", "Double"]
+  },
+  {
+    "id": "starter_8",
+    "name": "Cranberry Sauce",
+    "description": "",
+    "weight": "40",
+    "price": 15,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FZhuravlynovyi%2Fpromo-05-2025%2Fpravky-promo%2Fsauces-cranberry-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["DIP"]
+  },
+  {
+    "id": "starter_9",
+    "name": "Pear and Cinnamon Breadsticks",
+    "description": "",
+    "weight": "310",
+    "price": 90,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fkhlibets%2Fnew%2Fbread-pearcinnamon-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_10",
+    "name": "Banana, Chocolate & Cherry Breadsticks",
+    "description": "",
+    "weight": "410",
+    "price": 135,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fkhlibets%2Fnew%2Fbread-cherrybananachocolate-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_11",
+    "name": "Lava Cake",
+    "description": "",
+    "weight": "96",
+    "price": 102,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Flava%2F01-06%2Flavacake-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_12",
+    "name": "Cinnamon Rolls",
+    "description": "",
+    "weight": "300",
+    "price": 123,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fproduct-imags-rolls-2300x1533pix-07b-07.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_13",
+    "name": "Cream Cheese Rolls",
+    "description": "",
+    "weight": "258",
+    "price": 123,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkrem-roly.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_14",
+    "name": "Sweet Pizza",
+    "description": "Mozzarella, Banana, Almond, Chocolate paste, Sweet sauce, Cherry crust",
+    "weight": "588",
+    "price": 295,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSweet%2F06_06%2Fpizza-sweet-website-main.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_15",
+    "name": "Sweet Sauce 50g",
+    "description": "Desserts",
+    "weight": "",
+    "price": 30,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-sweet.webp&w=1560&q=75",
+    "category": "Desserts",
+    "volume": ["DIP"]
+  },
+  {
+    "id": "starter_16",
+    "name": "White Ice Cream with Condensed Milk \"Try Vedmedi\"",
+    "description": "",
+    "weight": "100",
+    "price": 40,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F31_05%2Ficecream-whitemax-website-main.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_17",
+    "name": "Galaretka Ice Cream \"Try Vedmedi\"",
+    "description": "",
+    "weight": "80",
+    "price": 40,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F31_05%2Ficecream-galaretka-website-main.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_18",
+    "name": "Ice Cream Waffle Cup \"Cherry\"",
+    "description": "",
+    "weight": "75",
+    "price": 40,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F26_04%2Fdominos-berry-main.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_19",
+    "name": "White Ice Cream in Waffle Cup \"Try Vedmedi\"",
+    "description": "",
+    "weight": "100",
+    "price": 40,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2Ficecream-trivedmedi-bilewaffer.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_20",
+    "name": "Kashtan Vanilla Ice Cream",
+    "description": "",
+    "weight": "70",
+    "price": 53,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F26_04%2Fdominos-kashtan-main.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_21",
+    "name": "Cotton Candy Ice Cream \"Try Vedmedi\"",
+    "description": "",
+    "weight": "70",
+    "price": 40,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2Ficecream-trivedmedi-cottoncandy.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_22",
+    "name": "Éclair Brownie Ice Cream Cone \"Monaco\"",
+    "description": "",
+    "weight": "100",
+    "price": 60,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Fnew%2Ficecream-monaco-eclairbrownie.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_23",
+    "name": "Mango Sorbet Ice Cream \"Try Vedmedi\"",
+    "description": "",
+    "weight": "320",
+    "price": 150,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Ficecream-trivedmedi-mango.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  },
+  {
+    "id": "starter_24",
+    "name": "Strawberry Cheesecake Ice Cream \"Monaco Dessert\"",
+    "description": "",
+    "weight": "500",
+    "price": 220,
+    "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Ficecream-monaco-strawberrycheesecake.webp&w=1560&q=75",
+    "category": "Ice Cream",
+    "volume": ["Standard"]
+  }
+]

@@ -21,7 +21,7 @@ import { AppFonts } from "../../styles/fonts";
 import CardTags from "../tags/CardTags";
 import AppText from "../texts/AppText";
 
-export interface Sides {
+export interface Starters {
   id: string;
   name: string;
   image: string;
@@ -32,64 +32,66 @@ export interface Sides {
   tags: string[];
 }
 
-interface SidesCardProps {
-  sides: Sides;
+interface StartersCardProps {
+  starters: Starters;
 }
 
-const SidesCard: FC<SidesCardProps> = ({ sides }) => {
-  const [selected, setSelected] = useState(sides.volume[0]);
+const StartersCard: FC<StartersCardProps> = ({ starters }) => {
+  const [selected, setSelected] = useState(starters.volume[0]);
 
   const dispatch = useDispatch();
   const item = useSelector((state: RootState) =>
-    state.cart.items.find((i) => i.id === sides.id)
+    state.cart.items.find((i) => i.id === starters.id)
   );
 
   return (
     <View style={styles.container}>
-      <View key={sides.id} style={styles.card}>
-        {sides.tags && sides.tags.length > 0 && <CardTags tags={sides.tags} />}
+      <View key={starters.id} style={styles.card}>
+        {starters.tags && starters.tags.length > 0 && (
+          <CardTags tags={starters.tags} />
+        )}
         <View>
           <Image
-            source={{ uri: sides.image }}
+            source={{ uri: starters.image }}
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.weight}>{sides.weight} г*</Text>
+          <Text style={styles.weight}>{starters.weight} г*</Text>
         </View>
         <View style={styles.bottomPart}>
-          <AppText style={styles.title}>{sides.name}</AppText>
-          {sides.description && (
-            <AppText style={styles.description}>{sides.description}</AppText>
+          <AppText style={styles.title}>{starters.name}</AppText>
+          {starters.description && (
+            <AppText style={styles.description}>{starters.description}</AppText>
           )}
           <View
             style={{ flexDirection: "row", gap: s(10), paddingVertical: s(20) }}
           >
-            {sides.volume.map((side, index) => (
+            {starters.volume.map((starter, index) => (
               <Pressable
                 key={index}
                 style={[
                   styles.button,
-                  selected === side && styles.selectedButton,
+                  selected === starter && styles.selectedButton,
                 ]}
-                onPress={() => setSelected(side)}
+                onPress={() => setSelected(starter)}
               >
                 <AppText
                   style={[
                     styles.buttonText,
-                    selected === side && styles.selectedText,
+                    selected === starter && styles.selectedText,
                   ]}
                 >
-                  {side}
+                  {starter}
                 </AppText>
               </Pressable>
             ))}
           </View>
           <View style={styles.floor}>
-            <AppText style={styles.price}>{sides.price}.00 грн</AppText>
+            <AppText style={styles.price}>{starters.price}.00 грн</AppText>
             {!item ? (
               <Pressable
                 style={styles.addCartBtn}
-                onPress={() => dispatch(addToCart(sides))}
+                onPress={() => dispatch(addToCart(starters))}
               >
                 <Ionicons
                   name="cart-outline"
@@ -101,13 +103,13 @@ const SidesCard: FC<SidesCardProps> = ({ sides }) => {
             ) : (
               <View style={styles.countItemBtn}>
                 <Pressable
-                  onPress={() => dispatch(decrementQty({ id: sides.id }))}
+                  onPress={() => dispatch(decrementQty({ id: starters.id }))}
                 >
                   <AntDesign name="minus" size={16} color="black" />
                 </Pressable>
                 <Text>{item.qty}</Text>
                 <Pressable
-                  onPress={() => dispatch(incrementQty({ id: sides.id }))}
+                  onPress={() => dispatch(incrementQty({ id: starters.id }))}
                 >
                   <AntDesign name="plus" size={16} color="black" />
                 </Pressable>
@@ -224,4 +226,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SidesCard;
+export default StartersCard;

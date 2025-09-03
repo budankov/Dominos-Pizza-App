@@ -3,216 +3,240 @@
     "id": "starter_1",
     "name": "Вишневі роли",
     "description": "",
-    "weight": "290 г*",
+    "weight": "290",
     "price": 99,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fpromo-vysh-05-2025%2Fkyiv-ta-inshi%2Fcherryrolls-sale-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_2",
     "name": "Мафін черрі",
     "description": "",
-    "weight": "80 г*",
+    "weight": "80",
     "price": 55,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fmafiny%2Fmuffin-cherry-640x400.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_3",
     "name": "Мафін дабл карамель",
     "description": "",
-    "weight": "80 г*",
+    "weight": "80",
     "price": 55,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fmafiny%2Fmuffin-doublecaramel-640x400.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_4",
     "name": "Чизкейк «Нью-Йорк»",
     "description": "",
-    "weight": "130 г*",
+    "weight": "130",
     "price": 85,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FChizkeik%2Fcheesecake-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_5",
     "name": "Шоколадні роли",
     "description": "",
-    "weight": "265 г*",
+    "weight": "265",
     "price": 123,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fchocoroll.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_6",
     "name": "Байтси з корицею (журавлиновий соус 50г)",
     "description": "",
-    "weight": "235 г*",
+    "weight": "235",
     "price": 99,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FCinnamon%20Bites%2FCranberry%2Fcinnamonbites-cranberrysauce-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт", "Подвійна"]
   },
   {
     "id": "starter_7",
     "name": "Байтси з корицею",
     "description": "Соус солодкий (50г)",
-    "weight": "235 г*",
+    "weight": "235",
     "price": 99,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FKhlibtsi%2FCinnamon%20Bites%2FSweet%2Fcinnamonbites-sweetsauce-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт", "Подвійна"]
   },
   {
     "id": "starter_8",
     "name": "Журавлиновий соус",
     "description": "",
-    "weight": "40 г*",
+    "weight": "40",
     "price": 15,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2FZhuravlynovyi%2Fpromo-05-2025%2Fpravky-promo%2Fsauces-cranberry-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["DIP"]
   },
   {
     "id": "starter_9",
     "name": "Хлібці з грушею та корицею",
     "description": "",
-    "weight": "310 г*",
+    "weight": "310",
     "price": 90,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fkhlibets%2Fnew%2Fbread-pearcinnamon-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_10",
     "name": "Хлібці з бананом, шоколадом та вишнею",
     "description": "",
-    "weight": "410 г*",
+    "weight": "410",
     "price": 135,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Fkhlibets%2Fnew%2Fbread-cherrybananachocolate-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_11",
     "name": "Лава кейк",
     "description": "",
-    "weight": "96 г*",
+    "weight": "96",
     "price": 102,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2Flava%2F01-06%2Flavacake-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_12",
     "name": "Сіннамон роли",
     "description": "",
-    "weight": "300 г*",
+    "weight": "300",
     "price": 123,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fproduct-imags-rolls-2300x1533pix-07b-07.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_13",
     "name": "Крем-сир роли",
     "description": "",
-    "weight": "258 г*",
+    "weight": "258",
     "price": 123,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2Fkrem-roly.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_14",
     "name": "Піца солодка",
     "description": "Моцарела, Банан, Мигдаль, Шоко паста, Солодкий соус, Вишневий бортик",
-    "weight": "588 г*",
+    "weight": "588",
     "price": 295,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSweet%2F06_06%2Fpizza-sweet-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_15",
     "name": "Соус солодкий 50г",
-    "description": "",
+    "description": "Десерти",
     "weight": "",
     "price": 30,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FSousy%2Fsauce-40g-sweet.webp&w=1560&q=75",
-    "category": ""
+    "category": "Десерти",
+    "volume": ["DIP"]
   },
   {
     "id": "starter_16",
     "name": "Морозиво Біле зі згущеним молоком \"Три ведмеді\"",
     "description": "",
-    "weight": "100 г*",
+    "weight": "100",
     "price": 40,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F31_05%2Ficecream-whitemax-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_17",
     "name": "Морозиво Galaretka \"Три Ведмеді\"",
     "description": "",
-    "weight": "80 г*",
+    "weight": "80",
     "price": 40,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F31_05%2Ficecream-galaretka-website-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_18",
     "name": "Морозиво Вафельний стакан «Вишня»",
     "description": "",
-    "weight": "75 г*",
+    "weight": "75",
     "price": 40,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F26_04%2Fdominos-berry-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_19",
     "name": "Морозиво біле у вафельному стаканчику «Три Ведмеді»",
     "description": "",
-    "weight": "100 г*",
+    "weight": "100",
     "price": 40,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2Ficecream-trivedmedi-bilewaffer.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_20",
     "name": "Морозиво Каштан Ваніль",
     "description": "",
-    "weight": "70 г*",
+    "weight": "70",
     "price": 53,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2F26_04%2Fdominos-kashtan-main.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_21",
     "name": "Морозиво «Цукрова вата» «Три Ведмеді»",
     "description": "",
-    "weight": "70 г*",
+    "weight": "70",
     "price": 40,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FIceCream%2Ficecream-trivedmedi-cottoncandy.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_22",
     "name": "Морозиво «Еклер-брауні» у вафельному ріжку «Monaco»",
     "description": "",
-    "weight": "100 г*",
+    "weight": "100",
     "price": 60,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Fnew%2Ficecream-monaco-eclairbrownie.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_23",
     "name": "Морозиво сорбет манго \"Три Ведмеді\"",
     "description": "",
-    "weight": "320 г*",
+    "weight": "320",
     "price": 150,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Ficecream-trivedmedi-mango.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   },
   {
     "id": "starter_24",
     "name": "Морозиво \"Полуничний чизкейк\" \"Monaco Dessert\"",
     "description": "",
-    "weight": "500 г*",
+    "weight": "500",
     "price": 220,
     "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FDeserty%2FMorozyvo%2Ficecream-monaco-strawberrycheesecake.webp&w=1560&q=75",
-    "category": ""
+    "category": "Морозиво",
+    "volume": ["Стандарт"]
   }
 ]
