@@ -30,5 +30,19 @@
   "location_title": "Де ви знаходитесь?",
 
   "pizzaDough": "Тісто",
-  "pizzaCrust": "Борти"
+  "pizzaCrust": "Борти",
+
+  "filter_title": "Фільтр",
+  "filter_clear": "Очистити",
+  "filter_apply": "Фільтрувати",
+
+  "sort_default": "Сортувати",
+  "sort_price_asc": "Ціна низька-висока",
+  "sort_price_desc": "Ціна висока-низька",
+
+  "starters_weight_unit": "г*",
+  "add_to_cart": "В кошик",
+  "replace_ingredients": " Замінити інгрідієнти",
+  "currency": "грн",
+  "price_title": "Ціна"
 }

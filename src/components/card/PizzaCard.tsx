@@ -1,4 +1,5 @@
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { t } from "i18next";
 import React, { FC } from "react";
 import {
   Dimensions,
@@ -53,7 +54,9 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.weight}>{pizza.weight} г*</Text>
+          <Text style={styles.weight}>
+            {pizza.weight} {t("starters_weight_unit")}
+          </Text>
         </View>
         <View style={styles.bottomPart}>
           <AppText style={styles.title}>{pizza.name}</AppText>
@@ -63,12 +66,14 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
           <AppButton
             style={styles.changeIngredientsBtn}
             styleTitle={styles.changeIngredientsTitle}
-            title=" Замінити інгрідієнти"
+            title={t("replace_ingredients")}
             onPress={() => console.log("В розробці")}
           />
           <PizzaCartRadioGroup />
           <View style={styles.floor}>
-            <AppText style={styles.price}>{pizza.price}.00 грн</AppText>
+            <AppText style={styles.price}>
+              {pizza.price}.00 {t("currency")}
+            </AppText>
             {!item ? (
               <Pressable
                 style={styles.addCartBtn}
@@ -79,7 +84,7 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
                   size={s(32)}
                   color={AppColors.textColorWhite}
                 />
-                <Text style={styles.addCartBtnText}>В кошик</Text>
+                <Text style={styles.addCartBtnText}>{t("add_to_cart")}</Text>
               </Pressable>
             ) : (
               <View style={styles.countItemBtn}>

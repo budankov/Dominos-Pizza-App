@@ -63,7 +63,7 @@ const FilterPizza: FC<FilterPizzaProps> = ({
           onPress={() => SheetManager.show("filterSheet")}
         >
           <FontAwesome5 name="filter" size={24} color={"#636363"} />
-          <Text style={styles.filterText}>Фільтр</Text>
+          <Text style={styles.filterText}>{t("filter_title")}</Text>
         </Pressable>
       </View>
 
@@ -71,7 +71,7 @@ const FilterPizza: FC<FilterPizzaProps> = ({
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.sheetContainer}>
             <View style={styles.sheetHeader}>
-              <AppText style={styles.title}>Фільтр</AppText>
+              <AppText style={styles.title}>{t("filter_title")}</AppText>
               <Pressable
                 onPress={() => SheetManager.hide("filterSheet")}
                 style={styles.closeBtn}
@@ -102,14 +102,14 @@ const FilterPizza: FC<FilterPizzaProps> = ({
           </View>
           <View style={styles.buttonContainer}>
             <AppButton
-              title="Очистити"
+              title={t("filter_clear")}
               backgroundColor={AppColors.buttonLightGray}
               textColor={AppColors.textColor}
               styleTitle={{ fontSize: s(15) }}
               onPress={handleReset}
             />
             <AppButton
-              title="Фільтрувати"
+              title={t("filter_apply")}
               onPress={handleApply}
               styleTitle={{ fontSize: s(15) }}
             />

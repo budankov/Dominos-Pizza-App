@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { t } from "i18next";
 import React, { FC, useState } from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import {
@@ -17,17 +18,17 @@ interface SortProps {
 }
 
 const Sort: FC<SortProps> = ({ onSort, reset }) => {
-  const [selected, setSelected] = useState<string>("Сортувати");
+  const [selectedKey, setSelectedKey] = useState<string>("sort_default");
 
   const screenWidth = Dimensions.get("window").width;
   const menuWidth = screenWidth * 0.5 - s(18);
 
-  const handleSelect = (type: "priceAsc" | "priceDesc", label: string) => {
-    if (selected === label) {
+  const handleSelect = (type: "priceAsc" | "priceDesc", key: string) => {
+    if (selectedKey === key) {
       reset();
-      setSelected("Сортувати");
+      setSelectedKey("sort_default");
     } else {
-      setSelected(label);
+      setSelectedKey(key);
       onSort(type);
     }
   };
@@ -37,7 +38,7 @@ const Sort: FC<SortProps> = ({ onSort, reset }) => {
       <Menu>
         <MenuTrigger style={styles.menu}>
           <Text numberOfLines={1} ellipsizeMode="tail" style={styles.menuTitle}>
-            {selected}
+            {t(selectedKey)}
           </Text>
           <Ionicons name="chevron-down" size={16} color={"#808080"} />
         </MenuTrigger>
@@ -48,23 +49,23 @@ const Sort: FC<SortProps> = ({ onSort, reset }) => {
         >
           <MenuOption
             style={
-              selected === "Ціна низька-висока" && {
+              selectedKey === "sort_price_asc" && {
                 backgroundColor: AppColors.buttonFilterChooseGray,
               }
             }
-            onSelect={() => handleSelect("priceAsc", "Ціна низька-висока")}
+            onSelect={() => handleSelect("priceAsc", "sort_price_asc")}
           >
-            <Text style={styles.optionalTitle}>Ціна низька-висока</Text>
+            <Text style={styles.optionalTitle}>{t("sort_price_asc")}</Text>
           </MenuOption>
           <MenuOption
             style={
-              selected === "Ціна висока-низька" && {
+              selectedKey === "sort_price_desc" && {
                 backgroundColor: AppColors.buttonFilterChooseGray,
               }
             }
-            onSelect={() => handleSelect("priceDesc", "Ціна висока-низька")}
+            onSelect={() => handleSelect("priceDesc", "sort_price_desc")}
           >
-            <Text style={styles.optionalTitle}>Ціна висока-низька</Text>
+            <Text style={styles.optionalTitle}>{t("sort_price_desc")}</Text>
           </MenuOption>
         </MenuOptions>
       </Menu>

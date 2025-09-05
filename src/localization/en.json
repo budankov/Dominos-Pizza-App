@@ -30,5 +30,19 @@
   "location_title": "Where are you located?",
 
   "pizzaDough": "Dough",
-  "pizzaCrust": "Crust"
+  "pizzaCrust": "Crust",
+
+  "filter_title": "Filter",
+  "filter_clear": "Clear",
+  "filter_apply": "Apply",
+
+  "sort_default": "Sort",
+  "sort_price_asc": "Price Low to High",
+  "sort_price_desc": "Price High to Low",
+
+  "starters_weight_unit": "g*",
+  "add_to_cart": "Add to Cart",
+  "replace_ingredients": " Replace Ingredients",
+  "currency": "UAH",
+  "price_title": "Price"
 }

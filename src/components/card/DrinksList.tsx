@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { s, vs } from "react-native-size-matters";
-import {
-  default as drinksArrEn,
-  default as drinksArrUa,
-} from "../../data/drinks-ua.json";
+import drinksArrEn from "../../data/drinks-en.json";
+import drinksArrUa from "../../data/drinks-ua.json";
 import { AppFonts } from "../../styles/fonts";
 import Sort from "../filter/Sort";
 import DrinksCard from "./DrinksCard";
@@ -21,6 +19,10 @@ const DrinksList = () => {
   );
 
   const drinks = language === "en" ? drinksArrEn : drinksArrUa;
+
+  useEffect(() => {
+    setFilteredDrinks(drinks);
+  }, [language]);
 
   const sections = Object.values(
     filteredDrinks.reduce((acc: Record<string, any>, drink: any) => {

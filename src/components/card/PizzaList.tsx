@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
@@ -16,12 +16,13 @@ import PizzaCard from "./PizzaCard";
 
 const PizzaList = () => {
   const { i18n } = useTranslation();
-  const language = i18n.language; // "en" або "ua"
+  const language = i18n.language;
 
   const [mode, setMode] = useState<"section" | "flat">("section");
   const [filteredPizzas, setFilteredPizzas] = useState(
     language === "en" ? pizzaArrEn : pizzaArrUa
   );
+
   const [selectedSize, setSelectedSize] = useState<
     "standard" | "large" | "xlarge" | "xxl"
   >("standard");
@@ -30,6 +31,10 @@ const PizzaList = () => {
   const tagsData = language === "en" ? pizzaTagsEn : pizzaTagsUa;
   const ingredientsData =
     language === "en" ? pizzaIngredientsEn : pizzaIngredientsUa;
+
+  useEffect(() => {
+    setFilteredPizzas(pizzas);
+  }, [language]);
 
   const prices = filteredPizzas.map((p) => p.price);
   const minPrice = Math.min(...prices);
@@ -69,7 +74,6 @@ const PizzaList = () => {
 
     let result = pizzas;
 
-    // Фільтр по ціні
     result = result.filter(
       (p) => p.price >= filters.low && p.price <= filters.high
     );
@@ -82,7 +86,6 @@ const PizzaList = () => {
       .map((ing) => ingredientsData.ingredients[ing])
       .filter(Boolean) as string[];
 
-    // OR-фільтр: тег або інгредієнт
     if (
       selectedTagsLocalized.length > 0 ||
       selectedIngredientsLocalized.length > 0

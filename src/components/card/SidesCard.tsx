@@ -1,4 +1,5 @@
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { t } from "i18next";
 import React, { FC, useState } from "react";
 import {
   Dimensions,
@@ -54,7 +55,9 @@ const SidesCard: FC<SidesCardProps> = ({ sides }) => {
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.weight}>{sides.weight} г*</Text>
+          <Text style={styles.weight}>
+            {sides.weight} {t("starters_weight_unit")}
+          </Text>
         </View>
         <View style={styles.bottomPart}>
           <AppText style={styles.title}>{sides.name}</AppText>
@@ -85,7 +88,9 @@ const SidesCard: FC<SidesCardProps> = ({ sides }) => {
             ))}
           </View>
           <View style={styles.floor}>
-            <AppText style={styles.price}>{sides.price}.00 грн</AppText>
+            <AppText style={styles.price}>
+              {sides.price}.00 {t("currency")}
+            </AppText>
             {!item ? (
               <Pressable
                 style={styles.addCartBtn}
@@ -96,7 +101,7 @@ const SidesCard: FC<SidesCardProps> = ({ sides }) => {
                   size={s(32)}
                   color={AppColors.textColorWhite}
                 />
-                <Text style={styles.addCartBtnText}>В кошик</Text>
+                <Text style={styles.addCartBtnText}>{t("add_to_cart")}</Text>
               </Pressable>
             ) : (
               <View style={styles.countItemBtn}>

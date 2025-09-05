@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dimensions, SectionList, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
@@ -19,6 +19,10 @@ const StartersList = () => {
   );
 
   const starters = language === "en" ? startersArrEn : startersArrUa;
+
+  useEffect(() => {
+    setFilteredStarters(starters);
+  }, [language]);
 
   const sections = Object.values(
     filteredStarters.reduce((acc: Record<string, any>, drink: any) => {

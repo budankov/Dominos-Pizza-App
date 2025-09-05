@@ -1,4 +1,5 @@
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
+import { t } from "i18next";
 import React, { FC, useState } from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { s } from "react-native-size-matters";
@@ -28,7 +29,7 @@ const PriceFilter: FC<PriceFilterProps> = ({
 
   return (
     <>
-      <Text style={styles.title}>Ціна</Text>
+      <Text style={styles.title}>{t("price_title")}</Text>
       <View style={styles.labelContainer}>
         <Text style={styles.sideLabel}>{values[0]}</Text>
         <Text style={styles.sideLabel}>{values[1]}</Text>
