@@ -13,16 +13,19 @@ import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
 import MasterCardIcon from "../assets/icons/MasterCardIcon";
 import PizzaTrackerIcon from "../assets/icons/PizzaTrackerIcon";
 import VisaIcon from "../assets/icons/VisaIcon";
+import SingInScreen from "../components/auth/SingInScreen";
 import AppButton from "../components/buttons/AppButton";
 import DrawerHeaderClose from "../components/close-drawer/DrawerHeaderClose";
 import LanguageDropDownMenu from "../components/language/LanguageDropDownMenu";
 import LocationButton from "../components/location/LocationButton";
+import { useModal } from "../components/modal/ModalContext";
 import AppText from "../components/texts/AppText";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   const { t } = useTranslation();
+  const { showModal } = useModal();
 
   return (
     <DrawerContentScrollView
@@ -49,7 +52,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           />
           <AppButton
             title={t("drawer_sign_in")}
-            onPress={() => {}}
+            onPress={() => showModal(<SingInScreen />)}
             style={styles.singInButton}
             styleTitle={styles.singInButtonText}
           />

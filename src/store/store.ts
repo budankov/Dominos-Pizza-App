@@ -13,12 +13,14 @@ import {
   persistedLanguageSlice,
   persistedLocationSlice,
 } from "./persisted/persistConfig";
+import userSlice from "./reducers/userSlice";
 
 export const store = configureStore({
   reducer: {
     location: persistedLocationSlice,
     language: persistedLanguageSlice,
     cart: persistedCartSlice,
+    userSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

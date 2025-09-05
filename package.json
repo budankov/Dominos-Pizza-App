@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-async-storage/async-storage": "^2.1.2",
     "@react-navigation/bottom-tabs": "^7.4.5",
@@ -17,16 +18,20 @@
     "@react-navigation/stack": "^7.4.5",
     "@reduxjs/toolkit": "^2.8.2",
     "expo": "53.0.22",
+    "expo-checkbox": "~4.1.4",
     "expo-font": "^13.3.2",
     "expo-status-bar": "~2.2.3",
     "expo-updates": "~0.28.17",
     "expo-web-browser": "^14.2.0",
+    "firebase": "^12.2.1",
     "i18next": "^25.3.6",
     "prop-types": "^15.8.1",
     "react": "19.0.0",
+    "react-hook-form": "^7.62.0",
     "react-i18next": "^15.6.1",
     "react-native": "0.79.5",
     "react-native-actions-sheet": "^0.9.7",
+    "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-popup-menu": "^0.18.0",
     "react-native-reanimated": "~3.17.4",
@@ -37,7 +42,7 @@
     "react-native-svg": "^15.11.2",
     "react-redux": "^9.2.0",
     "redux-persist": "^6.0.0",
-    "expo-checkbox": "~4.1.4"
+    "yup": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
