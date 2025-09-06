@@ -9,12 +9,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyADWUlEpQSb8iWvYFEVPDkKZxWPYmJ2D5A",
-  authDomain: "smart-e-commerce-app-1463c.firebaseapp.com",
-  projectId: "smart-e-commerce-app-1463c",
-  storageBucket: "smart-e-commerce-app-1463c.firebasestorage.app",
-  messagingSenderId: "1058378613913",
-  appId: "1:1058378613913:web:5aeec08321a7a20c37a408",
+  apiKey: "AIzaSyBoK9qUQMtbFQ5XXFetwytAao-nQ0rN5iU",
+  authDomain: "dominos-pizza-app-6b746.firebaseapp.com",
+  projectId: "dominos-pizza-app-6b746",
+  storageBucket: "dominos-pizza-app-6b746.firebasestorage.app",
+  messagingSenderId: "321565001940",
+  appId: "1:321565001940:web:181340d841b35e98501341",
 };
 
 const app = initializeApp(firebaseConfig);

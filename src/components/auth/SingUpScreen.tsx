@@ -1,6 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigation } from "@react-navigation/native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -10,17 +10,17 @@ import { s, vs } from "react-native-size-matters";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
 import AppButton from "../../components/buttons/AppButton";
-import AppText from "../../components/texts/AppText";
 import AppSaveView from "../../components/views/AppSaveView";
 import { auth } from "../../config/firebase";
 import { setUserData } from "../../store/reducers/userSlice";
-import { AppColors } from "../../styles/colors";
 import AppTextInputController from "../inputs/AppTextInputController";
+import { useModal } from "../modal/ModalContext";
 
 type FormData = yup.InferType<typeof schema>;
 
 const SingUpScreen = () => {
   const { t } = useTranslation();
+  const { hideModal } = useModal();
 
   const schema = yup
     .object({
@@ -54,11 +54,19 @@ const SingUpScreen = () => {
         data.password
       );
 
+      await updateProfile(userCredential.user, {
+        displayName: data.userName,
+      });
+
       Alert.alert(t("sign_up_success"));
-      //   navigation.navigate("MainAppBottomTabs");
+      hideModal();
+
+      const currentUser = auth.currentUser;
 
       const userDataObj = {
-        uid: userCredential.user.uid,
+        uid: currentUser?.uid,
+        email: currentUser?.email,
+        userName: currentUser?.displayName,
       };
 
       dispatch(setUserData(userDataObj));
@@ -99,16 +107,9 @@ const SingUpScreen = () => {
         placeholder={t("sign_up_password_placeholder")}
         secureTextEntry
       />
-      <AppText style={styles.appName}>Smart E-Commerce</AppText>
       <AppButton
         title={t("sign_up_create_account_button")}
         onPress={handleSubmit(onSingUpPress)}
-      />
-      <AppButton
-        title={t("sign_up_goto_signin_button")}
-        style={styles.singInButton}
-        textColor={AppColors.textColor}
-        // onPress={() => navigation.navigate("SingInScreen")}
       />
     </AppSaveView>
   );
@@ -118,15 +119,12 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: s(14),
+    backgroundColor: "#fff",
   },
   logo: {
     height: s(150),
     width: s(150),
     marginBottom: vs(30),
-  },
-  appName: {
-    fontSize: s(16),
-    marginBottom: vs(15),
   },
   singInButton: {
     backgroundColor: "#fff",

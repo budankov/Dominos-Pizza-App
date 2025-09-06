@@ -4,10 +4,18 @@ import {
   DrawerContentScrollView,
   DrawerItem,
 } from "@react-navigation/drawer";
+import { useNavigation } from "@react-navigation/native";
 import * as WebBrowser from "expo-web-browser";
-import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Linking, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Linking,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { s, vs } from "react-native-size-matters";
 import DominosPizzaLogoIcon from "../assets/icons/DominosPizzaLogoIcon";
 import MasterCardIcon from "../assets/icons/MasterCardIcon";
@@ -20,13 +28,49 @@ import LanguageDropDownMenu from "../components/language/LanguageDropDownMenu";
 import LocationButton from "../components/location/LocationButton";
 import { useModal } from "../components/modal/ModalContext";
 import AppText from "../components/texts/AppText";
+import { auth } from "../config/firebase";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
+  const navigation = useNavigation();
   const { t } = useTranslation();
   const { showModal } = useModal();
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [userData, setUserData] = useState<object | null>(null);
+
+  console.log(userData);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (userDataFromFireBase) => {
+      if (userDataFromFireBase) {
+        console.log("User is Signed In");
+        setUserData(userDataFromFireBase);
+      } else {
+        console.log("User is Signed Out");
+        setUserData(null);
+      }
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          flex: 1,
+          backgroundColor: "white",
+        }}
+      >
+        <ActivityIndicator size={"large"} color={AppColors.textColor} />
+      </View>
+    );
+  }
   return (
     <DrawerContentScrollView
       {...props}
@@ -50,12 +94,21 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             markerSize={18}
             titleSize={22}
           />
-          <AppButton
-            title={t("drawer_sign_in")}
-            onPress={() => showModal(<SingInScreen />)}
-            style={styles.singInButton}
-            styleTitle={styles.singInButtonText}
-          />
+          {userData ? (
+            <AppButton
+              title={(userData as any).displayName || "User"}
+              onPress={() => navigation.navigate("ProfileScreen")}
+              style={styles.singInButton}
+              styleTitle={styles.singInButtonText}
+            />
+          ) : (
+            <AppButton
+              title={t("drawer_sign_in")}
+              onPress={() => showModal(<SingInScreen />)}
+              style={styles.singInButton}
+              styleTitle={styles.singInButtonText}
+            />
+          )}
         </View>
         <DrawerItem
           label={t("drawer_home")}

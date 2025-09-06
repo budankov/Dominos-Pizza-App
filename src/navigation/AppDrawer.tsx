@@ -10,6 +10,7 @@ import HomeScreen from "../screens/home/HomeScreen";
 import PizzaMakerScreen from "../screens/maker/PizzaMakerScreen";
 import NewsScreen from "../screens/news/NewsScreen";
 import PizzeriasScreen from "../screens/pizzerias/PizzeriasScreen";
+import ProfileScreen from "../screens/profile/ProfileScreen";
 import PromotionsScreen from "../screens/promotions/PromotionsScreen";
 import LeaveReviewScreen from "../screens/review/LeaveReviewScreen";
 import PizzaTrackerScreen from "../screens/tracker/PizzaTrackerScreen";
@@ -47,6 +48,7 @@ export default function AppDrawer() {
         <Drawer.Screen name="Promotions" component={PromotionsScreen} />
         <Drawer.Screen name="News" component={NewsScreen} />
         <Drawer.Screen name="CartScreen" component={CartScreen} />
+        <Drawer.Screen name="ProfileScreen" component={ProfileScreen} />
       </Drawer.Navigator>
     </AppSaveView>
   );

@@ -15,11 +15,15 @@ import { auth } from "../../config/firebase";
 import { setUserData } from "../../store/reducers/userSlice";
 import { AppColors } from "../../styles/colors";
 import AppTextInputController from "../inputs/AppTextInputController";
+import { useModal } from "../modal/ModalContext";
+import SingUpScreen from "./SingUpScreen";
 
 type FormData = yup.InferType<typeof schema>;
 
 const SingInScreen = () => {
+  const navigation = useNavigation();
   const { t } = useTranslation();
+  const { showModal, hideModal } = useModal();
 
   const schema = yup
     .object({
@@ -38,7 +42,6 @@ const SingInScreen = () => {
     resolver: yupResolver(schema),
   });
 
-  const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const onLoginPress = async (data: FormData) => {
@@ -48,7 +51,8 @@ const SingInScreen = () => {
         data.email,
         data.password
       );
-      //   navigation.navigate("MainAppBottomTabs");
+      hideModal();
+      navigation.navigate("ProfileScreen");
 
       const userDataObj = {
         uid: userCredential.user.uid,
@@ -93,7 +97,7 @@ const SingInScreen = () => {
         title={t("sign_in_signup_button")}
         style={styles.registerButton}
         textColor="#fff"
-        // onPress={() => navigation.navigate("SingUpScreen")}
+        onPress={() => showModal(<SingUpScreen />)}
       />
     </AppSaveView>
   );
