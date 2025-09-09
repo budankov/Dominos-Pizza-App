@@ -52,7 +52,7 @@ const SingInScreen = () => {
         data.password
       );
       hideModal();
-      navigation.navigate("ProfileScreen");
+      navigation.navigate("ProfileStack");
 
       const userDataObj = {
         uid: userCredential.user.uid,
