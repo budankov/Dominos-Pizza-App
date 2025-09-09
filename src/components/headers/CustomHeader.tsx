@@ -1,6 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerHeaderProps } from "@react-navigation/drawer";
-import { DrawerActions } from "@react-navigation/native";
+import {
+  DrawerActions,
+  getFocusedRouteNameFromRoute,
+} from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { s } from "react-native-size-matters";
@@ -10,13 +13,16 @@ import LocationButton from "../location/LocationButton";
 import SocialMediaDropDownMenu from "../social-media/SocialMediaDropDownMenu";
 
 const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
-  const isOnMainTabs = route.name === "MainTabs";
+  const currentRouteName = getFocusedRouteNameFromRoute(route) ?? route.name;
+
+  const isOnRoot =
+    currentRouteName === "Home" || currentRouteName === "MainTabs";
 
   const handleLeftPress = () => {
-    if (isOnMainTabs) {
+    if (isOnRoot) {
       navigation.dispatch(DrawerActions.toggleDrawer());
-    } else {
-      navigation.navigate("MainTabs", { screen: "Home" });
+    } else if (navigation.canGoBack()) {
+      navigation.goBack();
     }
   };
 
@@ -24,7 +30,7 @@ const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={handleLeftPress}>
         <Ionicons
-          name={isOnMainTabs ? "menu-outline" : "arrow-back-outline"}
+          name={isOnRoot ? "menu-outline" : "arrow-back-outline"}
           size={28}
           color="#fff"
         />

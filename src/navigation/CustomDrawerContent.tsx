@@ -97,7 +97,11 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           {userData ? (
             <AppButton
               title={(userData as any).displayName || "User"}
-              onPress={() => navigation.navigate("ProfileStack")}
+              onPress={() =>
+                navigation.navigate("ProfileStack", {
+                  screen: "ProfileMainScreen",
+                })
+              }
               style={styles.singInButton}
               styleTitle={styles.singInButtonText}
             />
