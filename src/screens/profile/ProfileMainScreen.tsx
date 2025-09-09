@@ -2,8 +2,20 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import { signOut } from "firebase/auth";
 import { useTranslation } from "react-i18next";
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { s } from "react-native-size-matters";
 import { auth } from "../../config/firebase";
+
+import {
+  AntDesign,
+  Entypo,
+  Feather,
+  FontAwesome,
+  Ionicons,
+  MaterialCommunityIcons,
+  SimpleLineIcons,
+} from "@expo/vector-icons";
+import { AppFonts } from "../../styles/fonts";
 
 const ProfileMainScreen = () => {
   const { t } = useTranslation();
@@ -19,64 +31,168 @@ const ProfileMainScreen = () => {
   };
 
   return (
-    <View style={{ paddingHorizontal: 14 }}>
-      <Text>ProfileMainScreen</Text>
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <View style={styles.profileImg}>
+          <FontAwesome name="user-circle-o" size={50} color="#6E6D6E" />
+        </View>
+        <View>
+          <Text style={styles.profileNickname}>Костянтин</Text>
+          <Text style={styles.profileBonus}>0 бонусів на рахунку</Text>
+        </View>
+      </View>
       <View style={styles.navList}>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileScreen")}
         >
-          <Text>Профіль</Text>
+          <View style={styles.navLinkItem}>
+            <Feather name="user" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Профіль</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileGroupScreen")}
         >
-          <Text>Групи</Text>
+          <View style={styles.navLinkItem}>
+            <Feather name="users" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Групи</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileAddressScreen")}
         >
-          <Text>Адреси</Text>
+          <View style={styles.navLinkItem}>
+            <MaterialCommunityIcons
+              name="map-marker-circle"
+              size={24}
+              color="#6E6D6E"
+            />
+            <Text style={styles.navLinkTitle}>Адреси</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileOrdersScreen")}
         >
-          <Text>Замовлення</Text>
+          <View style={styles.navLinkItem}>
+            <SimpleLineIcons name="social-dropbox" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Замовлення</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileBankCardsScreen")}
         >
-          <Text>Банківські картки</Text>
+          <View style={styles.navLinkItem}>
+            <AntDesign name="creditcard" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Банківські картки</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
           style={styles.navLink}
           onPress={() => navigation.navigate("ProfileLeaveReviewScreen")}
         >
-          <Text>Залишити відгук</Text>
+          <View style={styles.navLinkItem}>
+            <AntDesign name="like2" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Залишити відгук</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
         <Pressable
-          style={styles.navLink}
+          style={[styles.navLink, { borderBottomWidth: 0 }]}
           onPress={() => navigation.navigate("ProfileMessage")}
         >
-          <Text>Повідомлення</Text>
+          <View style={styles.navLinkItem}>
+            <Ionicons name="notifications-outline" size={24} color="#6E6D6E" />
+            <Text style={styles.navLinkTitle}>Повідомлення</Text>
+          </View>
+          <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
       </View>
-      <Button title="Вийти" onPress={handleLogout} />
+      <Pressable style={styles.logOutBtn} onPress={handleLogout}>
+        <View style={styles.navLinkItem}>
+          <Feather name="log-out" size={30} color="#6E6D6E" />
+          <Text style={styles.logOutBtnTitle}>Вийти</Text>
+        </View>
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  headerContainer: {
+    paddingHorizontal: s(14),
+    flexDirection: "row",
+    gap: s(10),
+    alignItems: "center",
+    paddingVertical: s(30),
+    borderBottomWidth: s(16),
+    borderBottomColor: "#F1F1F1",
+  },
+  profileImg: {
+    width: s(50),
+    height: s(50),
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: s(50),
+    backgroundColor: "#CCCBCB",
+  },
+  profileNickname: {
+    fontSize: s(14),
+    fontFamily: AppFonts.Bold,
+  },
+  profileBonus: {
+    fontSize: s(12),
+    fontFamily: AppFonts.Regular,
+  },
   navList: {
+    paddingHorizontal: s(14),
+    paddingTop: s(7),
+    paddingBottom: s(35),
     flexDirection: "column",
     gap: 10,
   },
   navLink: {
-    fontSize: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: s(8),
+    borderBottomWidth: s(2),
+    borderBlockColor: "#F2F2F1",
+  },
+  navLinkItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: s(10),
+  },
+  navLinkTitle: {
+    fontSize: s(17),
+    fontFamily: AppFonts.Regular,
+    color: "#6B6B6B",
+  },
+  logOutBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: s(10),
+    paddingHorizontal: s(14),
+  },
+  logOutBtnTitle: {
+    fontSize: s(17),
+    fontFamily: AppFonts.Regular,
+    textDecorationLine: "underline",
+    color: "#6B6B6B",
   },
 });
 
