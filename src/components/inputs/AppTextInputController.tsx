@@ -12,6 +12,7 @@ interface AppTextInputControllerProps<T extends FieldValues> {
   placeholder: string;
   secureTextEntry?: boolean;
   keyboardType?: "default" | "email-address" | "numeric";
+  styleInput?: object[];
 }
 
 const AppTextInputController = <T extends FieldValues>({
@@ -21,6 +22,7 @@ const AppTextInputController = <T extends FieldValues>({
   placeholder,
   secureTextEntry,
   keyboardType,
+  styleInput,
 }: AppTextInputControllerProps<T>) => {
   return (
     <Controller
@@ -35,7 +37,7 @@ const AppTextInputController = <T extends FieldValues>({
             placeholder={placeholder}
             secureTextEntry={secureTextEntry}
             keyboardType={keyboardType}
-            style={error & styles.errorInput}
+            style={[styleInput, error ? styles.errorInput : undefined]}
           />
           {error && <AppText style={styles.textError}>{error.message}</AppText>}
         </>

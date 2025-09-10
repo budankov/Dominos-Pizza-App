@@ -9,6 +9,7 @@ interface AppTextInputProps {
   secureTextEntry?: boolean;
   keyboardType: "default" | "email-address" | "numeric";
   style?: ViewStyle | ViewStyle[];
+  placeholderTextColor?: string;
 }
 
 const AppTextInput: React.FC<AppTextInputProps> = ({
@@ -18,12 +19,14 @@ const AppTextInput: React.FC<AppTextInputProps> = ({
   secureTextEntry,
   keyboardType,
   style,
+  placeholderTextColor,
 }) => {
   return (
     <TextInput
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
+      placeholderTextColor={placeholderTextColor}
       secureTextEntry={secureTextEntry}
       keyboardType={keyboardType}
       style={[styles.input, style]}
