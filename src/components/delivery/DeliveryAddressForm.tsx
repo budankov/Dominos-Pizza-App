@@ -1,5 +1,4 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
     borderRadius: s(20),
     paddingHorizontal: s(14),
     paddingVertical: s(20),
-    backgroundColor: AppColors.buttonLightGray,
+    backgroundColor: AppColors.cartFormGrey,
   },
   title: {
     fontFamily: AppFonts.SemiBold,
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderRadius: 0,
     paddingHorizontal: 0,
-    backgroundColor: AppColors.buttonLightGray,
+    backgroundColor: AppColors.cartFormGrey,
     borderBottomColor: AppColors.darkGrey,
   },
 });

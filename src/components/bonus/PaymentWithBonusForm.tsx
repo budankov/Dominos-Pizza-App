@@ -1,6 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
@@ -19,7 +18,6 @@ import AppText from "../texts/AppText";
 
 type FormData = yup.InferType<typeof schema>;
 
-// Додаємо "---" з value 0
 const promotions = [
   { label: "---", value: 0 },
   { label: "Більше піц!", value: 30 },
@@ -119,7 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: s(20),
     paddingHorizontal: s(14),
     paddingVertical: s(20),
-    backgroundColor: AppColors.buttonLightGray,
+    backgroundColor: AppColors.cartFormGrey,
   },
   title: {
     fontFamily: AppFonts.Regular,

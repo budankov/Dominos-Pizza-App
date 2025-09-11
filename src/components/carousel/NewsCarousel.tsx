@@ -7,6 +7,7 @@ import Carousel, {
   Pagination,
 } from "react-native-reanimated-carousel";
 import { s } from "react-native-size-matters";
+import { scheduleOnRN } from "react-native-worklets";
 import newsArr from "../../data/promotions-ua.json";
 import { AppColors } from "../../styles/colors";
 
@@ -15,9 +16,11 @@ const NewsCarousel = () => {
   const ref = React.useRef<ICarouselInstance>(null);
 
   const onPressPagination = (index: number) => {
-    ref.current?.scrollTo({
-      count: index - progress.value,
-      animated: true,
+    scheduleOnRN(() => {
+      ref.current?.scrollTo({
+        count: index - progress.value,
+        animated: true,
+      });
     });
   };
 
