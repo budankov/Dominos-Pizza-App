@@ -6,8 +6,6 @@ import {
 } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
 import * as WebBrowser from "expo-web-browser";
-import { onAuthStateChanged } from "firebase/auth";
-import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
@@ -26,9 +24,9 @@ import AppButton from "../components/buttons/AppButton";
 import DrawerHeaderClose from "../components/close-drawer/DrawerHeaderClose";
 import LanguageDropDownMenu from "../components/language/LanguageDropDownMenu";
 import LocationButton from "../components/location/LocationButton";
-import { useModal } from "../components/modal/ModalContext";
 import AppText from "../components/texts/AppText";
-import { auth } from "../config/firebase";
+import { useAuth } from "../context/AuthContext";
+import { useModal } from "../context/ModalContext";
 import { AppColors } from "../styles/colors";
 import { AppFonts } from "../styles/fonts";
 
@@ -36,28 +34,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   const navigation = useNavigation();
   const { t } = useTranslation();
   const { showModal } = useModal();
+  const { user, loading } = useAuth();
 
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [userData, setUserData] = useState<object | null>(null);
-
-  console.log(userData);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (userDataFromFireBase) => {
-      if (userDataFromFireBase) {
-        console.log("User is Signed In");
-        setUserData(userDataFromFireBase);
-      } else {
-        console.log("User is Signed Out");
-        setUserData(null);
-      }
-      setIsLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  if (isLoading) {
+  if (loading) {
     return (
       <View
         style={{
@@ -67,14 +46,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           backgroundColor: "white",
         }}
       >
-        <ActivityIndicator size={"large"} color={AppColors.textColor} />
+        <ActivityIndicator size="large" color={AppColors.textColor} />
       </View>
     );
   }
   return (
     <DrawerContentScrollView
       {...props}
-      freact-react-i18next
       contentContainerStyle={{
         paddingTop: s(7),
       }}
@@ -94,9 +72,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
             markerSize={18}
             titleSize={22}
           />
-          {userData ? (
+          {user ? (
             <AppButton
-              title={(userData as any).displayName || "User"}
+              title={user.displayName || "User"}
               onPress={() =>
                 navigation.navigate("ProfileStack", {
                   screen: "ProfileMainScreen",

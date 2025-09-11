@@ -13,4 +13,5 @@ export const AppColors = {
   buttonCheckedBox: "#00668E",
   buttonCheckBoxBorder: "#1b6e83ff",
   cartFormGrey: "#F7F7F7",
+  cartBorderColor: "#D3D3D3",
 };

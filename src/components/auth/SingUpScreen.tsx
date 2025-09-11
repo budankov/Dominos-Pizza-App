@@ -1,7 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Alert, StyleSheet } from "react-native";
@@ -12,9 +11,9 @@ import * as yup from "yup";
 import AppButton from "../../components/buttons/AppButton";
 import AppSaveView from "../../components/views/AppSaveView";
 import { auth } from "../../config/firebase";
+import { useModal } from "../../context/ModalContext";
 import { setUserData } from "../../store/reducers/userSlice";
 import AppTextInputController from "../inputs/AppTextInputController";
-import { useModal } from "../modal/ModalContext";
 
 type FormData = yup.InferType<typeof schema>;
 

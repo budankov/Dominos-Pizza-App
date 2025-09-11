@@ -7,7 +7,8 @@ import { MenuProvider } from "react-native-popup-menu";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { ModalProvider } from "./src/components/modal/ModalContext";
+import { AuthProvider } from "./src/context/AuthContext";
+import { ModalProvider } from "./src/context/ModalContext";
 import i18n from "./src/localization/i18n";
 import AppDrawer from "./src/navigation/AppDrawer";
 import { persistor, store } from "./src/store/store";
@@ -36,12 +37,14 @@ export default function App() {
         <SafeAreaProvider>
           <I18nextProvider i18n={i18n}>
             <MenuProvider>
-              <NavigationContainer>
-                <FlashMessage position={"top"} statusBarHeight={50} />
-                <ModalProvider>
-                  <AppDrawer />
-                </ModalProvider>
-              </NavigationContainer>
+              <AuthProvider>
+                <NavigationContainer>
+                  <FlashMessage position={"top"} statusBarHeight={50} />
+                  <ModalProvider>
+                    <AppDrawer />
+                  </ModalProvider>
+                </NavigationContainer>
+              </AuthProvider>
             </MenuProvider>
           </I18nextProvider>
         </SafeAreaProvider>

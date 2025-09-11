@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     paddingHorizontal: 0,
     backgroundColor: AppColors.cartFormGrey,
-    borderBottomColor: AppColors.darkGrey,
+    borderBottomColor: AppColors.cartBorderColor,
   },
 });
 

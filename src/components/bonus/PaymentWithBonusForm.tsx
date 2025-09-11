@@ -125,11 +125,12 @@ const styles = StyleSheet.create({
     paddingBottom: s(10),
   },
   input: {
-    borderBottomColor: AppColors.darkGrey,
+    borderWidth: 1,
+    borderColor: AppColors.cartBorderColor,
   },
   selectInput: {
     borderWidth: 1,
-    borderColor: "#000",
+    borderColor: AppColors.cartBorderColor,
     borderRadius: s(25),
     paddingHorizontal: s(15),
     fontSize: s(16),
