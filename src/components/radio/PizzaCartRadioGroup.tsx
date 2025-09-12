@@ -9,9 +9,7 @@ import sizesUa from "../../data/sizes-ua.json";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 
-const PizzaCartRadioGroup = () => {
-  const [size, setSize] = useState("standard");
-  const [dough, setDough] = useState("thick");
+const PizzaCartRadioGroup = ({ size, setSize, dough, setDough }) =>  {
 
   const { i18n, t } = useTranslation();
 

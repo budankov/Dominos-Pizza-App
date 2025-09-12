@@ -17,24 +17,55 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<Record<string, any>>) => {
-      const existing = state.items.find((i) => i.id === action.payload.id);
+      const payload = action.payload;
+
+      const existing = state.items.find(
+        (i) =>
+          i.id === payload.id &&
+          (payload.size ? i.size === payload.size : true) &&
+          (payload.dough ? i.dough === payload.dough : true)
+      );
+
       if (existing) {
         existing.qty += 1;
       } else {
-        state.items.push({ ...action.payload, qty: 1 });
+        state.items.push({ ...payload, qty: 1 });
       }
     },
-    incrementQty: (state, action: PayloadAction<{ id: string }>) => {
-      const existing = state.items.find((i) => i.id === action.payload.id);
+    incrementQty: (
+      state,
+      action: PayloadAction<{ id: string; size?: string; dough?: string }>
+    ) => {
+      const existing = state.items.find(
+        (i) =>
+          i.id === action.payload.id &&
+          (action.payload.size ? i.size === action.payload.size : true) &&
+          (action.payload.dough ? i.dough === action.payload.dough : true)
+      );
       if (existing) existing.qty += 1;
     },
-    decrementQty: (state, action: PayloadAction<{ id: string }>) => {
-      const existing = state.items.find((i) => i.id === action.payload.id);
+    decrementQty: (
+      state,
+      action: PayloadAction<{ id: string; size?: string; dough?: string }>
+    ) => {
+      const existing = state.items.find(
+        (i) =>
+          i.id === action.payload.id &&
+          (action.payload.size ? i.size === action.payload.size : true) &&
+          (action.payload.dough ? i.dough === action.payload.dough : true)
+      );
       if (existing) {
         if (existing.qty > 1) {
           existing.qty -= 1;
         } else {
-          state.items = state.items.filter((i) => i.id !== action.payload.id);
+          state.items = state.items.filter(
+            (i) =>
+              !(
+                i.id === action.payload.id &&
+                (action.payload.size ? i.size === action.payload.size : true) &&
+                (action.payload.dough ? i.dough === action.payload.dough : true)
+              )
+          );
         }
       }
     },

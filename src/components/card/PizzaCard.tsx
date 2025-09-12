@@ -1,6 +1,6 @@
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { t } from "i18next";
-import React, { FC } from "react";
+import { FC, useState } from "react";
 import {
   Dimensions,
   Image,
@@ -39,6 +39,9 @@ interface PizzaCardProps {
 }
 
 const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
+  const [size, setSize] = useState("standard");
+  const [dough, setDough] = useState("thick");
+
   const dispatch = useDispatch();
   const item = useSelector((state: RootState) =>
     state.cart.items.find((i) => i.id === pizza.id)
@@ -69,7 +72,12 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
             title={t("replace_ingredients")}
             onPress={() => console.log("В розробці")}
           />
-          <PizzaCartRadioGroup />
+          <PizzaCartRadioGroup
+            size={size}
+            setSize={setSize}
+            dough={dough}
+            setDough={setDough}
+          />
           <View style={styles.floor}>
             <AppText style={styles.price}>
               {pizza.price}.00 {t("currency")}
@@ -77,7 +85,7 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
             {!item ? (
               <Pressable
                 style={styles.addCartBtn}
-                onPress={() => dispatch(addToCart(pizza))}
+                onPress={() => dispatch(addToCart({ ...pizza, size, dough }))}
               >
                 <Ionicons
                   name="cart-outline"
