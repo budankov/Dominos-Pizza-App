@@ -13,8 +13,8 @@ import { s, vs } from "react-native-size-matters";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
-  decrementQty,
-  incrementQty,
+  decreaseQty,
+  increaseQty,
 } from "../../store/reducers/cartSlice";
 import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
@@ -42,9 +42,35 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
   const [size, setSize] = useState("standard");
   const [dough, setDough] = useState("thick");
 
+  const surchargeForSizeAndDough = {
+    sizes: {
+      standard: 0,
+      large: 10,
+      xlarge: 20,
+      xxl: 30,
+    },
+    dough: {
+      thick: 0,
+      thin: 0,
+      cheese: 20,
+      sausages: 20,
+    },
+  };
+
+  const calculatePrice = (basePrice: number, size: string, dough: string) => {
+    const sizePercent = surchargeForSizeAndDough.sizes[size] ?? 0;
+    const doughPercent = surchargeForSizeAndDough.dough[dough] ?? 0;
+    const totalPercent = sizePercent + doughPercent;
+    return Math.round(basePrice * (1 + totalPercent / 100));
+  };
+
+  const price = calculatePrice(pizza.price, size, dough);
+
   const dispatch = useDispatch();
   const item = useSelector((state: RootState) =>
-    state.cart.items.find((i) => i.id === pizza.id)
+    state.cart.items.find(
+      (i) => i.id === pizza.id && i.size === size && i.dough === dough
+    )
   );
 
   return (
@@ -63,6 +89,7 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
         </View>
         <View style={styles.bottomPart}>
           <AppText style={styles.title}>{pizza.name}</AppText>
+
           <AppText style={styles.ingredients}>
             {pizza.ingredients.join(", ")}
           </AppText>
@@ -80,12 +107,14 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
           />
           <View style={styles.floor}>
             <AppText style={styles.price}>
-              {pizza.price}.00 {t("currency")}
+              {price}.00 {t("currency")}
             </AppText>
             {!item ? (
               <Pressable
                 style={styles.addCartBtn}
-                onPress={() => dispatch(addToCart({ ...pizza, size, dough }))}
+                onPress={() =>
+                  dispatch(addToCart({ ...pizza, size, size, dough, price }))
+                }
               >
                 <Ionicons
                   name="cart-outline"
@@ -97,13 +126,17 @@ const PizzaCard: FC<PizzaCardProps> = ({ pizza }) => {
             ) : (
               <View style={styles.countItemBtn}>
                 <Pressable
-                  onPress={() => dispatch(decrementQty({ id: pizza.id }))}
+                  onPress={() =>
+                    dispatch(decreaseQty({ id: pizza.id, size, dough }))
+                  }
                 >
                   <AntDesign name="minus" size={16} color="black" />
                 </Pressable>
                 <Text>{item.qty}</Text>
                 <Pressable
-                  onPress={() => dispatch(incrementQty({ id: pizza.id }))}
+                  onPress={() =>
+                    dispatch(increaseQty({ id: pizza.id, size, dough }))
+                  }
                 >
                   <AntDesign name="plus" size={16} color="black" />
                 </Pressable>

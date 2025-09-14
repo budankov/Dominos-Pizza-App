@@ -1,4 +1,4 @@
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -20,7 +20,11 @@ import doughEn from "../../data/dough-en.json";
 import doughUa from "../../data/dough-ua.json";
 import sizesEn from "../../data/sizes-en.json";
 import sizesUa from "../../data/sizes-ua.json";
-import { decrementQty, incrementQty } from "../../store/reducers/cartSlice";
+import {
+  decreaseQty,
+  increaseQty,
+  removeFromCart,
+} from "../../store/reducers/cartSlice";
 import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
@@ -45,7 +49,6 @@ const CartScreen = () => {
   const dispatch = useDispatch();
 
   const items = useSelector((state: RootState) => state.cart.items);
-  console.log(items);
 
   return (
     <ScrollView style={styles.scroll}>
@@ -92,7 +95,10 @@ const CartScreen = () => {
         <View style={{ flexDirection: "column", gap: s(20) }}>
           {items &&
             items.map((item) => (
-              <View key={item.id} style={styles.ordersPreview}>
+              <View
+                key={`${item.id}_${item.size ?? ""}_${item.dough ?? ""}`}
+                style={styles.ordersPreview}
+              >
                 <View style={styles.ordersLeftSide}>
                   <Image
                     style={styles.ordersImg}
@@ -100,16 +106,46 @@ const CartScreen = () => {
                   />
                 </View>
                 <View style={styles.ordersRightSide}>
-                  <Text
-                    style={{ fontSize: s(20), fontFamily: AppFonts.Regular }}
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
                   >
-                    {item.name}
-                  </Text>
+                    <Text
+                      style={{
+                        fontSize: s(20),
+                        fontFamily: AppFonts.Regular,
+                        flex: 1,
+                      }}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.name}
+                    </Text>
+                    <Pressable
+                      onPress={() =>
+                        dispatch(
+                          removeFromCart({
+                            id: item.id,
+                            size: item.size ?? "",
+                            dough: item.dough ?? "",
+                          })
+                        )
+                      }
+                      style={{ marginLeft: s(12) }}
+                    >
+                      <FontAwesome name="trash-o" size={20} color="#7E7E7E" />
+                    </Pressable>
+                  </View>
+
                   <Text
                     style={{ fontSize: s(12), fontFamily: AppFonts.Regular }}
                   >
                     {item.ingredients.join(", ")}
                   </Text>
+
                   <View
                     style={{
                       flexDirection: "row",
@@ -136,26 +172,45 @@ const CartScreen = () => {
                       {doughData[item.dough]}
                     </Text>
                   </View>
+
                   <View
                     style={{
                       flexDirection: "row",
+                      justifyContent: "space-between",
                       alignItems: "center",
                       gap: s(20),
                     }}
                   >
                     <View style={styles.countItemBtn}>
                       <Pressable
-                        onPress={() => dispatch(decrementQty({ id: item.id }))}
+                        onPress={() =>
+                          dispatch(
+                            decreaseQty({
+                              id: item.id,
+                              size: item.size ?? "",
+                              dough: item.dough ?? "",
+                            })
+                          )
+                        }
                       >
                         <AntDesign name="minus" size={16} color="black" />
                       </Pressable>
                       <Text>{item.qty}</Text>
                       <Pressable
-                        onPress={() => dispatch(incrementQty({ id: item.id }))}
+                        onPress={() =>
+                          dispatch(
+                            increaseQty({
+                              id: item.id,
+                              size: item.size ?? "",
+                              dough: item.dough ?? "",
+                            })
+                          )
+                        }
                       >
                         <AntDesign name="plus" size={16} color="black" />
                       </Pressable>
                     </View>
+
                     <Text
                       style={{ fontSize: s(14), fontFamily: AppFonts.SemiBold }}
                     >
@@ -237,7 +292,6 @@ const styles = StyleSheet.create({
     gap: s(10),
     justifyContent: "center",
     alignItems: "center",
-    // height: s(40),
     borderWidth: s(1),
     borderRadius: s(40),
     borderColor: AppColors.cartBorderColor,

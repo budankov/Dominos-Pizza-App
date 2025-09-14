@@ -1,77 +1,106 @@
+// cartSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface CartItem extends Record<string, any> {
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  size: string;
+  dough: string;
   qty: number;
 }
 
 interface CartState {
   items: CartItem[];
+  totalQty: number;
 }
 
 const initialState: CartState = {
   items: [],
+  totalQty: 0,
 };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<Record<string, any>>) => {
-      const payload = action.payload;
-
+    addToCart: (state, { payload }: PayloadAction<Omit<CartItem, "qty">>) => {
       const existing = state.items.find(
         (i) =>
           i.id === payload.id &&
-          (payload.size ? i.size === payload.size : true) &&
-          (payload.dough ? i.dough === payload.dough : true)
+          i.size === payload.size &&
+          i.dough === payload.dough
       );
-
       if (existing) {
         existing.qty += 1;
       } else {
         state.items.push({ ...payload, qty: 1 });
       }
+      state.totalQty = state.items.reduce((acc, item) => acc + item.qty, 0);
     },
-    incrementQty: (
+    increaseQty: (
       state,
-      action: PayloadAction<{ id: string; size?: string; dough?: string }>
+      { payload }: PayloadAction<{ id: string; size: string; dough: string }>
     ) => {
-      const existing = state.items.find(
+      const item = state.items.find(
         (i) =>
-          i.id === action.payload.id &&
-          (action.payload.size ? i.size === action.payload.size : true) &&
-          (action.payload.dough ? i.dough === action.payload.dough : true)
+          i.id === payload.id &&
+          i.size === payload.size &&
+          i.dough === payload.dough
       );
-      if (existing) existing.qty += 1;
+      if (item) item.qty += 1;
+      state.totalQty = state.items.reduce((acc, item) => acc + item.qty, 0);
     },
-    decrementQty: (
+    decreaseQty: (
       state,
-      action: PayloadAction<{ id: string; size?: string; dough?: string }>
+      { payload }: PayloadAction<{ id: string; size: string; dough: string }>
     ) => {
-      const existing = state.items.find(
+      const item = state.items.find(
         (i) =>
-          i.id === action.payload.id &&
-          (action.payload.size ? i.size === action.payload.size : true) &&
-          (action.payload.dough ? i.dough === action.payload.dough : true)
+          i.id === payload.id &&
+          i.size === payload.size &&
+          i.dough === payload.dough
       );
-      if (existing) {
-        if (existing.qty > 1) {
-          existing.qty -= 1;
-        } else {
+      if (item) {
+        if (item.qty > 1) item.qty -= 1;
+        else
           state.items = state.items.filter(
             (i) =>
               !(
-                i.id === action.payload.id &&
-                (action.payload.size ? i.size === action.payload.size : true) &&
-                (action.payload.dough ? i.dough === action.payload.dough : true)
+                i.id === payload.id &&
+                i.size === payload.size &&
+                i.dough === payload.dough
               )
           );
-        }
       }
+      state.totalQty = state.items.reduce((acc, item) => acc + item.qty, 0);
+    },
+    removeFromCart: (
+      state,
+      { payload }: PayloadAction<{ id: string; size: string; dough: string }>
+    ) => {
+      state.items = state.items.filter(
+        (i) =>
+          !(
+            i.id === payload.id &&
+            i.size === payload.size &&
+            i.dough === payload.dough
+          )
+      );
+      state.totalQty = state.items.reduce((acc, item) => acc + item.qty, 0);
+    },
+    clearCart: (state) => {
+      state.items = [];
+      state.totalQty = 0;
     },
   },
 });
 
-export const { addToCart, incrementQty, decrementQty } = cartSlice.actions;
-
+export const {
+  addToCart,
+  increaseQty,
+  decreaseQty,
+  removeFromCart,
+  clearCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { s, vs } from "react-native-size-matters";

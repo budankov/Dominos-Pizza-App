@@ -4,10 +4,11 @@ import {
   DrawerActions,
   getFocusedRouteNameFromRoute,
 } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { s } from "react-native-size-matters";
+import { useSelector } from "react-redux";
 import DominosPizzaLogoIcon from "../../assets/icons/DominosPizzaLogoIcon";
+import { RootState } from "../../store/store";
 import { AppColors } from "../../styles/colors";
 import LocationButton from "../location/LocationButton";
 import SocialMediaDropDownMenu from "../social-media/SocialMediaDropDownMenu";
@@ -25,6 +26,8 @@ const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
       navigation.goBack();
     }
   };
+
+  const totalQtyValue = useSelector((state: RootState) => state.cart.totalQty);
 
   return (
     <View style={styles.container}>
@@ -46,9 +49,16 @@ const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
       </View>
       <View style={styles.socialCartContainer}>
         <SocialMediaDropDownMenu />
-        <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
-          <Ionicons name="cart-outline" size={s(30)} color="#fff" />
-        </TouchableOpacity>
+        <View style={{ position: "relative" }}>
+          {totalQtyValue > 0 && (
+            <View style={styles.totalQtyCircle}>
+              <Text style={styles.totalQtyText}>{totalQtyValue}</Text>
+            </View>
+          )}
+          <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
+            <Ionicons name="cart-outline" size={s(30)} color="#fff" />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -70,6 +80,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: s(10),
+  },
+  totalQtyCircle: {
+    position: "absolute",
+    top: s(2),
+    right: -s(2),
+    backgroundColor: "#fff",
+    width: s(12),
+    height: s(12),
+    borderRadius: s(6),
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1,
+  },
+
+  totalQtyText: {
+    fontSize: s(10),
+    color: AppColors.red,
   },
 });
 
