@@ -73,5 +73,8 @@
   "sign_up_error_email_in_use": "This email is already in use! you can't use this email",
   "sign_up_error_invalid_email": "The email address is invalid.",
   "sign_up_error_weak_password": "The password is too weak.",
-  "sign_up_error_default": "An error occurred during sign-up."
+  "sign_up_error_default": "An error occurred during sign-up.",
+
+  "checkout_success_message": "Order successfully placed",
+  "checkout_error_message": "An error occurred"
 }

@@ -1,7 +1,9 @@
 import { AntDesign, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigation } from "@react-navigation/native";
 import { addDoc, collection, doc } from "firebase/firestore";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
   Image,
@@ -14,6 +16,7 @@ import {
 import { showMessage } from "react-native-flash-message";
 import { s, vs } from "react-native-size-matters";
 import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
 import PaymentWithBonusForm from "../../components/bonus/PaymentWithBonusForm";
 import AppButton from "../../components/buttons/AppButton";
 import DeliveryAddressForm from "../../components/delivery/DeliveryAddressForm";
@@ -26,6 +29,7 @@ import doughUa from "../../data/dough-ua.json";
 import sizesEn from "../../data/sizes-en.json";
 import sizesUa from "../../data/sizes-ua.json";
 import {
+  clearCart,
   decreaseQty,
   increaseQty,
   removeFromCart,
@@ -53,7 +57,7 @@ const CartScreen = () => {
     setDeliveryTypeButton(newDeliveryType);
   };
 
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const items = useSelector((state: RootState) => state.cart.items);
 
   const totalPrice = items.reduce(
@@ -61,16 +65,45 @@ const CartScreen = () => {
     0
   );
 
+  const deliverySchema = yup.object({
+    city: yup.string().required(),
+    street: yup.string().required(),
+    houseNumber: yup.string().required(),
+    floor: yup.number().required(),
+  });
+
+  const restaurantSchema = yup.object({
+    restaurant: yup.number().required(),
+  });
+
+  const { control: deliveryControl, getValues: getDeliveryValues } = useForm({
+    resolver: yupResolver(deliverySchema),
+  });
+
+  const { control: restaurantControl, getValues: getRestaurantValues } =
+    useForm({
+      resolver: yupResolver(restaurantSchema),
+      defaultValues: { restaurant: 0 },
+    });
+
+  const orderNumber = Date.now();
+  const userEmail = user?.email;
+
   const handlePlaceAnOrder = async () => {
+    const deliveryData = getDeliveryValues();
+    const restaurantData = getRestaurantValues();
+
     try {
       const orderBody = {
+        orderNumber,
         items,
         totalPrice,
+        userEmail,
         createdAt: new Date(),
         deliveryType: deliveryTypeButton,
         ...(deliveryTypeButton === "delivery"
-          ? { deliveryAddress: deliveryFormData }
-          : { restaurantId: restaurantSelection }),
+          ? { deliveryAddress: deliveryData }
+          : { restaurantId: restaurantData.restaurant }),
       };
 
       const userOrderRef = collection(doc(db, "users", user.uid), "orders");
@@ -79,10 +112,11 @@ const CartScreen = () => {
       const ordersRef = collection(db, "orders");
       await addDoc(ordersRef, orderBody);
 
-      showMessage({ type: "success", message: "checkout_success_message" });
+      showMessage({ type: "success", message: t("checkout_success_message") });
+      dispatch(clearCart());
       navigate.goBack();
     } catch (error) {
-      showMessage({ type: "danger", message: "checkout_error_message" });
+      showMessage({ type: "danger", message: t("checkout_error_message") });
     }
   };
 
@@ -90,6 +124,7 @@ const CartScreen = () => {
     <ScrollView style={styles.scroll}>
       <View style={styles.container}>
         <AppText style={styles.title}>Кошик</AppText>
+
         <View style={styles.deliveryContainer}>
           {deliveryTypeGroup.map((option) => (
             <Pressable
@@ -116,161 +151,146 @@ const CartScreen = () => {
             </Pressable>
           ))}
         </View>
+
         <AppText style={styles.subTitle}>Ваше замовлення</AppText>
         {deliveryTypeButton === "delivery" && (
-          <AppText
-            style={{
-              fontSize: s(14),
-              marginTop: s(-15),
-            }}
-          >
+          <AppText style={{ fontSize: s(14), marginTop: s(-15) }}>
             Мінімальна сума для безшкоштовної доставки 295 грн.
           </AppText>
         )}
 
         <View style={{ flexDirection: "column", gap: s(20) }}>
-          {items &&
-            items.map((item) => (
-              <View
-                key={`${item.id}_${item.size ?? ""}_${item.dough ?? ""}`}
-                style={styles.ordersPreview}
-              >
-                <View style={styles.ordersLeftSide}>
-                  <Image
-                    style={styles.ordersImg}
-                    source={{ uri: item.image }}
-                  />
-                </View>
-                <View style={styles.ordersRightSide}>
-                  <View
+          {items.map((item) => (
+            <View
+              key={`${item.id}_${item.size ?? ""}_${item.dough ?? ""}`}
+              style={styles.ordersPreview}
+            >
+              <View style={styles.ordersLeftSide}>
+                <Image style={styles.ordersImg} source={{ uri: item.image }} />
+              </View>
+              <View style={styles.ordersRightSide}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text
                     style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "space-between",
+                      fontSize: s(20),
+                      fontFamily: AppFonts.Regular,
+                      flex: 1,
+                    }}
+                    numberOfLines={1}
+                    ellipsizeMode="tail"
+                  >
+                    {item.name}
+                  </Text>
+                  <Pressable
+                    onPress={() =>
+                      dispatch(
+                        removeFromCart({
+                          id: item.id,
+                          size: item.size ?? "",
+                          dough: item.dough ?? "",
+                        })
+                      )
+                    }
+                    style={{ marginLeft: s(12) }}
+                  >
+                    <FontAwesome name="trash-o" size={20} color="#7E7E7E" />
+                  </Pressable>
+                </View>
+
+                <Text style={{ fontSize: s(12), fontFamily: AppFonts.Regular }}>
+                  {item.ingredients.join(", ")}
+                </Text>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: s(10),
+                    alignItems: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: s(12),
+                      fontFamily: AppFonts.Regular,
+                      flexShrink: 1,
                     }}
                   >
-                    <Text
-                      style={{
-                        fontSize: s(20),
-                        fontFamily: AppFonts.Regular,
-                        flex: 1,
-                      }}
-                      numberOfLines={1}
-                      ellipsizeMode="tail"
-                    >
-                      {item.name}
-                    </Text>
+                    {sizesData[item.size]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: s(12),
+                      fontFamily: AppFonts.Regular,
+                      flexShrink: 1,
+                    }}
+                  >
+                    {doughData[item.dough]}
+                  </Text>
+                </View>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: s(20),
+                  }}
+                >
+                  <View style={styles.countItemBtn}>
                     <Pressable
                       onPress={() =>
                         dispatch(
-                          removeFromCart({
+                          decreaseQty({
                             id: item.id,
                             size: item.size ?? "",
                             dough: item.dough ?? "",
                           })
                         )
                       }
-                      style={{ marginLeft: s(12) }}
                     >
-                      <FontAwesome name="trash-o" size={20} color="#7E7E7E" />
+                      <AntDesign name="minus" size={16} color="black" />
+                    </Pressable>
+                    <Text>{item.qty}</Text>
+                    <Pressable
+                      onPress={() =>
+                        dispatch(
+                          increaseQty({
+                            id: item.id,
+                            size: item.size ?? "",
+                            dough: item.dough ?? "",
+                          })
+                        )
+                      }
+                    >
+                      <AntDesign name="plus" size={16} color="black" />
                     </Pressable>
                   </View>
 
                   <Text
-                    style={{ fontSize: s(12), fontFamily: AppFonts.Regular }}
+                    style={{ fontSize: s(14), fontFamily: AppFonts.SemiBold }}
                   >
-                    {item.ingredients.join(", ")}
+                    {item.price * item.qty}.00 грн
                   </Text>
-
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      gap: s(10),
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: s(12),
-                        fontFamily: AppFonts.Regular,
-                        flexShrink: 1,
-                      }}
-                    >
-                      {sizesData[item.size]}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: s(12),
-                        fontFamily: AppFonts.Regular,
-                        flexShrink: 1,
-                      }}
-                    >
-                      {doughData[item.dough]}
-                    </Text>
-                  </View>
-
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: s(20),
-                    }}
-                  >
-                    <View style={styles.countItemBtn}>
-                      <Pressable
-                        onPress={() =>
-                          dispatch(
-                            decreaseQty({
-                              id: item.id,
-                              size: item.size ?? "",
-                              dough: item.dough ?? "",
-                            })
-                          )
-                        }
-                      >
-                        <AntDesign name="minus" size={16} color="black" />
-                      </Pressable>
-                      <Text>{item.qty}</Text>
-                      <Pressable
-                        onPress={() =>
-                          dispatch(
-                            increaseQty({
-                              id: item.id,
-                              size: item.size ?? "",
-                              dough: item.dough ?? "",
-                            })
-                          )
-                        }
-                      >
-                        <AntDesign name="plus" size={16} color="black" />
-                      </Pressable>
-                    </View>
-
-                    <Text
-                      style={{ fontSize: s(14), fontFamily: AppFonts.SemiBold }}
-                    >
-                      {item.price * item.qty}.00 грн
-                    </Text>
-                  </View>
                 </View>
               </View>
-            ))}
+            </View>
+          ))}
         </View>
 
         {deliveryTypeButton === "delivery" ? (
-          <DeliveryAddressForm />
+          <DeliveryAddressForm control={deliveryControl} />
         ) : (
-          <ChooseRestaurant />
+          <ChooseRestaurant control={restaurantControl} />
         )}
 
         <PaymentWithBonusForm />
-        <AppButton
-          style={styles.button}
-          textColor={styles.buttonTitle}
-          title="Додати Sorry Card"
-          onPress={() => {}}
-        />
+
         <View style={{ alignItems: "flex-end" }}>
           <AppText style={{ paddingBottom: s(10) }}>
             Товарів на сумму: {totalPrice} грн
@@ -282,18 +302,8 @@ const CartScreen = () => {
             </AppText>
           </AppText>
         </View>
-        <AppButton
-          title="Оформити замовлення"
-          onPress={() => {
-            handlePlaceAnOrder();
-          }}
-        />
-        <AppButton
-          style={styles.button}
-          textColor={styles.buttonTitle}
-          title="Повернутись до меню"
-          onPress={() => {}}
-        />
+
+        <AppButton title="Оформити замовлення" onPress={handlePlaceAnOrder} />
       </View>
     </ScrollView>
   );

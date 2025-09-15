@@ -1,6 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, useForm } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
   ScrollView,
@@ -17,7 +16,6 @@ import {
 } from "react-native-popup-menu";
 import { s } from "react-native-size-matters";
 import { useSelector } from "react-redux";
-import * as yup from "yup";
 import MapMarkerIcon from "../../assets/icons/MapMarkerIcon";
 import citiesArrEn from "../../components/location/cities-en.json";
 import citiesArrUa from "../../components/location/cities-ua.json";
@@ -40,38 +38,30 @@ const restaurantAddresses = [
   { label: "вул. Гната Юри, 6", value: 10 },
 ];
 
-const ChooseRestaurant = () => {
-  const { i18n, t } = useTranslation();
+type Props = {
+  control: any;
+};
 
-  const { control } = useForm({
-    resolver: yupResolver(
-      yup.object({
-        restaurant: yup.number().optional(),
-      })
-    ),
-    defaultValues: {
-      restaurant: 0,
-    },
-  });
+const ChooseRestaurant = ({ control }: Props) => {
+  const { i18n } = useTranslation();
 
   const citiesData =
     i18n.language === "en" ? citiesArrEn.cities : citiesArrUa.cities;
-  const cityCodes = Object.keys(citiesData) as (keyof typeof citiesData)[];
-
-  type CityCode = keyof typeof citiesData;
-
   const selectedCityCode = useSelector(
     (state: RootState) => state.location.userCity
-  ) as CityCode;
+  );
 
   return (
     <ScrollView style={styles.container}>
       <AppText style={styles.title}>Виберіть ресторан</AppText>
+
       <View style={styles.cityContainer}>
         <MapMarkerIcon color="red" />
         <Text style={styles.cityTitle}>{citiesData[selectedCityCode]}</Text>
       </View>
+
       <AppText style={styles.subTitle}>Ресторан</AppText>
+
       <Controller
         control={control}
         name="restaurant"
@@ -89,6 +79,7 @@ const ChooseRestaurant = () => {
               </Text>
               <Ionicons name="chevron-down" size={16} color="black" />
             </MenuTrigger>
+
             <MenuOptions
               customStyles={{
                 optionsContainer: [styles.optionsContainer, { width: "100%" }],
@@ -105,10 +96,9 @@ const ChooseRestaurant = () => {
                         paddingVertical: 10,
                         paddingHorizontal: 15,
                       },
-                      optionText: {
-                        fontSize: s(16),
-                        color: "#000",
-                      },
+                      optionText: { 
+                        fontSize: s(16), 
+                        color: "#000" },
                     }}
                   />
                 ))}

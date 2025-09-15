@@ -73,5 +73,8 @@
   "sign_up_error_email_in_use": "Ця електронна пошта вже використовується! Ви не можете її використовувати",
   "sign_up_error_invalid_email": "Невірна електронна адреса.",
   "sign_up_error_weak_password": "Пароль занадто слабкий.",
-  "sign_up_error_default": "Сталася помилка під час реєстрації."
+  "sign_up_error_default": "Сталася помилка під час реєстрації.",
+
+  "checkout_success_message": "Замовлення успішно оформлено",
+  "checkout_error_message": "Сталася помилка"
 }
