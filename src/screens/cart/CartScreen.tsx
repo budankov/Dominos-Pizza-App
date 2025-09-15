@@ -1,4 +1,6 @@
 import { AntDesign, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { addDoc, collection, doc } from "firebase/firestore";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -9,6 +11,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { showMessage } from "react-native-flash-message";
 import { s, vs } from "react-native-size-matters";
 import { useDispatch, useSelector } from "react-redux";
 import PaymentWithBonusForm from "../../components/bonus/PaymentWithBonusForm";
@@ -16,6 +19,8 @@ import AppButton from "../../components/buttons/AppButton";
 import DeliveryAddressForm from "../../components/delivery/DeliveryAddressForm";
 import ChooseRestaurant from "../../components/restaurant/СhooseRestaurant";
 import AppText from "../../components/texts/AppText";
+import { db } from "../../config/firebase";
+import { useAuth } from "../../context/AuthContext";
 import doughEn from "../../data/dough-en.json";
 import doughUa from "../../data/dough-ua.json";
 import sizesEn from "../../data/sizes-en.json";
@@ -30,7 +35,9 @@ import { AppColors } from "../../styles/colors";
 import { AppFonts } from "../../styles/fonts";
 
 const CartScreen = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const navigate = useNavigation();
+  const dispatch = useDispatch();
 
   const sizesData = i18n.language === "en" ? sizesEn.sizes : sizesUa.sizes;
   const doughData = i18n.language === "en" ? doughEn.dough : doughUa.dough;
@@ -46,9 +53,38 @@ const CartScreen = () => {
     setDeliveryTypeButton(newDeliveryType);
   };
 
-  const dispatch = useDispatch();
-
+  const { user, loading } = useAuth();
   const items = useSelector((state: RootState) => state.cart.items);
+
+  const totalPrice = items.reduce(
+    (acc, item) => acc + item.price * item.qty,
+    0
+  );
+
+  const handlePlaceAnOrder = async () => {
+    try {
+      const orderBody = {
+        items,
+        totalPrice,
+        createdAt: new Date(),
+        deliveryType: deliveryTypeButton,
+        ...(deliveryTypeButton === "delivery"
+          ? { deliveryAddress: deliveryFormData }
+          : { restaurantId: restaurantSelection }),
+      };
+
+      const userOrderRef = collection(doc(db, "users", user.uid), "orders");
+      await addDoc(userOrderRef, orderBody);
+
+      const ordersRef = collection(db, "orders");
+      await addDoc(ordersRef, orderBody);
+
+      showMessage({ type: "success", message: "checkout_success_message" });
+      navigate.goBack();
+    } catch (error) {
+      showMessage({ type: "danger", message: "checkout_error_message" });
+    }
+  };
 
   return (
     <ScrollView style={styles.scroll}>
@@ -227,6 +263,7 @@ const CartScreen = () => {
         ) : (
           <ChooseRestaurant />
         )}
+
         <PaymentWithBonusForm />
         <AppButton
           style={styles.button}
@@ -236,16 +273,21 @@ const CartScreen = () => {
         />
         <View style={{ alignItems: "flex-end" }}>
           <AppText style={{ paddingBottom: s(10) }}>
-            Товарів на сумму: 0 грн
+            Товарів на сумму: {totalPrice} грн
           </AppText>
           <AppText>
             Сумма до сплати:{" "}
             <AppText style={{ color: AppColors.red, fontSize: s(20) }}>
-              0 грн
+              {totalPrice} грн
             </AppText>
           </AppText>
         </View>
-        <AppButton title="Оформити замовлення" onPress={() => {}} />
+        <AppButton
+          title="Оформити замовлення"
+          onPress={() => {
+            handlePlaceAnOrder();
+          }}
+        />
         <AppButton
           style={styles.button}
           textColor={styles.buttonTitle}
