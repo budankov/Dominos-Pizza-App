@@ -91,7 +91,7 @@ const ProfileMainScreen = () => {
           onPress={() => navigation.navigate("ProfileBankCardsScreen")}
         >
           <View style={styles.navLinkItem}>
-            <AntDesign name="creditcard" size={24} color="#6E6D6E" />
+            <AntDesign name="credit-card" size={24} color="#6E6D6E" />
             <Text style={styles.navLinkTitle}>Банківські картки</Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
@@ -101,7 +101,7 @@ const ProfileMainScreen = () => {
           onPress={() => navigation.navigate("ProfileLeaveReviewScreen")}
         >
           <View style={styles.navLinkItem}>
-            <AntDesign name="like2" size={24} color="#6E6D6E" />
+            <AntDesign name="like" size={24} color="#6E6D6E" />
             <Text style={styles.navLinkTitle}>Залишити відгук</Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
