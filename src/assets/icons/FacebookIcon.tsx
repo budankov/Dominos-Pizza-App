@@ -1,4 +1,3 @@
-import * as React from "react";
 import Svg, {
   Circle,
   Defs,
@@ -9,8 +8,8 @@ import Svg, {
 } from "react-native-svg";
 const FacebookIcon = (props) => (
   <Svg
-    width="40px"
-    height="40px"
+    width={props.width || 40}
+    height={props.height || 40}
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

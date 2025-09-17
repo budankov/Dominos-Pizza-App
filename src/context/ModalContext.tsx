@@ -1,5 +1,7 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
-import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
+import { EvilIcons } from "@expo/vector-icons";
+import { createContext, ReactNode, useContext, useState } from "react";
+import { Dimensions, Pressable, StyleSheet, View } from "react-native";
+import { s } from "react-native-size-matters";
 
 interface ModalContextProps {
   showModal: (content: ReactNode) => void;
@@ -36,8 +38,8 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         <View style={styles.backdrop}>
           <View style={[styles.container, { width: screenWidth - 40 }]}>
             {modalContent}
-            <Pressable onPress={hideModal} style={{ marginTop: 10 }}>
-              <Text style={{ textAlign: "center", color: "blue" }}>Close</Text>
+            <Pressable onPress={hideModal} style={styles.closeBtn}>
+              <EvilIcons name="close" size={40} color="#000" />
             </Pressable>
           </View>
         </View>
@@ -62,5 +64,10 @@ const styles = StyleSheet.create({
     padding: 20,
     height: "80%",
     backgroundColor: "white",
+  },
+  closeBtn: {
+    position: "absolute",
+    top: s(10),
+    right: s(10),
   },
 });

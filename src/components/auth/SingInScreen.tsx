@@ -3,18 +3,23 @@ import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import { s, vs } from "react-native-size-matters";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";
+import FacebookIcon from "../../assets/icons/FacebookIcon";
+import GoogleIcon from "../../assets/icons/GoogleIcon";
 import AppButton from "../../components/buttons/AppButton";
 import AppSaveView from "../../components/views/AppSaveView";
 import { auth } from "../../config/firebase";
+import { useFacebookSignIn, useGoogleSignIn } from "../../config/socialAuth";
 import { useModal } from "../../context/ModalContext";
 import { setUserData } from "../../store/reducers/userSlice";
 import { AppColors } from "../../styles/colors";
+import { AppFonts } from "../../styles/fonts";
 import AppTextInputController from "../inputs/AppTextInputController";
+import AppText from "../texts/AppText";
 import SingUpScreen from "./SingUpScreen";
 
 type FormData = yup.InferType<typeof schema>;
@@ -23,6 +28,9 @@ const SingInScreen = () => {
   const navigation = useNavigation();
   const { t } = useTranslation();
   const { showModal, hideModal } = useModal();
+
+  const { promptAsync: googleSignIn } = useGoogleSignIn();
+  const { promptAsync: facebookSignIn } = useFacebookSignIn();
 
   const schema = yup
     .object({
@@ -77,17 +85,28 @@ const SingInScreen = () => {
 
   return (
     <AppSaveView style={styles.container}>
+      <AppText style={styles.title}>Вхід</AppText>
+      <AppText style={styles.subTitle}>Логін</AppText>
       <AppTextInputController<FormData>
         control={control}
+        styleInput={styles.input}
+        placeholderTextColor={AppColors.cartBorderColor}
         name="email"
-        placeholder={t("sign_in_email_placeholder")}
+        placeholder="Ваш Email або номер телефону"
       />
+      <AppText style={styles.subTitle}>Пароль</AppText>
       <AppTextInputController<FormData>
         control={control}
+        styleInput={styles.input}
+        placeholderTextColor={AppColors.cartBorderColor}
+        showPassword
         name="password"
-        placeholder={t("sign_in_password_placeholder")}
+        placeholder="Ваш пароль"
         secureTextEntry
       />
+      <Pressable onPress={() => {}}>
+        <AppText style={styles.forgotPassword}>Забули пароль?</AppText>
+      </Pressable>
       <AppButton
         title={t("sign_in_login_button")}
         onPress={handleSubmit(onLoginPress)}
@@ -95,24 +114,84 @@ const SingInScreen = () => {
       <AppButton
         title={t("sign_in_signup_button")}
         style={styles.registerButton}
-        textColor="#fff"
+        textColor={AppColors.textColor}
         onPress={() => showModal(<SingUpScreen />)}
       />
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginTop: vs(25),
+        }}
+      >
+        <View
+          style={{
+            flex: 1,
+            borderBottomWidth: 1,
+            borderColor: AppColors.buttonBorderGray,
+          }}
+        />
+        <AppText style={{ paddingHorizontal: s(10), color: "grey" }}>
+          Або
+        </AppText>
+        <View
+          style={{
+            flex: 1,
+            borderBottomWidth: 1,
+            borderColor: AppColors.buttonBorderGray,
+          }}
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          gap: s(40),
+          justifyContent: "center",
+          marginTop: vs(20),
+        }}
+      >
+        <Pressable onPress={() => googleSignIn()}>
+          <GoogleIcon width={70} height={80} />
+        </Pressable>
+
+        <Pressable onPress={() => facebookSignIn()}>
+          <FacebookIcon width={80} height={80} />
+        </Pressable>
+      </View>
     </AppSaveView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    paddingHorizontal: s(14),
     backgroundColor: "#fff",
   },
+  title: {
+    textAlign: "center",
+    fontSize: s(26),
+    fontFamily: AppFonts.Bold,
+  },
+  subTitle: {
+    fontSize: s(18),
+    fontFamily: AppFonts.Regular,
+  },
   registerButton: {
-    backgroundColor: AppColors.buttonDarkGray,
-    borderColor: "#000",
+    backgroundColor: AppColors.buttonLightGray,
     marginTop: vs(15),
-    borderWidth: 1,
+  },
+  input: {
+    borderWidth: 0,
+    borderRadius: 0,
+    borderBottomWidth: 1,
+    paddingHorizontal: 0,
+    borderBottomColor: AppColors.buttonBorderGray,
+  },
+  forgotPassword: {
+    textAlign: "right",
+    fontSize: s(13),
+    textDecorationLine: "underline",
+    color: "#39a9ff",
+    marginBottom: vs(20),
   },
 });
 
