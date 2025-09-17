@@ -10,7 +10,9 @@ import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
   Linking,
+  Pressable,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -67,29 +69,49 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           <DrawerHeaderClose />
         </View>
         <View style={styles.headerBottomContainer}>
-          <LocationButton
-            sheetId="LOCALS_SHEET_DRAWER"
-            markerSize={18}
-            titleSize={22}
-          />
           {user ? (
-            <AppButton
-              title={user.displayName || "User"}
-              onPress={() =>
-                navigation.navigate("ProfileStack", {
-                  screen: "ProfileMainScreen",
-                })
-              }
-              style={styles.singInButton}
-              styleTitle={styles.singInButtonText}
-            />
+            <>
+              <Pressable
+                onPress={() =>
+                  navigation.navigate("ProfileStack", {
+                    screen: "ProfileMainScreen",
+                  })
+                }
+              >
+                <View style={styles.profile}>
+                  <View style={styles.profileImg}>
+                    <FontAwesome name="user-circle-o" size={50} color="#fff" />
+                  </View>
+                  <View>
+                    <Text style={styles.profileNickname}>
+                      {user.displayName || "User"}
+                    </Text>
+                    <Text style={styles.profileBonus}>
+                      0 бонусів на рахунку
+                    </Text>
+                  </View>
+                </View>
+              </Pressable>
+              <LocationButton
+                sheetId="LOCALS_SHEET_DRAWER"
+                markerSize={18}
+                titleSize={22}
+              />
+            </>
           ) : (
-            <AppButton
-              title={t("drawer_sign_in")}
-              onPress={() => showModal(<SingInScreen />)}
-              style={styles.singInButton}
-              styleTitle={styles.singInButtonText}
-            />
+            <>
+              <LocationButton
+                sheetId="LOCALS_SHEET_DRAWER"
+                markerSize={18}
+                titleSize={22}
+              />
+              <AppButton
+                title={t("drawer_sign_in")}
+                onPress={() => showModal(<SingInScreen />)}
+                style={styles.singInButton}
+                styleTitle={styles.singInButtonText}
+              />
+            </>
           )}
         </View>
         <DrawerItem
@@ -360,7 +382,32 @@ const styles = StyleSheet.create({
     width: s(120),
     backgroundColor: AppColors.darkGrey,
   },
-  singInButtonText: { fontFamily: AppFonts.Bold },
+  singInButtonText: {
+    fontFamily: AppFonts.Bold,
+  },
+  profile: {
+    flexDirection: "row",
+    gap: s(10),
+    alignItems: "center",
+  },
+  profileImg: {
+    width: s(50),
+    height: s(50),
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: s(50),
+    backgroundColor: AppColors.backgroundGrey,
+  },
+  profileNickname: {
+    fontSize: s(14),
+    fontFamily: AppFonts.Bold,
+    color: AppColors.textColorWhite,
+  },
+  profileBonus: {
+    fontSize: s(12),
+    fontFamily: AppFonts.Regular,
+    color: AppColors.lightGrey,
+  },
 });
 
 export default CustomDrawerContent;
