@@ -42,7 +42,7 @@ const ProfileOrdersScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <AppText style={styles.title}>Мої замовлення</AppText>
+      <AppText style={styles.title}>{t("profile_orders_title")}</AppText>
       <View style={styles.btnContainer}>
         <Pressable
           style={[
@@ -57,7 +57,7 @@ const ProfileOrdersScreen = () => {
               typeOrdersBtn === "current" && styles.selectedTitle,
             ]}
           >
-            Поточні
+            {t("profile_orders_current")}
           </AppText>
         </Pressable>
         <Pressable
@@ -73,7 +73,7 @@ const ProfileOrdersScreen = () => {
               typeOrdersBtn === "archive" && styles.selectedTitle,
             ]}
           >
-            Архів ({ordersList.length})
+            {t("profile_orders_archive")} ({ordersList.length})
           </AppText>
         </Pressable>
       </View>
@@ -81,19 +81,14 @@ const ProfileOrdersScreen = () => {
         <View style={styles.currentContainer}>
           <CurrentOrdersIcon width={180} height={180} />
           <AppText style={styles.currentTitle}>
-            У вас немає поточних замовлень
+            {t("profile_orders_no_current")}
           </AppText>
           <AppText style={styles.currentSubTitle}>
-            Щоб побачити список поточних замовлень, потрібно оформити замовлення
+            {t("profile_orders_instruction")}
           </AppText>
         </View>
       ) : (
         <View style={styles.archiveContainer}>
-          {/* <AppText style={styles.archiveTitle}>
-            Статус замовлення може некоректно відображатись. Але не
-            переймайтесь, доставка буде за адресою, яку ви вказали в замовленні.
-            Вибачте за тимчасові незручності.
-          </AppText> */}
           <FlatList
             data={ordersList}
             scrollEnabled={false}
@@ -103,7 +98,7 @@ const ProfileOrdersScreen = () => {
               <View style={styles.archiveCard}>
                 <View style={styles.archiveCardLine}>
                   <AppText style={styles.archiveCardTitle}>
-                    Номер замовлення
+                    {t("profile_orders_order_number")}
                   </AppText>
                   <AppText style={styles.archiveCardValue}>
                     {item.orderNumber}
@@ -112,7 +107,7 @@ const ProfileOrdersScreen = () => {
 
                 <View style={styles.archiveCardLine}>
                   <AppText style={styles.archiveCardTitle}>
-                    Дата та час замовлення
+                    {t("profile_orders_date_time")}
                   </AppText>
                   <AppText style={styles.archiveCardValue}>
                     {getDateFromFireStoreTimeStampObject(
@@ -123,48 +118,64 @@ const ProfileOrdersScreen = () => {
                 </View>
 
                 <View style={styles.archiveCardLine}>
-                  <AppText style={styles.archiveCardTitle}>Адреса</AppText>
+                  <AppText style={styles.archiveCardTitle}>
+                    {t("profile_orders_address")}
+                  </AppText>
                   <AppText style={styles.archiveCardValue}>
                     {item.deliveryAddress
                       ? `${item.deliveryAddress.city}, ${item.deliveryAddress.street}, ${item.deliveryAddress.houseNumber}` +
                         (item.deliveryAddress.entranceNumber
-                          ? `, підʼїзд ${item.deliveryAddress.entranceNumber}`
+                          ? `, ${t("profile_orders_entrance")} ${
+                              item.deliveryAddress.entranceNumber
+                            }`
                           : "") +
                         (item.deliveryAddress.apartmentNumber
-                          ? `, квартира ${item.deliveryAddress.apartmentNumber}`
+                          ? `, ${t("profile_orders_apartment")} ${
+                              item.deliveryAddress.apartmentNumber
+                            }`
                           : "") +
                         (item.deliveryAddress.floor
-                          ? `, поверх ${item.deliveryAddress.floor}`
+                          ? `, ${t("profile_orders_floor")} ${
+                              item.deliveryAddress.floor
+                            }`
                           : "") +
                         (item.deliveryAddress.intercomCode
-                          ? `, домофон ${item.deliveryAddress.intercomCode}`
+                          ? `, ${t("profile_orders_intercom")} ${
+                              item.deliveryAddress.intercomCode
+                            }`
                           : "")
-                      : "Самовивіз"}
+                      : `${t("profile_orders_self_pickup")}`}
                   </AppText>
                 </View>
 
                 <View style={styles.archiveCardLine}>
-                  <AppText style={styles.archiveCardTitle}>Почта</AppText>
+                  <AppText style={styles.archiveCardTitle}>
+                    {t("profile_orders_email")}
+                  </AppText>
                   <AppText style={styles.archiveCardValue}>
                     {item.userEmail}
                   </AppText>
                 </View>
 
                 <View style={styles.archiveCardLine}>
-                  <AppText style={styles.archiveCardTitle}>Сума</AppText>
+                  <AppText style={styles.archiveCardTitle}>
+                    {t("profile_orders_total")}
+                  </AppText>
                   <AppText style={styles.archiveCardValue}>
-                    {item.totalPrice} грн
+                    {item.totalPrice} {t("currency")}
                   </AppText>
                 </View>
 
                 <View style={styles.archiveCardLine}>
                   <AppText style={styles.archiveCardTitle}>
-                    Статус замовлення
+                    {t("profile_orders_status")}
                   </AppText>
-                  <AppText style={styles.archiveCardValue}>Завершено</AppText>
+                  <AppText style={styles.archiveCardValue}>
+                    {t("profile_orders_completed")}
+                  </AppText>
                 </View>
                 <AppButton
-                  title="Повторити замовлення"
+                  title={t("profile_orders_repeat_order")}
                   onPress={() => {}}
                   backgroundColor={AppColors.darkGrey}
                   textColor={AppColors.textColorWhite}
@@ -173,7 +184,9 @@ const ProfileOrdersScreen = () => {
                   style={styles.detailsBtn}
                   onPress={() => handleToggleDetails(item.id)}
                 >
-                  <AppText style={styles.detailsBtnTitle}>Деталі</AppText>
+                  <AppText style={styles.detailsBtnTitle}>
+                    {t("profile_orders_details")}
+                  </AppText>
                 </Pressable>
 
                 {openDetailsIds.includes(item.id) && (
@@ -203,7 +216,7 @@ const ProfileOrdersScreen = () => {
                               </AppText>
                               <View style={styles.detailsString}>
                                 <AppText style={styles.detailsText}>
-                                  Розмір
+                                  {t("profile_orders_size")}
                                 </AppText>
                                 <AppText style={styles.detailsText}>
                                   {sizesData[item.size]}
@@ -211,7 +224,7 @@ const ProfileOrdersScreen = () => {
                               </View>
                               <View style={styles.detailsString}>
                                 <AppText style={styles.detailsText}>
-                                  Борт
+                                  {t("profile_orders_crust")}
                                 </AppText>
                                 <AppText style={styles.detailsText}>
                                   {doughData[item.dough]}
@@ -219,7 +232,7 @@ const ProfileOrdersScreen = () => {
                               </View>
                               <View style={styles.detailsString}>
                                 <AppText style={styles.detailsText}>
-                                  К-ть
+                                  {t("profile_orders_qty")}
                                 </AppText>
                                 <AppText style={styles.detailsText}>
                                   {item.qty}
@@ -240,8 +253,6 @@ const ProfileOrdersScreen = () => {
     </ScrollView>
   );
 };
-
-// [[{"category": "Бестселери і новинки", "dough": "thick", "id": "pizza_3", "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75", "ingredients": [Array], "name": "Піца Салямі", "price": 305, "qty": 1, "size": "standard", "weight": 501}], [{"category": "Бестселери і новинки", "dough": "sausages", "id": "pizza_4", "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FPitsa%20z%20vialenymy%20tomatamy%2Fdriedtomato-pieces.webp&w=1560&q=75", "ingredients": [Array], "name": "Піца з в’яленими томатами та куркою", "price": 455, "qty": 3, "size": "large", "weight": 550}, {"category": "Бестселери і новинки", "dough": "cheese", "id": "pizza_5", "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FHrusha%2Fpearandbluecheese-pieces.webp&w=1560&q=75", "ingredients": [Array], "name": "Піца з грушею і блакитним сиром", "price": 461, "qty": 2, "size": "xxl", "weight": 502}], [{"category": "Бестселери і новинки", "dough": "thick", "id": "pizza_3", "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75", "ingredients": [Array], "name": "Піца Салямі", "price": 305, "qty": 2, "size": "standard", "weight": 501}, {"category": "Бестселери і новинки", "dough": "sausages", "id": "pizza_3", "image": "https://dominos.ua/_next/image/?url=https%3A%2F%2Fmedia-v3.dominos.ua%2FProducts%2FPitsa%2FPitsy%2FSalami%2Fpizza-salami-website-main-ukr.webp&w=1560&q=75", "ingredients": [Array], "name": "Піца Салямі", "price": 397, "qty": 2, "size": "large", "weight": 501}]]
 
 const styles = StyleSheet.create({
   container: {

@@ -43,7 +43,7 @@ type Props = {
 };
 
 const ChooseRestaurant = ({ control }: Props) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const citiesData =
     i18n.language === "en" ? citiesArrEn.cities : citiesArrUa.cities;
@@ -53,14 +53,16 @@ const ChooseRestaurant = ({ control }: Props) => {
 
   return (
     <ScrollView style={styles.container}>
-      <AppText style={styles.title}>Виберіть ресторан</AppText>
+      <AppText style={styles.title}>{t("choose_restaurant_title")}</AppText>
 
       <View style={styles.cityContainer}>
         <MapMarkerIcon color="red" />
         <Text style={styles.cityTitle}>{citiesData[selectedCityCode]}</Text>
       </View>
 
-      <AppText style={styles.subTitle}>Ресторан</AppText>
+      <AppText style={styles.subTitle}>
+        {t("choose_restaurant_restaurant")}
+      </AppText>
 
       <Controller
         control={control}
@@ -96,9 +98,10 @@ const ChooseRestaurant = ({ control }: Props) => {
                         paddingVertical: 10,
                         paddingHorizontal: 15,
                       },
-                      optionText: { 
-                        fontSize: s(16), 
-                        color: "#000" },
+                      optionText: {
+                        fontSize: s(16),
+                        color: "#000",
+                      },
                     }}
                   />
                 ))}

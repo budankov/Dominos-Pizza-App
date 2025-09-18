@@ -15,70 +15,70 @@ const DeliveryAddressForm = ({ control }: Props) => {
 
   return (
     <View style={styles.container}>
-      <AppText style={styles.title}>Адреса доставки</AppText>
+      <AppText style={styles.title}>{t("delivery_address_title")}</AppText>
 
-      <AppText>Місто*</AppText>
+      <AppText>{t("delivery_address_city")}</AppText>
       <AppTextInputController
         control={control}
         name="city"
-        placeholder="Введіть місто"
+        placeholder={t("delivery_address_city_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
       />
 
-      <AppText>Вулиця*</AppText>
+      <AppText>{t("delivery_address_street")}</AppText>
       <AppTextInputController
         control={control}
         name="street"
-        placeholder="Введіть вулицю"
+        placeholder={t("delivery_address_street_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
       />
 
-      <AppText>Номер дому*</AppText>
+      <AppText>{t("delivery_address_house_number")}</AppText>
       <AppTextInputController
         control={control}
         name="houseNumber"
-        placeholder="Введіть номер дому"
+        placeholder={t("delivery_address_house_number_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
       />
 
-      <AppText>Підʼїзд</AppText>
+      <AppText>{t("delivery_address_entrance")}</AppText>
       <AppTextInputController
         control={control}
         name="entranceNumber"
-        placeholder="Введіть номер підʼїзду"
+        placeholder={t("delivery_address_entrance_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
         keyboardType="numeric"
       />
 
-      <AppText>Номер квартири</AppText>
+      <AppText>{t("delivery_address_apartment")}</AppText>
       <AppTextInputController
         control={control}
         name="apartmentNumber"
-        placeholder="Введіть номер квартири"
+        placeholder={t("delivery_address_apartment_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
         keyboardType="numeric"
       />
 
-      <AppText>Поверх*</AppText>
+      <AppText>{t("delivery_address_floor")}</AppText>
       <AppTextInputController
         control={control}
         name="floor"
-        placeholder="Введіть поверх"
+        placeholder={t("delivery_address_floor_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
         keyboardType="numeric"
       />
 
-      <AppText>Код домофону</AppText>
+      <AppText>{t("delivery_address_intercom")}</AppText>
       <AppTextInputController
         control={control}
         name="intercomCode"
-        placeholder="Введіть код"
+        placeholder={t("delivery_address_intercom_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
         keyboardType="numeric"

@@ -87,7 +87,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
                       {user.displayName || "User"}
                     </Text>
                     <Text style={styles.profileBonus}>
-                      0 бонусів на рахунку
+                      0 {t("profile_bonus")}
                     </Text>
                   </View>
                 </View>

@@ -48,10 +48,18 @@ const CartScreen = () => {
 
   const [deliveryTypeButton, setDeliveryTypeButton] = useState("delivery");
 
-  const deliveryTypeGroup = [
+  const deliveryTypeGroupUa = [
     { title: "Доставка", value: "delivery", icon: "delivery-dining" },
     { title: "З собою", value: "takeOut", icon: "shopping-bag" },
   ];
+
+  const deliveryTypeGroupEn = [
+    { title: "Delivery", value: "delivery", icon: "delivery-dining" },
+    { title: "Take Out", value: "takeOut", icon: "shopping-bag" },
+  ];
+
+  const deliveryTypeGroup =
+    i18n.language === "en" ? deliveryTypeGroupEn : deliveryTypeGroupUa;
 
   const handleDeliveryType = (newDeliveryType: string) => {
     setDeliveryTypeButton(newDeliveryType);
@@ -123,7 +131,7 @@ const CartScreen = () => {
   return (
     <ScrollView style={styles.scroll}>
       <View style={styles.container}>
-        <AppText style={styles.title}>Кошик</AppText>
+        <AppText style={styles.title}>{t("cart_title")}</AppText>
 
         <View style={styles.deliveryContainer}>
           {deliveryTypeGroup.map((option) => (
@@ -152,10 +160,10 @@ const CartScreen = () => {
           ))}
         </View>
 
-        <AppText style={styles.subTitle}>Ваше замовлення</AppText>
+        <AppText style={styles.subTitle}>{t("cart_your_order")}</AppText>
         {deliveryTypeButton === "delivery" && (
           <AppText style={{ fontSize: s(14), marginTop: s(-15) }}>
-            Мінімальна сума для безшкоштовної доставки 295 грн.
+            {t("cart_minimum_free_delivery")}
           </AppText>
         )}
 
@@ -275,7 +283,7 @@ const CartScreen = () => {
                   <Text
                     style={{ fontSize: s(14), fontFamily: AppFonts.SemiBold }}
                   >
-                    {item.price * item.qty}.00 грн
+                    {item.price * item.qty}.00 {t("currency")}
                   </Text>
                 </View>
               </View>
@@ -293,17 +301,18 @@ const CartScreen = () => {
 
         <View style={{ alignItems: "flex-end" }}>
           <AppText style={{ paddingBottom: s(10) }}>
-            Товарів на сумму: {totalPrice} грн
+            {t("cart_items_total")}
+            {totalPrice} {t("currency")}
           </AppText>
           <AppText>
-            Сумма до сплати:{" "}
+            {t("cart_total_amount")}
             <AppText style={{ color: AppColors.red, fontSize: s(20) }}>
-              {totalPrice} грн
+              {totalPrice} {t("currency")}
             </AppText>
           </AppText>
         </View>
 
-        <AppButton title="Оформити замовлення" onPress={handlePlaceAnOrder} />
+        <AppButton title={t("cart_place_order")} onPress={handlePlaceAnOrder} />
       </View>
     </ScrollView>
   );

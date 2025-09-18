@@ -85,27 +85,29 @@ const SingInScreen = () => {
 
   return (
     <AppSaveView style={styles.container}>
-      <AppText style={styles.title}>Вхід</AppText>
-      <AppText style={styles.subTitle}>Логін</AppText>
+      <AppText style={styles.title}>{t("sign_in_title")}</AppText>
+      <AppText style={styles.subTitle}>{t("sign_in_login_label")}</AppText>
       <AppTextInputController<FormData>
         control={control}
         styleInput={styles.input}
         placeholderTextColor={AppColors.cartBorderColor}
         name="email"
-        placeholder="Ваш Email або номер телефону"
+        placeholder={t("sign_in_placeholder_email")}
       />
-      <AppText style={styles.subTitle}>Пароль</AppText>
+      <AppText style={styles.subTitle}>{t("sign_in_password_label")}</AppText>
       <AppTextInputController<FormData>
         control={control}
         styleInput={styles.input}
         placeholderTextColor={AppColors.cartBorderColor}
         showPassword
         name="password"
-        placeholder="Ваш пароль"
+        placeholder={t("sign_in_placeholder_password")}
         secureTextEntry
       />
       <Pressable onPress={() => {}}>
-        <AppText style={styles.forgotPassword}>Забули пароль?</AppText>
+        <AppText style={styles.forgotPassword}>
+          {t("sign_in_forgot_password")}
+        </AppText>
       </Pressable>
       <AppButton
         title={t("sign_in_login_button")}
@@ -132,7 +134,7 @@ const SingInScreen = () => {
           }}
         />
         <AppText style={{ paddingHorizontal: s(10), color: "grey" }}>
-          Або
+          {t("sign_in_or")}
         </AppText>
         <View
           style={{

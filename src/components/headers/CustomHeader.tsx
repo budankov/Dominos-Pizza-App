@@ -4,7 +4,9 @@ import {
   DrawerActions,
   getFocusedRouteNameFromRoute,
 } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { showMessage } from "react-native-flash-message";
 import { s } from "react-native-size-matters";
 import { useSelector } from "react-redux";
 import DominosPizzaLogoIcon from "../../assets/icons/DominosPizzaLogoIcon";
@@ -14,6 +16,8 @@ import LocationButton from "../location/LocationButton";
 import SocialMediaDropDownMenu from "../social-media/SocialMediaDropDownMenu";
 
 const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
+  const { t } = useTranslation();
+
   const currentRouteName = getFocusedRouteNameFromRoute(route) ?? route.name;
 
   const isOnRoot =
@@ -28,6 +32,17 @@ const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
   };
 
   const totalQtyValue = useSelector((state: RootState) => state.cart.totalQty);
+
+  const handleNavToCartScreen = () => {
+    if (totalQtyValue <= 0) {
+      showMessage({
+        type: "info",
+        message: t("cart_empty_message"),
+      });
+    } else {
+      navigation.navigate("CartScreen");
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -55,7 +70,7 @@ const CustomHeader = ({ navigation, route }: DrawerHeaderProps) => {
               <Text style={styles.totalQtyText}>{totalQtyValue}</Text>
             </View>
           )}
-          <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
+          <TouchableOpacity onPress={handleNavToCartScreen}>
             <Ionicons name="cart-outline" size={s(30)} color="#fff" />
           </TouchableOpacity>
         </View>

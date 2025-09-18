@@ -13,6 +13,7 @@ import AppSaveView from "../../components/views/AppSaveView";
 import { auth } from "../../config/firebase";
 import { useModal } from "../../context/ModalContext";
 import { setUserData } from "../../store/reducers/userSlice";
+import { AppColors } from "../../styles/colors";
 import AppTextInputController from "../inputs/AppTextInputController";
 
 type FormData = yup.InferType<typeof schema>;
@@ -92,16 +93,23 @@ const SingUpScreen = () => {
     <AppSaveView style={styles.container}>
       <AppTextInputController
         control={control}
+        styleInput={styles.input}
+        placeholderTextColor={AppColors.cartBorderColor}
         name="userName"
         placeholder={t("sign_up_username_placeholder")}
       />
       <AppTextInputController
         control={control}
+        styleInput={styles.input}
+        placeholderTextColor={AppColors.cartBorderColor}
         name="email"
         placeholder={t("sign_up_email_placeholder")}
       />
       <AppTextInputController
         control={control}
+        styleInput={styles.input}
+        placeholderTextColor={AppColors.cartBorderColor}
+        showPassword
         name="password"
         placeholder={t("sign_up_password_placeholder")}
         secureTextEntry
@@ -130,6 +138,20 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     marginTop: vs(15),
     borderWidth: 1,
+  },
+  input: {
+    borderWidth: 0,
+    borderRadius: 0,
+    borderBottomWidth: 1,
+    paddingHorizontal: 0,
+    borderBottomColor: AppColors.buttonBorderGray,
+  },
+  forgotPassword: {
+    textAlign: "right",
+    fontSize: s(13),
+    textDecorationLine: "underline",
+    color: "#39a9ff",
+    marginBottom: vs(20),
   },
 });
 

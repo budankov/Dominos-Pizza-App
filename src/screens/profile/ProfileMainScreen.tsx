@@ -37,8 +37,8 @@ const ProfileMainScreen = () => {
           <FontAwesome name="user-circle-o" size={50} color="#6E6D6E" />
         </View>
         <View>
-          <Text style={styles.profileNickname}>Костянтин</Text>
-          <Text style={styles.profileBonus}>0 бонусів на рахунку</Text>
+          <Text style={styles.profileNickname}>{t("profile_nickname")}</Text>
+          <Text style={styles.profileBonus}>0 {t("profile_bonus")}</Text>
         </View>
       </View>
       <View style={styles.navList}>
@@ -48,7 +48,7 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <Feather name="user" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Профіль</Text>
+            <Text style={styles.navLinkTitle}>{t("profile_nav_profile")}</Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -58,7 +58,7 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <Feather name="users" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Групи</Text>
+            <Text style={styles.navLinkTitle}>{t("profile_nav_groups")}</Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -72,7 +72,9 @@ const ProfileMainScreen = () => {
               size={24}
               color="#6E6D6E"
             />
-            <Text style={styles.navLinkTitle}>Адреси</Text>
+            <Text style={styles.navLinkTitle}>
+              {t("profile_nav_addresses")}
+            </Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -82,7 +84,7 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <SimpleLineIcons name="social-dropbox" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Замовлення</Text>
+            <Text style={styles.navLinkTitle}>{t("profile_nav_orders")}</Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -92,7 +94,9 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <AntDesign name="credit-card" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Банківські картки</Text>
+            <Text style={styles.navLinkTitle}>
+              {t("profile_nav_bank_cards")}
+            </Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -102,7 +106,9 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <AntDesign name="like" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Залишити відгук</Text>
+            <Text style={styles.navLinkTitle}>
+              {t("profile_nav_leave_review")}
+            </Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -112,7 +118,9 @@ const ProfileMainScreen = () => {
         >
           <View style={styles.navLinkItem}>
             <Ionicons name="notifications-outline" size={24} color="#6E6D6E" />
-            <Text style={styles.navLinkTitle}>Повідомлення</Text>
+            <Text style={styles.navLinkTitle}>
+              {t("profile_nav_notifications")}
+            </Text>
           </View>
           <Entypo name="chevron-thin-right" size={16} color="#6E6D6E" />
         </Pressable>
@@ -120,7 +128,7 @@ const ProfileMainScreen = () => {
       <Pressable style={styles.logOutBtn} onPress={handleLogout}>
         <View style={styles.navLinkItem}>
           <Feather name="log-out" size={30} color="#6E6D6E" />
-          <Text style={styles.logOutBtnTitle}>Вийти</Text>
+          <Text style={styles.logOutBtnTitle}>{t("profile_log_out")}</Text>
         </View>
       </Pressable>
     </View>

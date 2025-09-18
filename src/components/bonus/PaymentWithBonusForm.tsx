@@ -16,6 +16,13 @@ import { AppFonts } from "../../styles/fonts";
 import AppTextInputController from "../inputs/AppTextInputController";
 import AppText from "../texts/AppText";
 
+const schema = yup
+  .object({
+    bonus: yup.number().optional(),
+    promotion: yup.number().optional(),
+  })
+  .required();
+
 type FormData = yup.InferType<typeof schema>;
 
 const promotions = [
@@ -29,13 +36,6 @@ const promotions = [
 const PaymentWithBonusForm = () => {
   const { t } = useTranslation();
 
-  const schema = yup
-    .object({
-      bonus: yup.number().optional(),
-      promotion: yup.number().optional(),
-    })
-    .required();
-
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -45,9 +45,7 @@ const PaymentWithBonusForm = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <AppText style={styles.title}>
-        Виберіть акцію або введіть промокод
-      </AppText>
+      <AppText style={styles.title}>{t("promotions_title")}</AppText>
 
       <Controller<FormData>
         control={control}
@@ -98,16 +96,16 @@ const PaymentWithBonusForm = () => {
         )}
       />
 
-      <AppText style={styles.title}>Оплата бонусами</AppText>
+      <AppText style={styles.title}>{t("bonus_payment_title")}</AppText>
       <AppTextInputController<FormData>
         control={control}
         name="bonus"
-        placeholder="Бонуси"
+        placeholder={t("bonus_placeholder")}
         placeholderTextColor={AppColors.textColor}
         styleInput={styles.input}
         keyboardType="numeric"
       />
-      <AppText style={styles.title}>Доступно 0 бонусів</AppText>
+      <AppText style={styles.title}>{t("bonus_available")}</AppText>
     </ScrollView>
   );
 };
